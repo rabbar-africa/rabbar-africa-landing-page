@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Landing Page
+
+A modern, responsive landing page built with the latest web technologies.
+
+## Tech Stack
+
+- **Next.js 15.5** - React framework with App Router
+- **React 19** - Latest React version with enhanced features
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS v4** - Modern utility-first CSS framework
+- **shadcn/ui** - Beautiful, accessible component library
+- **ESLint** - Code linting and formatting
+
+## Features
+
+- ⚡️ Blazing fast with Turbopack
+- 📱 Fully responsive design
+- 🎨 Modern UI components with shadcn/ui
+- 🎯 Type-safe with TypeScript
+- 🚀 Optimized for performance
+- 📦 Component-based architecture
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.17 or later
+- npm (comes with Node.js)
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+- `npm run dev` - Start the development server with Turbopack
+- `npm run build` - Create an optimized production build
+- `npm run start` - Start the production server
+- `npm run lint` - Run ESLint to check for code issues
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+├── src/
+│   ├── app/                # App Router pages and layouts
+│   │   ├── globals.css     # Global styles with Tailwind CSS
+│   │   ├── layout.tsx      # Root layout component
+│   │   └── page.tsx        # Home page component
+│   ├── components/         # Reusable components
+│   │   └── ui/             # shadcn/ui components
+│   └── lib/                # Utility functions
+├── public/                 # Static assets
+└── package.json           # Project dependencies and scripts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding Components
 
-## Deploy on Vercel
+To add new shadcn/ui components:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx shadcn@latest add [component-name]
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example:
+```bash
+npx shadcn@latest add card
+npx shadcn@latest add input
+npx shadcn@latest add dialog
+```
+
+## Customization
+
+### Themes
+The project uses CSS variables for theming. You can customize colors in `src/app/globals.css`.
+
+### Components
+All UI components are in `src/components/ui/` and can be customized as needed.
+
+### Styling
+Use Tailwind CSS classes for styling. The configuration supports the latest Tailwind v4 features.
+
+## Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Deploy with zero configuration
+
+### Other Platforms
+The project can be deployed to any platform that supports Node.js:
+- Netlify
+- AWS Amplify
+- Railway
+- Render

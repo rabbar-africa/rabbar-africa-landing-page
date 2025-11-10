@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getAllBlogPosts } from "@/lib/blog-data";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { Clock, User, ArrowLeft } from "lucide-react";
 
@@ -24,6 +26,8 @@ export default function BlogsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Header />
+
       {/* Header */}
       <section className="bg-white border-b">
         <div className="max-w-6xl mx-auto px-8 py-16">
@@ -149,6 +153,8 @@ export default function BlogsPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

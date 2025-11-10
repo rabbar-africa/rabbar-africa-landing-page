@@ -72,6 +72,30 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
+  icons: {
+    icon: [
+      {
+        url: '/favicon-light.ico',
+        media: '(prefers-color-scheme: light)',
+        type: 'image/x-icon'
+      },
+      {
+        url: '/favicon-dark.ico', 
+        media: '(prefers-color-scheme: dark)',
+        type: 'image/x-icon'
+      },
+      // Fallback ICO for browsers that don't support media queries or SVG
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+    ]
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({

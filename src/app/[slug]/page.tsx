@@ -8,6 +8,8 @@ import {
   getRelatedPosts,
   getAllBlogSlugs,
 } from "@/lib/blog-data";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { Clock, User, ArrowLeft, Calendar } from "lucide-react";
 
@@ -70,6 +72,8 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Header />
+
       {/* Article Header */}
       <article className="bg-white">
         <div className="max-w-4xl mx-auto px-8 py-16">
@@ -281,6 +285,8 @@ export default async function BlogPostPage({
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

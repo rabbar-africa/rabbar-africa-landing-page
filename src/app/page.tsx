@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getFeaturedBlogPosts } from "@/lib/blog-data";
+import { Logo } from "@/components/Logo";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { Car, Wrench, FileText, Shield, Clock, User } from "lucide-react";
 
@@ -10,11 +13,19 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <Header />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-8">
         <div className="max-w-6xl mx-auto text-center">
           <div className="space-y-6">
-            <div className="space-y-2">
+            <div className="space-y-4">
+              <Logo
+                width={200}
+                height={80}
+                priority={true}
+                className="mx-auto"
+              />
               <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 Rabbar Africa
               </h1>
@@ -201,6 +212,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

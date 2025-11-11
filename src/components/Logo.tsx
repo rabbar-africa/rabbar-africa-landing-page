@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface LogoProps {
   isLink?: boolean;
@@ -10,20 +10,22 @@ interface LogoProps {
   className?: string;
   priority?: boolean;
   alt?: string;
+  color?: "black" | "white";
 }
 
-export function Logo({ 
-  isLink = false, 
-  href = '/',
+export function Logo({
+  isLink = false,
+  href = "/",
   width = 180,
   height = 60,
   className,
   priority = false,
-  alt = "Rabbar Africa - Premier Automobile Services"
+  alt = "Rabbar Africa - Premier Automobile Services",
+  color = "black",
 }: LogoProps) {
   const logoImage = (
     <Image
-      src="/logo.png"
+      src={color === "white" ? "/white-logo.png" : "/logo.png"}
       alt={alt}
       width={width}
       height={height}
@@ -36,8 +38,8 @@ export function Logo({
 
   if (isLink) {
     return (
-      <Link 
-        href={href} 
+      <Link
+        href={href}
         className="inline-block transition-opacity hover:opacity-80"
         aria-label="Go to Rabbar Africa homepage"
       >

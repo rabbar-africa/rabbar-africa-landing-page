@@ -1,25 +1,29 @@
-"use client"
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState } from 'react';
+"use client";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 
-export   function Contact() {
+export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! We will get back to you soon.");
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -30,18 +34,24 @@ export   function Contact() {
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl mb-4 text-[#0D2847]">Get in Touch</h2>
+          <h2 className="text-4xl sm:text-5xl mb-4 text-[#0D2847]">
+            Get in Touch
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions? {`We're`} here to help you find the perfect vehicle or service
+            Have questions? {`We're`} here to help you find the perfect vehicle
+            or service
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl mb-6 text-[#0D2847]">Contact Information</h3>
+            <h3 className="text-2xl mb-6 text-[#0D2847]">
+              Contact Information
+            </h3>
             <p className="text-gray-600 mb-8">
-              Reach out to us through any of the following channels. Our team is ready to assist you.
+              Reach out to us through any of the following channels. Our team is
+              ready to assist you.
             </p>
 
             <div className="space-y-6">
@@ -52,7 +62,7 @@ export   function Contact() {
                 <div>
                   <h4 className="text-lg mb-1 text-gray-900">Phone</h4>
                   <p className="text-gray-600">+254 700 000 000</p>
-                 </div>
+                </div>
               </div>
 
               <div className="flex items-start gap-4">
@@ -61,7 +71,7 @@ export   function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg mb-1 text-gray-900">Email</h4>
-                   <p className="text-gray-600">service@rabbarafrica.com</p>
+                  <p className="text-gray-600">service@rabbarafrica.com</p>
                 </div>
               </div>
 

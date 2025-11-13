@@ -1,4 +1,3 @@
- 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { About, BlogSection, Contact, Hero, Services } from "@/components/home";

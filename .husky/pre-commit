@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚀 Running pre-commit checks..."
+
+# Format all files
+echo "📝 Running format..."
+yarn run format
+
+# Run lint-staged for staged files
+echo "📝 Running lint-staged..."
+yarn lint-staged
+
+
+ 
+# Run type checking across all packages
+echo "🔍 Running type checks..."
+yarn run format:check
+
+git add -A .
+
+echo "✅ Pre-commit checks completed successfully!"

@@ -94,10 +94,10 @@ export default async function BlogPostPage({
                   post.category === "Maintenance"
                     ? "bg-blue-100 text-blue-700"
                     : post.category === "Repair"
-                    ? "bg-red-100 text-red-700"
-                    : post.category === "Documentation"
-                    ? "bg-green-100 text-green-700"
-                    : "bg-gray-100 text-gray-700"
+                      ? "bg-red-100 text-red-700"
+                      : post.category === "Documentation"
+                        ? "bg-green-100 text-green-700"
+                        : "bg-gray-100 text-gray-700"
                 }
               >
                 {post.category}
@@ -151,24 +151,24 @@ export default async function BlogPostPage({
                     // Handle headers
                     if (line.startsWith("# ")) {
                       return `<h1 class="text-3xl font-bold mt-8 mb-4 text-gray-900">${line.substring(
-                        2
+                        2,
                       )}</h1>`;
                     }
                     if (line.startsWith("## ")) {
                       return `<h2 class="text-2xl font-semibold mt-6 mb-3 text-gray-800">${line.substring(
-                        3
+                        3,
                       )}</h2>`;
                     }
                     if (line.startsWith("### ")) {
                       return `<h3 class="text-xl font-semibold mt-4 mb-2 text-gray-800">${line.substring(
-                        4
+                        4,
                       )}</h3>`;
                     }
                     // Handle bold text
                     if (line.includes("**")) {
                       line = line.replace(
                         /\*\*(.*?)\*\*/g,
-                        '<strong class="font-semibold text-gray-900">$1</strong>'
+                        '<strong class="font-semibold text-gray-900">$1</strong>',
                       );
                     }
                     // Handle lists
@@ -182,7 +182,7 @@ export default async function BlogPostPage({
                     }
                     if (line.match(/^\d+\. /)) {
                       return `<li class="mb-1">${line.substring(
-                        line.indexOf(". ") + 2
+                        line.indexOf(". ") + 2,
                       )}</li>`;
                     }
                     // Handle regular paragraphs

@@ -1,17 +1,17 @@
 import { blogPostsData } from "@/data/blog-data";
 import BlogCard from "../BlogCard";
 
- 
-
- 
-export   function BlogSection( ) {
+export function BlogSection() {
   return (
     <section id="blog" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl mb-4 text-[#0D2847]">Latest from Our Blog</h2>
+          <h2 className="text-4xl sm:text-5xl mb-4 text-[#0D2847]">
+            Latest from Our Blog
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Stay informed with automotive news, tips, and insights from our experts
+            Stay informed with automotive news, tips, and insights from our
+            experts
           </p>
         </div>
 
@@ -25,7 +25,7 @@ export   function BlogSection( ) {
               date={post.date}
               image={post.image}
               category={post.category}
-             />
+            />
           ))}
         </div>
 

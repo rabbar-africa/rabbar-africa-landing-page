@@ -750,7 +750,7 @@ At Rabbar Africa, we understand that insurance can be complex. Our team is ready
 export function getAllBlogPosts(): BlogPost[] {
   return blogPosts.sort(
     (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 }
 
@@ -759,7 +759,7 @@ export function getFeaturedBlogPosts(limit: number = 3): BlogPost[] {
     .filter((post) => post.featured)
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     )
     .slice(0, limit);
 }
@@ -773,7 +773,7 @@ export function getBlogPostsByCategory(category: string): BlogPost[] {
     .filter((post) => post.category === category)
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
 }
 
@@ -782,13 +782,13 @@ export function getBlogPostsByTag(tag: string): BlogPost[] {
     .filter((post) => post.tags.includes(tag))
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
 }
 
 export function getRelatedPosts(
   currentSlug: string,
-  limit: number = 3
+  limit: number = 3,
 ): BlogPost[] {
   const currentPost = getBlogPostBySlug(currentSlug);
   if (!currentPost) return [];
@@ -798,11 +798,11 @@ export function getRelatedPosts(
       (post) =>
         post.slug !== currentSlug &&
         (post.category === currentPost.category ||
-          post.tags.some((tag) => currentPost.tags.includes(tag)))
+          post.tags.some((tag) => currentPost.tags.includes(tag))),
     )
     .sort(
       (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     )
     .slice(0, limit);
 }

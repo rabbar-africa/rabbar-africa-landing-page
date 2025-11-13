@@ -20,7 +20,7 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
         "hover:font-semibold hover:text-[#030213]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064] focus-visible:rounded-sm",
         "active:text-[#013064]",
-        className
+        className,
       )}
       aria-label={typeof children === "string" ? children : undefined}
     >

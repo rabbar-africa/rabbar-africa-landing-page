@@ -21,8 +21,8 @@ export function Footer() {
             {/* <h3 className="text-[#E8F34F] text-xl mb-4">RABBAR AFRICA</h3>
              */}
 
-            <div className="mb-4" >
-              <Logo color="white"  />
+            <div className="mb-4">
+              <Logo color="white" />
             </div>
             <p className="text-gray-400 mb-4">
               Your trusted partner for premium automobiles and exceptional

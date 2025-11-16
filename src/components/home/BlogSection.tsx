@@ -25,6 +25,7 @@ export function BlogSection() {
               date={post.date}
               image={post.image}
               category={post.category}
+              slug={post.slug}
             />
           ))}
         </div>

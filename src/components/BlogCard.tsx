@@ -1,5 +1,6 @@
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallBack";
+import Link from "next/link";
 
 interface BlogCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface BlogCardProps {
   date: string;
   image: string;
   category: string;
+  slug: string;
   onClick?: () => void;
 }
 
@@ -19,6 +21,7 @@ export default function BlogCard({
   image,
   category,
   onClick,
+  slug,
 }: BlogCardProps) {
   return (
     <article
@@ -56,10 +59,12 @@ export default function BlogCard({
           </div>
         </div>
 
-        <button className="text-[#0D2847]   flex items-center gap-2 transition-colors">
-          Read More
-          <ArrowRight size={18} />
-        </button>
+        <Link href={`/${slug}`} className="cursor-pointer">
+          <button className="text-[#0D2847] cursor-pointer  flex items-center gap-2 transition-colors">
+            Read More
+            <ArrowRight size={18} />
+          </button>
+        </Link>
       </div>
     </article>
   );

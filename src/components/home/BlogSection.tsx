@@ -1,7 +1,10 @@
-import { blogPostsData } from "@/data/blog-data";
 import BlogCard from "../BlogCard";
+import { getPaginatedBlogPosts, BlogPost } from "@/lib/sanity-blog";
+import Link from "next/link";
 
-export function BlogSection() {
+export async function BlogSection() {
+  const { posts } = await getPaginatedBlogPosts(1, 6);
+
   return (
     <section id="blog" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +19,7 @@ export function BlogSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPostsData.map((post) => (
+          {posts.map((post: BlogPost) => (
             <BlogCard
               key={post.id}
               title={post.title}
@@ -31,9 +34,11 @@ export function BlogSection() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] transition-colors">
-            View All Articles
-          </button>
+          <Link href="/blogs">
+            <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] transition-colors">
+              View All Articles
+            </button>
+          </Link>
         </div>
       </div>
     </section>

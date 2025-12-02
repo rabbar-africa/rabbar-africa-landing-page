@@ -1,12 +1,12 @@
 import {
   Facebook,
-  Twitter,
   Instagram,
-  Linkedin,
+  // Linkedin,
   Mail,
   Phone,
   MapPin,
 } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -30,29 +30,35 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1AHGfHjCxz/?mibextid=wwXIfr"
                 className="w-10 h-10 bg-[#0A1E3A] rounded-full flex items-center justify-center hover:bg-[#E8F34F] hover:text-[#0D2847] transition-colors"
               >
                 <Facebook size={20} />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="w-10 h-10 bg-[#0A1E3A] rounded-full flex items-center justify-center hover:bg-[#E8F34F] hover:text-[#0D2847] transition-colors"
               >
                 <Twitter size={20} />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://www.instagram.com/rabbar.africa?igsh=c2F5azMzem0zcmJz&utm_source=qr"
                 className="w-10 h-10 bg-[#0A1E3A] rounded-full flex items-center justify-center hover:bg-[#E8F34F] hover:text-[#0D2847] transition-colors"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@rabbar.africa?_r=1&_t=ZS-91szIfwso1o"
+                className="w-10 h-10 bg-[#0A1E3A] rounded-full flex items-center justify-center hover:bg-[#E8F34F] hover:text-[#0D2847] transition-colors"
+              >
+                <FaTiktok size={20} />
+              </a>
+              {/* <a
+                href=""
                 className="w-10 h-10 bg-[#0A1E3A] rounded-full flex items-center justify-center hover:bg-[#E8F34F] hover:text-[#0D2847] transition-colors"
               >
                 <Linkedin size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
 

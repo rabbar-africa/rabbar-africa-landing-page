@@ -61,7 +61,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg mb-1 text-gray-900">Phone</h4>
-                  <p className="text-gray-600">+254 700 000 000</p>
+                  <p className="text-gray-600">+234 916 000 2836</p>
                 </div>
               </div>
 
@@ -71,7 +71,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg mb-1 text-gray-900">Email</h4>
-                  <p className="text-gray-600">service@rabbarafrica.com</p>
+                  <p className="text-gray-600">contact.rabbar@gmail.com</p>
                 </div>
               </div>
 
@@ -81,8 +81,10 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg mb-1 text-gray-900">Location</h4>
-                  <p className="text-gray-600">123 Automotive Avenue</p>
-                  <p className="text-gray-600">Nairobi, Kenya</p>
+                  <p className="text-gray-600">49 Akinwunmi Street</p>
+                  <p className="text-gray-600">
+                    Alagomeji, Yaba, Lagos, Nigeria
+                  </p>
                 </div>
               </div>
             </div>
@@ -135,7 +137,7 @@ export function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  placeholder="+254 700 000 000"
+                  placeholder="+234 916 000 2836"
                 />
               </div>
 

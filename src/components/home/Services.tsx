@@ -6,6 +6,7 @@ import {
   Briefcase,
   Paintbrush,
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -13,6 +14,7 @@ const services = [
     title: "Vehicle Documentation",
     description:
       "Insurance, vehicle license, proof of ownership, driver's license renewal - we handle all your paperwork needs.",
+    link: "/vehicle-documentation",
   },
   {
     icon: Wrench,
@@ -63,11 +65,8 @@ export function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:border-2 hover:border-[#E8F34F]"
-              >
+            const CardContent = (
+              <>
                 <div className="w-14 h-14 bg-[#E8F34F]/40 rounded-lg flex items-center justify-center mb-6">
                   <Icon className="text-[#0D2847]" size={28} />
                 </div>
@@ -75,6 +74,28 @@ export function Services() {
                   {service.title}
                 </h3>
                 <p className="text-gray-600">{service.description}</p>
+                {service.link && (
+                  <div className="mt-4 text-[#0D2847] font-medium flex items-center gap-2">
+                    Learn more →
+                  </div>
+                )}
+              </>
+            );
+
+            return service.link ? (
+              <Link
+                key={index}
+                href={service.link}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:border-2 hover:border-[#E8F34F] block"
+              >
+                {CardContent}
+              </Link>
+            ) : (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:border-2 hover:border-[#E8F34F]"
+              >
+                {CardContent}
               </div>
             );
           })}

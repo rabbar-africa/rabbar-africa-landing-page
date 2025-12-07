@@ -74,12 +74,11 @@ export function DocumentServices() {
                 {service.title}
               </h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              {/* <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <span className="text-[#0D2847] font-bold text-lg">
-                  {service.price}
-                </span>
-                <TrendingUp className="text-[#E8F34F]" size={20} />
-              </div>
+                    {service.price} </span>
+                  <TrendingUp className="text-[#E8F34F]" size={20} />
+              </div> */}
             </div>
           ))}
         </div>

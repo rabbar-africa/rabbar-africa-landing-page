@@ -174,7 +174,7 @@ export function Footer() {
               © {currentYear} Rabbar Africa. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="hover:text-[#E8F34F] transition-colors">
+              {/* <a href="#" className="hover:text-[#E8F34F] transition-colors">
                 Privacy Policy
               </a>
               <a href="#" className="hover:text-[#E8F34F] transition-colors">
@@ -182,7 +182,7 @@ export function Footer() {
               </a>
               <a href="#" className="hover:text-[#E8F34F] transition-colors">
                 Cookie Policy
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

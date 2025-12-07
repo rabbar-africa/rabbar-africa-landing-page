@@ -58,13 +58,6 @@ export function DocumentCTA() {
             Call Us Now
           </a>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-[#0D2847]/20">
-          <p className="text-[#0D2847]/70">
-            <CheckCircle2 className="inline text-[#E8F34F] mr-2" size={20} />
-            Average response time: 5 minutes
-          </p>
-        </div>
       </div>
     </section>
   );

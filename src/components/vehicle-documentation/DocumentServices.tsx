@@ -1,4 +1,7 @@
-import { FileText, TrendingUp, MessageCircle, ArrowRight } from "lucide-react";
+"use client";
+import { FileText, MessageCircle, ArrowRight } from "lucide-react";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 const documentServices = [
   {
@@ -46,6 +49,10 @@ export function DocumentServices() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const handleWhatsAppClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.WHATSAPP.DOCUMENT_SERVICES);
+  };
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,16 +91,17 @@ export function DocumentServices() {
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              handleWhatsAppClick();
+              window.open(whatsappLink, "_blank", "noopener,noreferrer");
+            }}
             className="inline-flex items-center gap-2 bg-[#0D2847] text-white px-8 py-4 rounded-lg hover:bg-[#013064] transition-all transform hover:scale-105 shadow-lg"
           >
             <MessageCircle size={20} />
             Request a Service
             <ArrowRight size={20} />
-          </a>
+          </button>
         </div>
       </div>
     </section>

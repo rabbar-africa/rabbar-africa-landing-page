@@ -1,4 +1,7 @@
+"use client";
 import { MessageCircle, ArrowRight, CheckCircle2 } from "lucide-react";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 function Phone({ size }: { size: number }) {
   return (
@@ -25,6 +28,14 @@ export function DocumentCTA() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const handleWhatsAppClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.WHATSAPP.DOCUMENT_CTA);
+  };
+
+  const handlePhoneClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.PHONE.DOCUMENT_CTA);
+  };
+
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Gradient Background */}
@@ -40,23 +51,27 @@ export function DocumentCTA() {
           their vehicle documentation needs. Get started today!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => {
+              handleWhatsAppClick();
+              window.open(whatsappLink, "_blank", "noopener,noreferrer");
+            }}
             className="bg-[#0D2847] text-white px-8 py-4 rounded-lg hover:bg-[#013064] transition-all transform hover:scale-105 flex items-center justify-center gap-2 font-semibold shadow-xl"
           >
             <MessageCircle size={24} />
             Chat with Us on WhatsApp
             <ArrowRight size={24} />
-          </a>
-          <a
-            href="tel:+2349160002836"
+          </button>
+          <button
+            onClick={() => {
+              handlePhoneClick();
+              window.location.href = "tel:+2349160002836";
+            }}
             className="bg-white text-[#0D2847] border-2 border-[#0D2847]/20 px-8 py-4 rounded-lg hover:bg-white/90 hover:border-[#0D2847] transition-colors flex items-center justify-center gap-2 font-semibold"
           >
             <Phone size={24} />
             Call Us Now
-          </a>
+          </button>
         </div>
       </div>
     </section>

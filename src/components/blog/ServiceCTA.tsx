@@ -1,7 +1,18 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 export function ServiceCTA() {
+  const handleBlogCTAClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.CTA.BLOG_READ_MORE);
+  };
+
+  const handleScheduleServiceClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.CTA.BLOG_SCHEDULE_SERVICE);
+  };
+
   return (
     <>
       {/* Blog CTA Section */}
@@ -12,7 +23,10 @@ export function ServiceCTA() {
             Check out more insights and tips from our automotive experts
           </p>
           <Link href="/blogs">
-            <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] cursor-pointer transition-colors">
+            <button
+              onClick={handleBlogCTAClick}
+              className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] cursor-pointer transition-colors"
+            >
               Read More Articles
             </button>
           </Link>
@@ -30,7 +44,11 @@ export function ServiceCTA() {
             services from Rabbar Africa&apos;s certified technicians.
           </p>
           <div className="flex gap-4 items-center justify-center flex-wrap">
-            <Button size="lg" variant="secondary">
+            <Button
+              size="lg"
+              variant="secondary"
+              onClick={handleScheduleServiceClick}
+            >
               Schedule Service
             </Button>
           </div>

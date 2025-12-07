@@ -1,3 +1,4 @@
+"use client";
 import {
   FileText,
   Wrench,
@@ -7,6 +8,8 @@ import {
   Paintbrush,
 } from "lucide-react";
 import Link from "next/link";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 const services = [
   {
@@ -49,6 +52,13 @@ const services = [
 ];
 
 export function Services() {
+  const handleServiceClick = (serviceTitle: string) => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.ENGAGEMENT.SERVICE_CARD_CLICK, {
+      service_name: serviceTitle,
+      event_label: serviceTitle.toLowerCase().replace(/\s+/g, "_"),
+    });
+  };
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,6 +96,7 @@ export function Services() {
               <Link
                 key={index}
                 href={service.link}
+                onClick={() => handleServiceClick(service.title)}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:border-2 hover:border-[#E8F34F] block"
               >
                 {CardContent}

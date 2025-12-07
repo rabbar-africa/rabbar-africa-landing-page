@@ -1,7 +1,18 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "../ImageWithFallBack";
+import { whatsappMessage, whatsappNumber } from "@/data/constant";
+import Link from "next/link";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 export function Hero() {
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  const handleWhatsAppClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.WHATSAPP.HERO);
+  };
+
   return (
     <section
       id="hero"
@@ -31,11 +42,19 @@ export function Hero() {
             across Africa
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] transition-colors flex items-center justify-center gap-2">
-              Explore Services
-              <ArrowRight size={20} />
-            </button>
-            <button className="bg-white text-[#0D2847] px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors">
+            <Link href="#services">
+              <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 cursor-pointer rounded-lg hover:bg-[#d5e040] transition-colors flex items-center justify-center gap-2">
+                Explore Services
+                <ArrowRight size={20} />
+              </button>
+            </Link>
+            <button
+              onClick={() => {
+                handleWhatsAppClick();
+                window.open(whatsappLink, "_blank", "noopener,noreferrer");
+              }}
+              className="bg-white text-[#0D2847] cursor-pointer px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
+            >
               Get in Touch
             </button>
           </div>

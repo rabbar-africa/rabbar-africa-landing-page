@@ -1,4 +1,7 @@
+"use client";
 import { Star, MessageCircle, ArrowRight } from "lucide-react";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 const stats = [
   { number: "47+", label: "Documents Processed" },
@@ -13,6 +16,10 @@ export function VehicleDocHero() {
     "Hello Rabbar Africa! I'm interested in your vehicle documentation services.",
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  const handleWhatsAppClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.WHATSAPP.VEHICLE_DOC_HERO);
+  };
 
   return (
     <section className="relative min-h-[70vh] flex items-center pt-16 bg-gradient-to-br from-[#0D2847] via-[#013064] to-[#0D2847]">
@@ -37,16 +44,17 @@ export function VehicleDocHero() {
             of your home. Fast, reliable, and 100% legitimate.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                handleWhatsAppClick();
+                window.open(whatsappLink, "_blank", "noopener,noreferrer");
+              }}
               className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] transition-all transform hover:scale-105 flex items-center justify-center gap-2 font-semibold shadow-lg"
             >
               <MessageCircle size={20} />
               Get Started on WhatsApp
               <ArrowRight size={20} />
-            </a>
+            </button>
             <a
               href="#services"
               className="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-lg hover:bg-white/20 transition-colors flex items-center justify-center"

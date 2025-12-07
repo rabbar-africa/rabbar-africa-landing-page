@@ -1,6 +1,9 @@
+"use client";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallBack";
 import Link from "next/link";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 interface BlogCardProps {
   title: string;
@@ -23,10 +26,19 @@ export default function BlogCard({
   onClick,
   slug,
 }: BlogCardProps) {
+  const handleClick = () => {
+    trackConfiguredEvent(ANALYTICS_EVENTS.ENGAGEMENT.BLOG_CARD_CLICK, {
+      event_label: slug,
+      blog_title: title,
+      blog_category: category,
+    });
+    onClick?.();
+  };
+
   return (
     <article
       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all group cursor-pointer"
-      onClick={onClick}
+      onClick={handleClick}
     >
       <div className="relative h-64 overflow-hidden">
         <ImageWithFallback

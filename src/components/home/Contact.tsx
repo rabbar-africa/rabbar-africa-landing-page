@@ -1,6 +1,8 @@
 "use client";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import { trackConfiguredEvent } from "@/lib/gtag";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -28,6 +30,11 @@ export function Contact() {
       const data = await response.json();
 
       if (response.ok) {
+        // Track successful form submission
+        trackConfiguredEvent(ANALYTICS_EVENTS.FORM.CONTACT_SUBMISSION, {
+          form_subject: formData.subject,
+        });
+
         alert("Thank you for your message! We will get back to you soon.");
         setFormData({
           name: "",

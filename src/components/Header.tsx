@@ -49,7 +49,7 @@ export function Header() {
 
             <NavLink href="#services">Services</NavLink>
 
-            <NavLink href="#contact">About</NavLink>
+            <NavLink href="#about">About</NavLink>
 
             <NavLink href="/blogs">Blog</NavLink>
           </nav>

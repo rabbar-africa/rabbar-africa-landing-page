@@ -1,65 +1,82 @@
-"use client";
-import { ArrowRight } from "lucide-react";
-import { ImageWithFallback } from "../ImageWithFallBack";
-import { whatsappMessage, whatsappNumber } from "@/data/constant";
-import Link from "next/link";
-import { trackConfiguredEvent } from "@/lib/gtag";
-import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
-
-export function Hero() {
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-  const handleWhatsAppClick = () => {
-    trackConfiguredEvent(ANALYTICS_EVENTS.WHATSAPP.HERO);
-  };
-
+import PageContainer from "../elements/PageContainer";
+import { MenuIcon } from "../icons";
+import { Logo } from "../Logo";
+import { Button } from "../ui/button";
+function MobileHero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center pt-16"
-    >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <ImageWithFallback
-          alt="Luxury car showroom"
-          fill
-          className="object-cover"
-          priority
-          src="/hero.jpeg"
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/40"></div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-3xl">
-          <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl mb-6">
-            Drive Your Dreams with{" "}
-            <span className="text-[#E8F34F]">Rabbar Africa</span>
-          </h1>
-          <p className="text-gray-200 text-xl sm:text-2xl mb-8">
-            Your trusted partner for premium automobiles and exceptional service
-            across Africa
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#services">
-              <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 cursor-pointer rounded-lg hover:bg-[#d5e040] transition-colors flex items-center justify-center gap-2">
-                Explore Services
-                <ArrowRight size={20} />
-              </button>
-            </Link>
-            <button
-              onClick={() => {
-                handleWhatsAppClick();
-                window.open(whatsappLink, "_blank", "noopener,noreferrer");
-              }}
-              className="bg-white text-[#0D2847] cursor-pointer px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              Get in Touch
-            </button>
-          </div>
+    <div className="lg:hidden pb-20">
+      <div className="flex items-center justify-between pt-4">
+        <Logo isLink />
+        <div
+          aria-label="Open menu"
+          className="flex items-center gap-2 text-xl text-[#2F2F2F] transition-opacity hover:opacity-80"
+        >
+          <span>MENU</span>
+          <MenuIcon className="cursor-pointer" />
         </div>
       </div>
+      <div className="mt-25 mb-20 ">
+        <h1 className="mb-10 text-[32px] font-normal uppercase leading-8 tracking-[-1px] text-prim">
+          Everything Your Car Needs, Delivered at a Higher Standard.
+        </h1>
+
+        <p className="text-xl font-normal leading-7.5 tracking-[0px]">
+          We provide world-class automotive excellence, delivering premium
+          vehicles and precision servicing you can rely on, wherever you are
+          across Africa.
+        </p>
+      </div>
+      <Button className="bg-secondary h-19.5 rounded-none text-xl py-0 w-full cursor-pointer">
+        Explore our services
+      </Button>{" "}
+    </div>
+  );
+}
+export function Hero() {
+  return (
+    <section id="hero" className="relative lg:min-h-screen bg-white">
+      {/* <Header /> */}
+      <PageContainer className="min-h-full">
+        <div className=" min-h-screen grid-cols-1 py-8 lg:grid-cols-[66fr_34fr] hidden lg:grid">
+          {/* Left column — 64%, 3 rows */}
+          <div className="grid grid-rows-3   border-r border-[#DCDCDC]">
+            <div>
+              <Logo isLink />
+            </div>
+            <div className="">
+              <h1 className="mb-10 text-5xl font-normal uppercase leading-none tracking-[-0.05em] text-prim">
+                Everything Your Car Needs, Delivered at a Higher Standard.
+              </h1>
+              <p className="w-148.75 text-xl font-normal leading-normal">
+                We provide world-class automotive excellence, delivering premium
+                vehicles and precision servicing you can rely on, wherever you
+                are across Africa.
+              </p>
+            </div>
+            <div className=""></div>
+          </div>
+
+          {/* Right column — 36%, 2 rows */}
+          <div className="grid grid-rows-2  ">
+            <div className="border-b border-[#DCDCDC] flex justify-end  items-start">
+              <div
+                aria-label="Open menu"
+                className="flex items-center gap-2 text-xl text-[#2F2F2F] transition-opacity hover:opacity-80"
+              >
+                <span>MENU</span>
+                <MenuIcon className="cursor-pointer" />
+              </div>
+            </div>
+            <div className="flex items-center bg-red pl-10">
+              <Button className="bg-secondary h-19.5 rounded-none text-xl py-0 w-[83%] cursor-pointer">
+                Explore our services
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <MobileHero />
+      </PageContainer>
     </section>
   );
 }

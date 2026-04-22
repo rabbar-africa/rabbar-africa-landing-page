@@ -3,11 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Fonts don't change across light/dark, so they go in a regular @theme block.
+   This emits --font-sans / --font-mono as CSS vars so Tailwind's preflight
+   (which references --default-font-family → --font-sans) can resolve them. */
+@theme {
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-geist-mono);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -41,11 +47,14 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-primary: var(--brand-dark-blue);
+  --color-secondary: var(--brand-green-yellow);
 }
 :root {
   --font-size: 16px;
   --background: #ffffff;
-  --foreground: #030213;
+  --foreground: #2f2f2f;
 
   /* Brand Colors */
   --brand-cool-black: #030213;
@@ -90,6 +99,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: #013064;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dark {

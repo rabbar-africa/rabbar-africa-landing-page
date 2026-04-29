@@ -5,7 +5,7 @@ import { Hero } from "@/components/home/Hero";
 import ImageSection from "@/components/home/ImageSection";
 import ServiceSection from "@/components/home/Services";
 import { About } from "@/components/home/About";
-import { BlogSection } from "@/components/home/BlogSection";
+import  BlogSection  from "@/components/home/BlogSection";
 import { Contact } from "@/components/home/Contact";
 
 export default function Home() {

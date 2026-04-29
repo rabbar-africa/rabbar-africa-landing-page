@@ -1,46 +1,59 @@
-import BlogCard from "../BlogCard";
-import { getPaginatedBlogPosts, BlogPost } from "@/lib/sanity-blog";
-import Link from "next/link";
+import React from 'react';
+import BlogCard from '../BlogCard';
 
-export async function BlogSection() {
-  const { posts } = await getPaginatedBlogPosts(1, 6);
 
+const BLOG_DATA = [
+  {
+    id: 1,
+    category: 'Driver Documentation',
+    title: 'Are you driving a truck with a bicycle license?',
+    excerpt: 'Many Lagos drivers unknowingly break the law by using a Class B license for commercial activities or driving with an expired license.',
+    date: 'December 17, 2025',
+  },
+  {
+    id: 2,
+    category: 'Driver Documentation',
+    title: 'The Medical Report: Why Roadworthiness Scares...',
+    excerpt: 'Many Lagos drivers fear LACVIS because the inspection is strict and the machine does not lie. Fake papers cannot save you anymore.',
+    date: 'December 17, 2025',
+  }
+];
+
+const BlogSection = () => {
   return (
-    <section id="blog" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl mb-4 text-[#0D2847]">
-            Latest from Our Blog
+    <section className="w-full bg-black flex justify-center py-16">
+      <div className="w-full max-w-[390px] md:max-w-[1440px] px-6 md:px-20">
+        
+        <div className="mb-10">
+          <h2 className="text-white text-3xl md:text-4xl font-bold uppercase mb-2">
+            Latest From Our Blog
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Stay informed with automotive news, tips, and insights from our
-            experts
+          <p className="text-zinc-400 text-sm md:text-base">
+            Stay informed with automotive news, tips, and insights from our experts.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post: BlogPost) => (
-            <BlogCard
+        <div className="bg-[#0A0A0A] border border-zinc-800 grid grid-cols-1 md:grid-cols-2">
+          {BLOG_DATA.map((post, index) => (
+            <BlogCard 
               key={post.id}
+              category={post.category}
               title={post.title}
               excerpt={post.excerpt}
-              author={post.author}
               date={post.date}
-              image={post.image}
-              category={post.category}
-              slug={post.slug}
+              isLast={index === BLOG_DATA.length - 1}
             />
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link href="/blogs">
-            <button className="bg-[#E8F34F] text-[#0D2847] px-8 py-4 rounded-lg hover:bg-[#d5e040] transition-colors">
-              View All Articles
-            </button>
-          </Link>
+        <div className="mt-8 flex justify-end">
+          <button className="bg-[#D9E954] text-black font-bold py-4 px-10 hover:bg-[#c4d44b] transition-colors">
+            Read all blogs
+          </button>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default BlogSection;

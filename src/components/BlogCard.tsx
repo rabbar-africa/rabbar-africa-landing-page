@@ -18,7 +18,9 @@ const BlogCard = ({ category, title, excerpt, date, isLast }: BlogCardProps) => 
       }`}
     >
       <div className="mb-8">
-        <span className="bg-black border border-zinc-800 text-zinc-400 text-[10px] uppercase tracking-widest px-3 py-1">
+        <span className="bg-zinc-900
+          border w-[1440] h-[1111] border-zinc-200
+           text-zinc-400 text-[10px] uppercase tracking-widest px-3 py-1">
           {category}
         </span>
       </div>
@@ -37,7 +39,7 @@ const BlogCard = ({ category, title, excerpt, date, isLast }: BlogCardProps) => 
         </span>
         
         <button className="flex items-center gap-2 group">
-          <span className="text-[#D9E954] text-xs md:text-sm font-bold group-hover:underline">
+          <span className="text-[#D9E954] text-xs md:text-sm font-bold underline">
             Read blog
           </span>
           

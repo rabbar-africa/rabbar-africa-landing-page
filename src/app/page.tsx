@@ -7,7 +7,7 @@ import ServiceSection from "@/components/home/Services";
 import { About } from "@/components/home/About";
 import  BlogSection  from "@/components/home/BlogSection";
 import { Contact } from "@/components/home/Contact";
-
+import  BlogList  from "@/components/blog";
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -20,6 +20,7 @@ export default function Home() {
         <About />
         <BlogSection />
         <Contact />
+        <BlogList />
       </main>
 
       <Footer />

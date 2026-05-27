@@ -24,7 +24,7 @@ const BlogSection = () => {
     <section className="w-full bg-black flex justify-center  py-16">
       <div className="w-full max-w-[390px] md:max-w-[1440px]  pt-[100px]  px-10 grid gap-[24px] md:px-10">
         
-        <div className="  mb-10">
+        <div className="mb-10">
           <h2 className="text-white text-3xl md:text-4xl font-regular uppercase mb-4">
             Latest From Our Blog
           </h2>

@@ -1,111 +1,40 @@
-"use client";
+import { Menu } from 'lucide-react';
+import BlogCard from '../BlogCard';
 
-import { useState } from "react";
-import BlogCard from "@/components/BlogCard";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+const blogPosts = [
+  { id: 1, title: "TRUCK LICENSES", excerpt: "Many Lagos drivers...", date: "Dec 17, 2025", img: "/bloglist1.svg" },
+  { id: 2, title: "ENGINE TIPS", excerpt: "Keep your engine...", date: "Dec 18, 2025", img: "/bloglist2.svg" },
+  { id: 3, title: "TIRE SAFETY", excerpt: "Check your pressure...", date: "Dec 19, 2025", img: "/bloglist3.svg" },
+  { id: 4, title: "BRAKE CARE", excerpt: "Stay safe on roads...", date: "Dec 20, 2025", img: "/bloglist4.svg" },
+  { id: 5, title: "FUEL ECONOMY", excerpt: "Save more money...", date: "Dec 21, 2025", img: "/bloglist5.svg" },
+  { id: 6, title: "DOCUMENTATION", excerpt: "Avoid legal issues...", date: "Dec 22, 2025", img: "/bloglist6.svg" },
+  { id: 7, title: "AC REPAIR", excerpt: "Beat the heat...", date: "Dec 23, 2025", img: "/bloglist7.svg" },
+  { id: 8, title: "NIGHT DRIVING", excerpt: "Safety tips for night...", date: "Dec 24, 2025", img: "/bloglist8.svg" },
+  { id: 9, title: "EMERGENCY KITS", excerpt: "What to keep inside...", date: "Dec 25, 2025", img: "/bloglist9.svg" },
+];
 
-interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  image: string;
-  category: string;
-  readingTime: number;
-}
-
-interface BlogListProps {
-  initialPosts: BlogPost[];
-  initialHasMore: boolean;
-  total: number;
-}
-
-export function BlogList({
-  initialPosts,
-  initialHasMore,
-  total,
-}: BlogListProps) {
-  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
-  const [hasMore, setHasMore] = useState(initialHasMore);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const loadMore = async () => {
-    setLoading(true);
-    try {
-      const nextPage = currentPage + 1;
-      const response = await fetch(`/api/blogs?page=${nextPage}&pageSize=9`);
-      const data = await response.json();
-
-      setPosts((prevPosts) => [...prevPosts, ...data.posts]);
-      setHasMore(data.hasMore);
-      setCurrentPage(nextPage);
-    } catch (error) {
-      console.error("Failed to load more posts:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+export default function BlogPage() {
   return (
-    <>
-      <section className="py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <BlogCard
-                key={post.id}
-                title={post.title}
-                excerpt={post.excerpt}
-                author={post.author}
-                date={post.date}
-                image={post.image}
-                category={post.category}
-                slug={post.slug}
-              />
-            ))}
-          </div>
+    
+    <main className="min-h-screen bg-white">
+      <header className="px-4 md:px-[160px] py-[160px] flex flex-col gap-6">
+        
+      </header>
 
-          {/* Load More Button */}
-          {hasMore && (
-            <div className="mt-12 text-center">
-              <Button
-                onClick={loadMore}
-                disabled={loading}
-                size="lg"
-                className="bg-[#0D2847] hover:bg-[#0D2847]/90 text-white px-8 py-6"
-              >
-                {loading ? (
-                  <>
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Loading...
-                  </>
-                ) : (
-                  <>Read More Articles</>
-                )}
-              </Button>
-              <p className="text-sm text-gray-500 mt-4">
-                Showing {posts.length} of {total} articles
-              </p>
-            </div>
-          )}
-
-          {/* No More Posts Message */}
-          {!hasMore && posts.length > 0 && (
-            <div className="mt-12 text-center">
-              <p className="text-gray-600">
-                You&apos;ve reached the end of our blog posts
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Total: {total} articles
-              </p>
-            </div>
-          )}
+      <section className="bg-[#000000] px-4 py-[120px] md:px-[40px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1440px] mx-auto">
+          {blogPosts.map((post) => (
+            <BlogCard 
+              key={post.id}
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              imageSrc={post.img} 
+            />
+            
+          ))}
         </div>
       </section>
-    </>
+    </main>
   );
 }

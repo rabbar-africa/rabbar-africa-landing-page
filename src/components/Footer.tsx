@@ -160,7 +160,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="shrink-0 mt-1" />
                 <div>
-                  <p>40 Akinwunmi street, Alagomeji, Yaba, Lagos, Nigeria .</p>
+                  <p>49 Akinwunmi street, Alagomeji, Yaba, Lagos, Nigeria .</p>
                 </div>
               </li>
             </ul>

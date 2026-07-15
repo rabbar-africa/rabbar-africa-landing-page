@@ -30,7 +30,7 @@ export function About() {
             </h2>
             <p className="text-gray-600 text-lg mb-6">
               Founded with a vision to revolutionize the automotive industry in
-              Africa, Rabbar Africa has become a trusted name for quality
+              Africa. Rabbar Africa has become a trusted name for quality
               vehicles and exceptional service.
             </p>
             <p className="text-gray-600 text-lg mb-8">

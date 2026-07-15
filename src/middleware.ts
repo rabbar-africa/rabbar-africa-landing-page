@@ -22,11 +22,6 @@ export function middleware(request: NextRequest) {
     }
 
     // Verify credentials
-    const auth = authHeader.split(" ")[1];
-    const [username, password] = Buffer.from(auth, "base64")
-      .toString()
-      .split(":");
-
     const expectedAuth = Buffer.from(
       `${STUDIO_USERNAME}:${STUDIO_PASSWORD}`,
     ).toString("base64");

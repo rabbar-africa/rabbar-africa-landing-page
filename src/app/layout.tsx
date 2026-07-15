@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rabbarafrica.com"),
+  metadataBase: new URL("https://rabbar.africa"),
   title: {
     default: "Rabbar Africa - Premier Automobile Services in Nigeria",
     template: "%s | Rabbar Africa",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rabbarafrica.com",
+    url: "https://rabbar.africa",
     siteName: "Rabbar Africa",
     title: "Rabbar Africa - Premier Automobile Services in Nigeria",
     description:
@@ -71,9 +71,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@rabbarafrica",
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+
   icons: {
     icon: [
       {

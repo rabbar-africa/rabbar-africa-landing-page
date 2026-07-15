@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllBlogSlugs } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://rabbarafrica.com";
+  const baseUrl = "https://rabbar.africa";
   const blogSlugs = getAllBlogSlugs();
 
   // Static routes

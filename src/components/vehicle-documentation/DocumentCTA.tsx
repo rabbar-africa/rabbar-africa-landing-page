@@ -1,5 +1,5 @@
 "use client";
-import { MessageCircle, ArrowRight, CheckCircle2 } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 import { trackConfiguredEvent } from "@/lib/gtag";
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 

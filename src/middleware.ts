@@ -21,7 +21,7 @@ export function middleware(request: NextRequest) {
       });
     }
 
-    // Verify credentials
+    // Verify credentials for deployment
     const expectedAuth = Buffer.from(
       `${STUDIO_USERNAME}:${STUDIO_PASSWORD}`,
     ).toString("base64");

@@ -7,7 +7,7 @@ const features = [
   "State-of-the-art service facilities",
   "Customer satisfaction guarantee",
 ];
-
+//for deployment
 export function About() {
   return (
     <section id="about" className="py-20 bg-white">

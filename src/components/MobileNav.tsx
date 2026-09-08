@@ -2,13 +2,10 @@
 
 import { useState } from "react";
 import { NavLink } from "@/components/ui/nav-link";
-import { Button } from "@/components/ui/button";
+import { softwareDemoLink } from "@/data/constant";
+import { PRODUCT_LIST } from "@/data/products";
 
-interface MobileNavProps {
-  onContactClick?: () => void;
-}
-
-export function MobileNav({ onContactClick }: MobileNavProps) {
+export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -59,25 +56,16 @@ export function MobileNav({ onContactClick }: MobileNavProps) {
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col p-6 space-y-4">
-              <NavLink href="/" onClick={closeMenu} className="text-lg py-2">
-                Home
-              </NavLink>
-
-              <NavLink
-                href="#services"
-                onClick={closeMenu}
-                className="text-lg py-2"
-              >
-                Services
-              </NavLink>
-
-              <NavLink
-                href="#contact"
-                onClick={closeMenu}
-                className="text-lg py-2"
-              >
-                About
-              </NavLink>
+              {PRODUCT_LIST.map((product) => (
+                <NavLink
+                  key={product.slug}
+                  href={product.slug}
+                  onClick={closeMenu}
+                  className="text-lg py-2"
+                >
+                  {product.name}
+                </NavLink>
+              ))}
 
               <NavLink
                 href="/blogs"
@@ -88,15 +76,15 @@ export function MobileNav({ onContactClick }: MobileNavProps) {
               </NavLink>
 
               <div className="pt-4">
-                <Button
-                  onClick={() => {
-                    closeMenu();
-                    onContactClick?.();
-                  }}
-                  className="w-full bg-[#E8F34F] text-[#030213] px-6 py-3 rounded-lg hover:bg-[#DAE648] font-semibold transition-colors"
+                <a
+                  href={softwareDemoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="block w-full text-center bg-[#DAE648] text-[#001F3E] px-6 py-3 rounded-lg hover:bg-[#E8F34F] font-semibold transition-colors"
                 >
-                  Contact Us
-                </Button>
+                  Talk to us
+                </a>
               </div>
             </div>
           </nav>

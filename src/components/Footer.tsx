@@ -7,6 +7,8 @@ import {
   MapPin,
 } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
+import Link from "next/link";
+import { PRODUCT_LIST, PRODUCTS } from "@/data/products";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -66,45 +68,31 @@ export function Footer() {
           <div>
             <h4 className="text-[#E8F34F] mb-4">Quick Links</h4>
             <ul className="space-y-2">
+              {PRODUCT_LIST.map((product) => (
+                <li key={product.slug}>
+                  <Link
+                    href={product.slug}
+                    className="hover:text-[#E8F34F] transition-colors"
+                  >
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <a
-                  href="#hero"
-                  className="hover:text-[#E8F34F] transition-colors"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-[#E8F34F] transition-colors"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-[#E8F34F] transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#blog"
+                <Link
+                  href="/blogs"
                   className="hover:text-[#E8F34F] transition-colors"
                 >
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href={`${PRODUCTS.garage.slug}#contact`}
                   className="hover:text-[#E8F34F] transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

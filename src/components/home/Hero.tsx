@@ -23,6 +23,7 @@ export function Hero() {
         <ImageWithFallback
           alt="Luxury car showroom"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
           src="/hero.jpeg"

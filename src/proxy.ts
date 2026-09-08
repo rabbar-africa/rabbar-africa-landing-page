@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Only protect /studio routes
   if (request.nextUrl.pathname.startsWith("/studio")) {
     const authHeader = request.headers.get("authorization");
@@ -39,7 +39,7 @@ export function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-// Configure which routes use this middleware
+// Configure which routes use this proxy
 export const config = {
   matcher: "/studio/:path*",
 };

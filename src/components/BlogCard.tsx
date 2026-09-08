@@ -43,6 +43,7 @@ export default function BlogCard({
       <div className="relative h-64 overflow-hidden">
         <ImageWithFallback
           fill
+          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 384px"
           src={image}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

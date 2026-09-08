@@ -52,6 +52,7 @@ export function ArticleHeader({ post }: ArticleHeaderProps) {
               alt={post.title}
               className="w-full h-full object-cover"
               fill
+              sizes="(max-width: 1023px) 100vw, 960px"
             />
             <div className="absolute top-6 left-6">
               <span className="bg-[#E8F34F] text-[#0D2847] px-4 py-2 rounded-full">

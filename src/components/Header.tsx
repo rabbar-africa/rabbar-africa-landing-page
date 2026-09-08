@@ -36,7 +36,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="shrink-0">
-            <Logo isLink={true} width={150} height={50} priority={true} />
+            <Logo isLink={true} width={150} priority={true} />
           </div>
 
           {/* Desktop Navigation */}

@@ -6,6 +6,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { PRODUCT_LIST } from "@/data/products";
 import { softwareDemoLink } from "@/data/constant";
+import { CursorParticles } from "@/components/ui/cursor-particles";
 
 const BADGES = [
   "Built and run in Lagos",
@@ -24,14 +25,14 @@ export function OSHero() {
 
   return (
     <section className="relative bg-[#001F3E] overflow-hidden">
-      {/* Ambient colour — one blob per product accent. */}
+      {/* Ambient color — one blob per product accent. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute -top-48 -right-24 h-[36rem] w-[36rem] rounded-full bg-[#DAE648]/12 blur-3xl" />
-        <div className="absolute top-1/3 -left-32 h-[26rem] w-[26rem] rounded-full bg-[#4CC9E8]/10 blur-3xl" />
-        <div className="absolute -bottom-40 right-1/4 h-[24rem] w-[24rem] rounded-full bg-[#FF8A3D]/8 blur-3xl" />
+        <div className="absolute -top-48 -right-24 h-144 w-xl rounded-full bg-[#DAE648]/12 blur-3xl" />
+        <div className="absolute top-1/3 -left-32 h-104 w-104 rounded-full bg-[#4CC9E8]/10 blur-3xl" />
+        <div className="absolute -bottom-40 right-1/4 h-96 w-[24rem] rounded-full bg-[#FF8A3D]/8 blur-3xl" />
       </div>
 
       {/* Grid texture */}
@@ -46,6 +47,9 @@ export function OSHero() {
             "radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%)",
         }}
       />
+
+      {/* Particle trail that follows the cursor across the hero. */}
+      <CursorParticles className="pointer-events-none absolute inset-0 h-full w-full" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-28 sm:pb-20">
         <motion.p
@@ -96,7 +100,7 @@ export function OSHero() {
           {BADGES.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-white/12 bg-white/[0.06] px-3 py-1 text-sm text-gray-300"
+              className="rounded-full border border-white/12 bg-white/6 px-3 py-1 text-sm text-gray-300"
             >
               {badge}
             </span>
@@ -138,10 +142,10 @@ export function OSHero() {
         >
           <div className="relative rounded-xl border border-white/10 bg-white/5 p-1.5 shadow-2xl backdrop-blur">
             <Image
-              src="/product/dashboard.png"
-              alt="The Jobcard dashboard showing invoiced, net profit, expenses, overdue and total revenue for a Lagos workshop"
+              src="/product/dashboard-full.png"
+              alt="The Jobcard dashboard: invoiced, net profit, expenses, overdue and total revenue for a Lagos workshop, with top debtors and a job card status breakdown"
               width={1800}
-              height={518}
+              height={913}
               priority
               sizes="(max-width: 1023px) 100vw, 1100px"
               className="rounded-lg w-full h-auto"
@@ -162,7 +166,7 @@ export function OSHero() {
               <Link
                 key={product.slug}
                 href={product.slug}
-                className="group flex items-center justify-between gap-4 px-2 py-5 sm:px-6 transition-colors hover:bg-white/[0.04] focus-visible:outline-none focus-visible:bg-white/[0.06]"
+                className="group flex items-center justify-between gap-4 px-2 py-5 sm:px-6 transition-colors hover:bg-white/4 focus-visible:outline-none focus-visible:bg-white/6"
               >
                 <span>
                   <span

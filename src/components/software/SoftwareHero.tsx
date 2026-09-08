@@ -55,10 +55,10 @@ export function SoftwareHero() {
         <div className="mt-14 sm:mt-16">
           <div className="rounded-xl border border-white/10 bg-white/5 p-1.5 shadow-2xl">
             <Image
-              src="/product/dashboard.png"
-              alt="The Rabbar dashboard showing invoiced, net profit, expenses, overdue, total revenue and customer totals for the last 60 days"
+              src="/product/dashboard-full.png"
+              alt="The Jobcard dashboard showing invoiced, net profit, expenses, overdue and total revenue, with top debtors and job card status"
               width={1800}
-              height={518}
+              height={913}
               priority
               sizes="(max-width: 1023px) 100vw, 1100px"
               className="rounded-lg w-full h-auto"

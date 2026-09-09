@@ -20,6 +20,7 @@ export function About() {
               className="w-full h-full object-cover"
               src="/about.jpeg"
               fill
+              sizes="(max-width: 1023px) 100vw, 600px"
             />
           </div>
 

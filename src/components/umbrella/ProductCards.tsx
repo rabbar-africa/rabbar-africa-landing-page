@@ -84,7 +84,7 @@ export function ProductCards() {
                     </p>
 
                     <span className="relative mt-6 flex flex-wrap gap-1.5">
-                      {product.highlights.map((h) => (
+                      {product?.highlights?.map((h) => (
                         <span
                           key={h}
                           className="rounded-full bg-[#F4F4F4] px-2.5 py-1 text-xs font-medium text-gray-600"
@@ -117,7 +117,7 @@ export function ProductCards() {
               className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#DAE648]/10 blur-3xl"
             />
             <p className="relative max-w-3xl text-lg sm:text-xl text-gray-200 leading-relaxed">
-              We run our own workshop in Lagos.{" "}
+              We run our own workshop in.{" "}
               <span className="font-semibold text-white">
                 {PRODUCTS.jobcard.name}
               </span>{" "}
@@ -125,7 +125,7 @@ export function ProductCards() {
               <span className="font-semibold text-white">
                 {PRODUCTS.fleet.name}
               </span>{" "}
-              is that same operation offered to companies — so neither one is
+              is that same operation offered to companies, so neither one is
               theory.
             </p>
             <Link

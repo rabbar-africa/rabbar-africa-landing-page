@@ -68,7 +68,7 @@ const PROBLEMS = [
   },
   {
     title: "Administrative burden on your staff",
-    body: "Your people lose time sourcing mechanics, chasing quotes and approving repairs — time that should go to their actual work.",
+    body: "Your people lose time sourcing mechanics, chasing quotes and approving repairs, time that should go to their actual work.",
   },
 ];
 
@@ -145,7 +145,7 @@ export function FleetIncluded() {
             What&apos;s included
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            You hand us the vehicle and we handle everything — one partner, one
+            You hand us the vehicle and we handle everything, one partner, one
             contact. Work is itemised and approved by you before it begins.
           </p>
         </div>
@@ -186,14 +186,14 @@ export function FleetWhy() {
             >
               {PRODUCTS.jobcard.name}
             </Link>{" "}
-            — is the operational backbone behind the service. Every vehicle, its
+            , is the operational backbone behind the service. Every vehicle, its
             service history, its next service due and its condition sit on a
             record rather than in someone&apos;s head.
           </p>
           <p>
             That means you get real visibility of your fleet: what has been done
             to each vehicle, what it costs to run, and which faults were caught
-            early. It also means we are not a loose network of mechanics — there
+            early. It also means we are not a loose network of mechanics, there
             is a real system behind the work, and a single team accountable for
             it.
           </p>

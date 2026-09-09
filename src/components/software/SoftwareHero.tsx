@@ -1,7 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { softwareDemoLink } from "@/data/constant";
+import {
+  jobcardStartIsApp,
+  jobcardStartLink,
+  softwareDemoLink,
+} from "@/data/constant";
 import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
 
 export function SoftwareHero() {
@@ -26,28 +29,35 @@ export function SoftwareHero() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
-            Job cards, inspections and invoices in one place — and for the first
+            Job cards, inspections and invoices in one place, and for the first
             time, a straight answer to which car actually made you money.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-4">
             <a
+              href={jobcardStartLink}
+              {...(jobcardStartIsApp
+                ? {}
+                : { target: "_blank", rel: "noopener noreferrer" })}
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#DAE648] px-7 py-3.5 font-semibold text-[#001F3E] transition-all hover:bg-[#E8F34F] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DAE648] focus-visible:ring-offset-2 focus-visible:ring-offset-[#001F3E]"
+            >
+              Get started free
+              <ArrowRight
+                size={18}
+                className="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </a>
+
+            <a
               href={softwareDemoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#DAE648] px-7 py-3.5 font-semibold text-[#001F3E] transition-all hover:bg-[#E8F34F] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DAE648] focus-visible:ring-offset-2 focus-visible:ring-offset-[#001F3E]"
-            >
-              <MessageCircle size={20} aria-hidden="true" />
-              Book a Demo on WhatsApp
-            </a>
-
-            <Link
-              href="#features"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
-              See Features
-              <ArrowRight size={18} aria-hidden="true" />
-            </Link>
+              <MessageCircle size={18} aria-hidden="true" />
+              Book a demo
+            </a>
           </div>
         </div>
 

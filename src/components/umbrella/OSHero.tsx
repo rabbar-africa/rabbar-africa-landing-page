@@ -9,7 +9,7 @@ import { softwareDemoLink } from "@/data/constant";
 import { CursorParticles } from "@/components/ui/cursor-particles";
 
 const BADGES = [
-  "Built and run in Lagos",
+  // "Built and run in Lagos",
   "Workshop software",
   "Our own garage",
   "Corporate fleets",
@@ -25,7 +25,7 @@ export function OSHero() {
 
   return (
     <section className="relative bg-[#001F3E] overflow-hidden">
-      {/* Ambient color — one blob per product accent. */}
+      {/* Ambient color,one blob per product accent. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -93,7 +93,7 @@ export function OSHero() {
           className="mt-7 max-w-2xl text-lg sm:text-xl text-gray-300 leading-relaxed"
         >
           Software for workshops, a workshop of our own, and fleet management
-          for companies — designed, built and run by one team in Lagos.
+          for companies, designed, built and run by one team.
         </motion.p>
 
         <motion.div {...rise(0.24)} className="mt-8 flex flex-wrap gap-2">
@@ -152,8 +152,7 @@ export function OSHero() {
             />
           </div>
           <p className="mt-4 text-center text-sm text-gray-400">
-            Jobcard, the software behind all three — running in our own
-            workshop.
+            Jobcard, the software behind all three, running in our own workshop.
           </p>
         </motion.div>
       </div>

@@ -13,8 +13,8 @@ export function CredibilityStrip() {
             <p className="text-[#001F3E] text-base sm:text-lg">
               This isn&apos;t software built by people who have never held a
               spanner. We built it for{" "}
-              <strong className="font-semibold">our own Lagos workshop</strong>,
-              and it runs there every day.
+              <strong className="font-semibold">our own workshop</strong>, and
+              it runs there every day.
             </p>
           </div>
 

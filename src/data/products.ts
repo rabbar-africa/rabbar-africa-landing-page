@@ -1,7 +1,7 @@
 /**
  * Single source of truth for the Rabbar Africa product family.
  *
- * Names, slugs and one-line pitches are all read from here — nav, product
+ * Names, slugs and one-line pitches are all read from here,nav, product
  * cards, page metadata and body copy. Renaming a product means editing this
  * file only. Slugs are used as route paths, so changing one means renaming the
  * matching directory under `src/app/`.
@@ -21,7 +21,7 @@ export interface Product {
   /** Longer supporting line for the homepage card. */
   blurb: string;
   /** Three concrete capabilities, for the card's chip row. */
-  highlights: string[];
+  highlights?: string[];
   /**
    * Accent colour, used to distinguish the three products across cards, chips
    * and hover states. All three sit on the same navy ground.
@@ -36,8 +36,8 @@ export const PRODUCTS = {
     pitch: "Run a workshop off your phone, not a carbon-copy pad.",
     audience: "For workshop owners",
     blurb:
-      "Job cards, photo-backed inspections with AI-drafted advisories, branded invoices — and profit on every car.",
-    highlights: ["Job cards", "AI advisories", "Per-job profit"],
+      "Job cards, photo-backed inspections with AI-drafted advisories, branded invoices, and profit on every car.",
+    // highlights: ["Job cards", "AI advisories", "Per-job profit"],
     accent: { hex: "#DAE648", onLight: "#5C6606" },
   },
   garage: {
@@ -46,8 +46,8 @@ export const PRODUCTS = {
     pitch: "Bring us your car. We handle the rest.",
     audience: "For car owners",
     blurb:
-      "Repairs, servicing, revamping and vehicle documentation from our own workshop in Yaba, Lagos.",
-    highlights: ["Repairs", "Documentation", "Insurance"],
+      "Repairs, servicing, revamping and vehicle documentation from our own workshop in.",
+    // highlights: ["Repairs", "Documentation", "Insurance"],
     accent: { hex: "#FF8A3D", onLight: "#B4471A" },
   },
   fleet: {
@@ -57,7 +57,7 @@ export const PRODUCTS = {
     audience: "For companies with vehicles",
     blurb:
       "Scheduled maintenance, repairs and compliance for company vehicles, with one accountable partner.",
-    highlights: ["Scheduled upkeep", "Compliance", "Monthly reporting"],
+    // highlights: ["Scheduled upkeep", "Compliance", "Monthly reporting"],
     accent: { hex: "#4CC9E8", onLight: "#0E6E88" },
   },
 } satisfies Record<string, Product>;

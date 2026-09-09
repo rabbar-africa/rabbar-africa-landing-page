@@ -44,7 +44,7 @@ export const GARAGE_CROSS_LINKS: CrossLink[] = [
   {
     name: PRODUCTS.jobcard.name,
     slug: PRODUCTS.jobcard.slug,
-    body: `Curious how we run this workshop day to day? We built ${PRODUCTS.jobcard.name} for that — and now other workshops run on it too.`,
+    body: `Curious how we run this workshop day to day? We built ${PRODUCTS.jobcard.name} for that, and now other workshops run on it too.`,
   },
   {
     name: PRODUCTS.fleet.name,

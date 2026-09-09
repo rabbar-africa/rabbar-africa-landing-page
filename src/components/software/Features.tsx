@@ -13,7 +13,7 @@ interface Feature {
 
 /**
  * Priority order from the brief: the two genuine differentiators first, then
- * the rest. Every claim here is backed by a shipped module — nothing from the
+ * the rest. Every claim here is backed by a shipped module, nothing from the
  * product brief's "not built" list appears.
  */
 const FEATURES: Feature[] = [
@@ -21,7 +21,7 @@ const FEATURES: Feature[] = [
     id: "advisories",
     eyebrow: "The differentiator",
     title: "AI-drafted inspection advisories",
-    body: `Your technician works the checklist on a phone, flags what they find and snaps up to two photos per fault. ${PRODUCTS.jobcard.name} drafts the customer-facing advisory in plain English — what's wrong, and what happens if it's left. The technician reviews and edits it, then sends it over WhatsApp before a single bolt is turned.`,
+    body: `Your technician works the checklist on a phone, flags what they find and snaps up to two photos per fault. ${PRODUCTS.jobcard.name} drafts the customer-facing advisory in plain English, what's wrong, and what happens if it's left. The technician reviews and edits it, then sends it over WhatsApp before a single bolt is turned.`,
     points: [
       "Writing an advisory drops from an hour to minutes",
       "Each finding carries its own status, note and photos",
@@ -39,7 +39,7 @@ const FEATURES: Feature[] = [
     id: "profit",
     eyebrow: "The owner's number",
     title: "Profit on every single job",
-    body: `Attach expenses — parts, sublet, labour, consumables, towing — to the job card as you incur them. ${PRODUCTS.jobcard.name} nets them against what you invoiced and what you actually collected, so the profit on that car is sitting there on the job card. No spreadsheet, no month-end guesswork.`,
+    body: `Attach expenses, parts, sublet, labour, consumables, towing, to the job card as you incur them. ${PRODUCTS.jobcard.name} nets them against what you invoiced and what you actually collected, so the profit on that car is sitting there on the job card. No spreadsheet, no month-end guesswork.`,
     points: [
       "Invoiced, collected, outstanding, expenses and profit per job",
       "Expense categories built for a workshop, not an office",
@@ -74,7 +74,7 @@ const FEATURES: Feature[] = [
     id: "invoicing",
     eyebrow: "Getting paid",
     title: "Invoices that look like a business, not a market receipt",
-    body: "Your logo, your colours, your bank details and your own numbering series on every PDF. Share to WhatsApp or email in a tap. And for the customer who still owes you from last time, carry that old invoice forward onto the new one — the balance follows them, and a payment clears the oldest debt first.",
+    body: "Your logo, your colours, your bank details and your own numbering series on every PDF. Share to WhatsApp or email in a tap. And for the customer who still owes you from last time, carry that old invoice forward onto the new one, the balance follows them, and a payment clears the oldest debt first.",
     points: [
       "Line items pulled from your parts and services catalogue",
       "Discounts, taxes and adjustments at item or invoice level",
@@ -93,7 +93,7 @@ const FEATURES: Feature[] = [
     id: "paperwork",
     eyebrow: "Very Nigerian",
     title: "Paperwork that expires before your customer notices",
-    body: "Roadworthiness, insurance, full paperwork — or any document type you define. Store the scans, record issue and expiry dates, and work the expiring-soon view. When a document is renewed, the old one is kept as history rather than overwritten.",
+    body: "Roadworthiness, insurance, full paperwork or any document type you define. Store the scans, record issue and expiry dates, and work the expiring-soon view. When a document is renewed, the old one is kept as history rather than overwritten.",
     points: [
       "Valid, expiring soon, expired and no-expiry states computed for you",
       "Multiple scans per document",
@@ -104,7 +104,7 @@ const FEATURES: Feature[] = [
     id: "reminders",
     eyebrow: "Getting them back",
     title: "Reminders by date or by mileage",
-    body: "The easiest money in a workshop is the customer who comes back. Set a service reminder for three months' time or three thousand kilometres — whichever the car reaches first — and complete it to have the next one generated automatically.",
+    body: "The easiest money in a workshop is the customer who comes back. Set a service reminder for three months' time or three thousand kilometres, whichever the car reaches first, and complete it to have the next one generated automatically.",
     points: [
       "Service, follow-up, paperwork and insurance reminders",
       "Recurring intervals in months, days or mileage",

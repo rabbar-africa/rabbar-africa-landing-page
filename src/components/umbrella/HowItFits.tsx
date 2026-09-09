@@ -173,8 +173,8 @@ export function UmbrellaCTA() {
             Whichever one you came for, start with a conversation
           </h2>
           <p className="mt-5 text-lg text-[#013064] max-w-2xl mx-auto leading-relaxed">
-            A workshop to run, a car to fix, or a fleet to hand over — message
-            us and we&apos;ll point you at the right one.
+            A workshop to run, a car to fix, or a fleet to hand over, message us
+            and we&apos;ll point you at the right one.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
@@ -193,9 +193,9 @@ export function UmbrellaCTA() {
               Email us
             </a>
           </div>
-          <p className="mt-6 text-sm font-medium text-[#013064]">
+          {/* <p className="mt-6 text-sm font-medium text-[#013064]">
             +234 916 000 2836 · Yaba, Lagos
-          </p>
+          </p> */}
         </Reveal>
       </div>
     </section>

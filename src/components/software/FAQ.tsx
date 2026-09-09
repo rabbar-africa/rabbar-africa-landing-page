@@ -2,12 +2,16 @@ import { PRODUCTS } from "@/data/products";
 
 const FAQS = [
   {
+    q: "Can I just sign up and start?",
+    a: `Yes. Create your workshop, add your first customer and raise a job card the same afternoon. Starter is free for one user, so there is nothing to pay to find out whether ${PRODUCTS.jobcard.name} suits how you work.`,
+  },
+  {
     q: "Do I need internet at the workshop?",
-    a: `Yes — ${PRODUCTS.jobcard.name} runs in the browser on your phone, tablet or laptop, so it needs a connection. There's nothing to install and nothing to update, and it works on the phone your technicians already carry.`,
+    a: `Yes, ${PRODUCTS.jobcard.name} runs in the browser on your phone, tablet or laptop, so it needs a connection. There's nothing to install and nothing to update, and it works on the phone your technicians already carry.`,
   },
   {
     q: "Can my technicians use it without a login?",
-    a: `They can. A technician in ${PRODUCTS.jobcard.name} is a record, not necessarily an account — you can assign someone to job cards, mark them as lead and track their work without ever creating a login for them. Give accounts only to the people who need to be in the system.`,
+    a: `They can. A technician in ${PRODUCTS.jobcard.name} is a record, not necessarily an account you can assign someone to job cards, mark them as lead and track their work without ever creating a login for them. Give accounts only to the people who need to be in the system.`,
   },
   {
     q: "What if I only have one bay?",
@@ -19,7 +23,7 @@ const FAQS = [
   },
   {
     q: "What happens to the records I already have?",
-    a: `We do onboarding by hand. Message us on WhatsApp and we'll go through what you're keeping today — the pad, the notebook, a spreadsheet — and get it into ${PRODUCTS.jobcard.name} with you.`,
+    a: `You can sign up and start entering them yourself straight away. If you'd rather not retype a year of records, message us on WhatsApp: we'll go through what you're keeping today, the pad, the notebook, a spreadsheet, and bring it across with you.`,
   },
 ];
 

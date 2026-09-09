@@ -40,7 +40,7 @@ export function ForTechnicians() {
             <p className="mt-4 text-lg text-gray-300 leading-relaxed">
               Your techs won&apos;t use software that fights them.{" "}
               {PRODUCTS.jobcard.name} is mobile-first because the work happens
-              under a bonnet, not at a desk — and because the advisory that wins
+              under a bonnet, not at a desk, and because the advisory that wins
               you the job gets written on the shop floor.
             </p>
 
@@ -75,7 +75,7 @@ export function ForTechnicians() {
               />
             </div>
             <p className="mt-4 text-center text-sm text-gray-400">
-              The report your customer receives — generated from the checklist
+              The report your customer receives, generated from the checklist
               your technician just worked.
             </p>
           </div>

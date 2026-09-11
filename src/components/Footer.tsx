@@ -17,7 +17,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0D2847] text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
             {/* <h3 className="text-[#E8F34F] text-xl mb-4">RABBAR AFRICA</h3>
@@ -97,38 +97,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-[#E8F34F] mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:text-[#E8F34F] transition-colors">
-                  Vehicle Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#E8F34F] transition-colors">
-                  Car Maintenance
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#E8F34F] transition-colors">
-                  Car Revamping
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#E8F34F] transition-colors">
-                  Dealership
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#E8F34F] transition-colors">
-                  Consulting
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
             <h4 className="text-[#E8F34F] mb-4">Contact Us</h4>
@@ -161,17 +129,20 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               © {currentYear} Rabbar Africa. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm">
-              {/* <a href="#" className="hover:text-[#E8F34F] transition-colors">
+            <nav aria-label="Legal" className="flex gap-6 text-sm">
+              <Link
+                href="/privacy"
+                className="hover:text-[#E8F34F] transition-colors"
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-[#E8F34F] transition-colors">
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-[#E8F34F] transition-colors"
+              >
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-[#E8F34F] transition-colors">
-                Cookie Policy
-              </a> */}
-            </div>
+              </Link>
+            </nav>
           </div>
         </div>
       </div>

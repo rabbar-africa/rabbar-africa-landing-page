@@ -38,4 +38,9 @@ export const fleetProposalMessage = encodeURIComponent(
 );
 export const fleetProposalLink = `https://wa.me/${whatsappNumber}?text=${fleetProposalMessage}`;
 
-export const contactEmail = "contact.rabbar@gmail.com";
+/**
+ * Public contact address. Must stay on the rabbar.africa domain: a free
+ * webmail address undermines business verification (AWS Activate, for one,
+ * automatically rejects applications from @gmail.com addresses).
+ */
+export const contactEmail = "info@rabbar.africa";

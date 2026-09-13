@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { trackConfiguredEvent } from "@/lib/gtag";
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
+import { contactEmail } from "@/data/constant";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -108,7 +109,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg mb-1 text-gray-900">Email</h4>
-                  <p className="text-gray-600">contact.rabbar@gmail.com</p>
+                  <p className="text-gray-600">{contactEmail}</p>
                 </div>
               </div>
 

@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { contactEmail } from "@/data/constant";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -19,7 +20,7 @@ export async function POST(req: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "Rabbar Contact Form <onboarding@resend.dev>", // You'll update this later with your domain
-      to: ["contact.rabbar@gmail.com"],
+      to: [contactEmail],
       subject: `Contact Form: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>

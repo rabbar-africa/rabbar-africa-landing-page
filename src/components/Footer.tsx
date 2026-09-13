@@ -10,6 +10,7 @@ import { FaTiktok } from "react-icons/fa";
 import Link from "next/link";
 import { PRODUCT_LIST, PRODUCTS } from "@/data/products";
 import { Logo } from "./Logo";
+import { contactEmail } from "@/data/constant";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -110,7 +111,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail size={18} className="shrink-0 mt-1" />
                 <div>
-                  <p>contact.rabbar@gmail.com</p>
+                  <p>{contactEmail}</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">

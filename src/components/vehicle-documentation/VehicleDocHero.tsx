@@ -7,7 +7,6 @@ const stats = [
   { number: "47+", label: "Documents Processed" },
   { number: "98%", label: "Success Rate" },
   { number: "24hrs", label: "Average Processing Time" },
-  { number: "2 Years", label: "In Business" },
 ];
 
 export function VehicleDocHero() {
@@ -64,7 +63,7 @@ export function VehicleDocHero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-white/20">
+          <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl font-bold text-[#E8F34F] mb-1">

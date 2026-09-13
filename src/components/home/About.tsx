@@ -2,7 +2,6 @@ import { CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "../ImageWithFallBack";
 
 const features = [
-  "Over 15 years of automotive excellence",
   "Certified technicians and mechanics",
   "State-of-the-art service facilities",
   "Customer satisfaction guarantee",

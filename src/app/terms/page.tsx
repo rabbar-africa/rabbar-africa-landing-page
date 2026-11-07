@@ -4,7 +4,7 @@ import {
   LegalDocument,
   type LegalSection,
 } from "@/components/legal/LegalDocument";
-import { COMPANY, LEGAL_LAST_UPDATED } from "@/data/legal";
+import { COMPANY, LEGAL_VERSION } from "@/data/legal";
 import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
 import { contactEmail } from "@/data/constant";
 
@@ -436,7 +436,7 @@ export default function TermsPage() {
     <LegalDocument
       eyebrow="Legal"
       title="Terms of Service"
-      lastUpdated={LEGAL_LAST_UPDATED.terms}
+      version={LEGAL_VERSION}
       intro={
         <p>
           These terms set out the rules for using {UMBRELLA_NAME}’s website and

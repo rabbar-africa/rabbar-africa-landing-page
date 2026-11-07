@@ -11,22 +11,44 @@ export const COMPANY = {
 } as const;
 
 /**
- * When each document last changed. Update the date whenever the wording of
- * the matching page changes, so readers can tell a revision has happened.
- */
-export const LEGAL_LAST_UPDATED = {
-  privacy: "7 November 2026",
-  terms: "7 November 2026",
-  dataProcessing: "7 November 2026",
-} as const;
-
-/**
- * The version an owner accepts at signup, recorded as
- * organizations.termsVersion. Must match LEGAL_VERSION in
- * internal-tool-backend/src/shared/constants/legal.ts. Bump both when a change
- * needs owners to accept it again.
+ * The version of the Terms of Service, Privacy Policy and Data Processing
+ * Terms, as the ISO date they last changed. All three share it, and each page
+ * shows it with the date written out ("Last updated 7 November 2026").
+ *
+ * The backend records it as organizations.termsVersion when an owner accepts
+ * the terms, so it must match LEGAL_VERSION in
+ * internal-tool-backend/src/shared/constants/legal.ts. Bump both whenever the
+ * wording of any of the three pages changes.
  */
 export const LEGAL_VERSION = "2026-11-07";
+
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+/**
+ * "2026-11-07" → "7 November 2026". Parsed by hand rather than with Date so
+ * the result never shifts a day with the server's timezone.
+ */
+export function formatLegalVersion(version: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(version);
+  const month = match ? MONTHS[Number(match[2]) - 1] : undefined;
+  if (!match || !month) {
+    throw new Error(`Legal version must be YYYY-MM-DD, got "${version}"`);
+  }
+  return `${Number(match[3])} ${month} ${match[1]}`;
+}
 
 export interface Subprocessor {
   name: string;

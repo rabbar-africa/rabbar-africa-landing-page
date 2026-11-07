@@ -6,7 +6,7 @@ import {
   type LegalSection,
 } from "@/components/legal/LegalDocument";
 import { SubprocessorTable } from "@/components/legal/SubprocessorTable";
-import { COMPANY, LEGAL_LAST_UPDATED } from "@/data/legal";
+import { COMPANY, LEGAL_VERSION } from "@/data/legal";
 import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
 import { contactEmail } from "@/data/constant";
 
@@ -574,7 +574,7 @@ export default function PrivacyPage() {
     <LegalDocument
       eyebrow="Legal"
       title="Privacy Policy"
-      lastUpdated={LEGAL_LAST_UPDATED.privacy}
+      version={LEGAL_VERSION}
       intro={
         <p>
           This policy explains what personal data {UMBRELLA_NAME} collects, why,

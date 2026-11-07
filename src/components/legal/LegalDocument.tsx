@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { formatLegalVersion } from "@/data/legal";
 
 export interface LegalSection {
   /** Anchor id, used by the table of contents and for deep links. */
@@ -56,8 +57,11 @@ export function LegalTable({
 interface LegalDocumentProps {
   eyebrow: string;
   title: string;
-  /** Human-readable date the document last changed, e.g. "11 September 2026". */
-  lastUpdated: string;
+  /**
+   * The version shown on the page, as an ISO date (LEGAL_VERSION for the live
+   * pages). The "Last updated" date is derived from it.
+   */
+  version: string;
   intro: ReactNode;
   sections: LegalSection[];
 }
@@ -70,7 +74,7 @@ interface LegalDocumentProps {
 export function LegalDocument({
   eyebrow,
   title,
-  lastUpdated,
+  version,
   intro,
   sections,
 }: LegalDocumentProps) {
@@ -88,7 +92,7 @@ export function LegalDocument({
               {title}
             </h1>
             <p className="mt-4 text-sm text-gray-400">
-              Last updated {lastUpdated}
+              Version {version} · Last updated {formatLegalVersion(version)}
             </p>
           </div>
         </section>

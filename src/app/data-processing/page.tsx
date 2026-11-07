@@ -6,7 +6,7 @@ import {
   type LegalSection,
 } from "@/components/legal/LegalDocument";
 import { SubprocessorTable } from "@/components/legal/SubprocessorTable";
-import { COMPANY, LEGAL_LAST_UPDATED } from "@/data/legal";
+import { COMPANY, LEGAL_VERSION } from "@/data/legal";
 import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
 import { contactEmail } from "@/data/constant";
 
@@ -355,7 +355,7 @@ export default function DataProcessingPage() {
     <LegalDocument
       eyebrow="Legal"
       title="Data Processing Terms"
-      lastUpdated={LEGAL_LAST_UPDATED.dataProcessing}
+      version={LEGAL_VERSION}
       intro={
         <p>
           Workshops use {jobcard.name} to keep records about their customers.

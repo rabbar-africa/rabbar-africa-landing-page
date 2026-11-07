@@ -15,7 +15,7 @@ interface NavLinkProps {
  * Returns true when `href` addresses the page currently being viewed.
  *
  * Query strings are ignored, and a nested route marks its parent active.
- * Links to a section (`/#pricing`) never match: several of them point at the
+ * Links to a section (`/#job-cards`) never match: several of them point at the
  * homepage, and marking them all active would be noise.
  */
 function useIsActive(href: string) {

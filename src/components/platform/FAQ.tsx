@@ -39,16 +39,22 @@ export const FAQS = [
   },
 ];
 
-export function FAQ() {
+export function FAQ({
+  items = FAQS,
+  heading = "Questions we get asked",
+}: {
+  items?: { q: string; a: string }[];
+  heading?: string;
+} = {}) {
   return (
     <section className="bg-[#F4F4F4] py-20 sm:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#001F3E] tracking-tight">
-          Questions we get asked
+          {heading}
         </h2>
 
         <div className="mt-10 divide-y divide-gray-200 border-y border-gray-200">
-          {FAQS.map(({ q, a }) => (
+          {items.map(({ q, a }) => (
             <details key={q} className="group py-5">
               <summary className="flex cursor-pointer items-start justify-between gap-4 list-none font-semibold text-[#001F3E] marker:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064] focus-visible:rounded-sm">
                 {q}

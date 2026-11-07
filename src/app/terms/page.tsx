@@ -124,7 +124,7 @@ const sections: LegalSection[] = [
         <p>
           The {APP} has a free Starter plan and paid plans. What each plan
           includes, and its limits, are shown in the app and on our{" "}
-          <Link href="/#pricing">pricing page</Link>. Prices are in Nigerian
+          <Link href="/pricing">pricing page</Link>. Prices are in Nigerian
           naira.
         </p>
         <ul>

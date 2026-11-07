@@ -10,7 +10,7 @@ import {
   PainPoints,
   Pillars,
   PlatformHero,
-  Pricing,
+  PricingTeaser,
   WhatsAppInvoice,
   WhoItsFor,
 } from "@/components/platform";
@@ -115,7 +115,7 @@ export default function Home() {
         <Documents />
         <PainPoints />
         <Features />
-        <Pricing />
+        <PricingTeaser />
         <FAQ />
         <FinalCTA />
         <CrossLinks

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import {
+  Documents,
   FAQ,
   FAQS,
   Features,
@@ -111,6 +112,7 @@ export default function Home() {
         <Pillars />
         <WhoItsFor />
         <WhatsAppInvoice />
+        <Documents />
         <PainPoints />
         <Features />
         <Pricing />

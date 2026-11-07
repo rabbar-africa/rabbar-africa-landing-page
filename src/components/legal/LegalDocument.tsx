@@ -24,7 +24,7 @@ export function LegalTable({
 }) {
   return (
     <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200">
-      <table className="w-full min-w-[32rem] text-left text-sm">
+      <table className="w-full min-w-lg text-left text-sm">
         <thead className="bg-gray-50">
           <tr>
             {head.map((label) => (

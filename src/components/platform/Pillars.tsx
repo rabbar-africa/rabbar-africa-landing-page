@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -7,6 +6,7 @@ import {
   MessageSquareText,
   ShieldCheck,
 } from "lucide-react";
+import { PhoneShot } from "./PhoneShot";
 
 /**
  * The four things Rabbar does that plain invoicing apps don't. This is the
@@ -55,7 +55,7 @@ export function Pillars() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,26rem)] gap-10 lg:gap-14 items-start">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,30rem)] gap-10 lg:gap-14 items-start">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {PILLARS.map(({ icon: Icon, title, body, href }) => (
               <Link
@@ -87,19 +87,21 @@ export function Pillars() {
           </div>
 
           <figure>
-            <div className="rounded-xl border border-gray-200 bg-white p-2 shadow-lg">
-              <Image
-                src="/product/inspection-report.png"
-                alt="A branded Rabbar vehicle inspection report PDF showing immediate attention, monitor and passed counts alongside per-component findings"
-                width={1020}
-                height={915}
-                sizes="(max-width: 1023px) 100vw, 416px"
-                className="rounded-lg w-full h-auto"
+            <div className="flex items-start justify-center gap-4 sm:gap-6">
+              <PhoneShot
+                src="/product/phone-job-card.png"
+                alt="A job card on a phone in Rabbar, showing its status, priority and the amounts invoiced, collected and spent"
+                className="w-[46%] max-w-[15rem]"
+              />
+              <PhoneShot
+                src="/product/phone-inspection-advisory.png"
+                alt="A vehicle inspection advisory on a phone in Rabbar, with fix-now items explaining what happens if each fault is left"
+                className="w-[46%] max-w-[15rem] mt-10"
               />
             </div>
-            <figcaption className="mt-4 text-center text-sm text-gray-500">
-              The vehicle inspection report your customer receives, generated
-              from the checklist your technician just worked.
+            <figcaption className="mt-5 text-center text-sm text-gray-500">
+              A job card and an inspection advisory, on the phone in your
+              pocket.
             </figcaption>
           </figure>
         </div>

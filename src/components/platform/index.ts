@@ -2,6 +2,8 @@ export * from "./PlatformHero";
 export * from "./Pillars";
 export * from "./WhoItsFor";
 export * from "./WhatsAppInvoice";
+export * from "./Documents";
+export * from "./PhoneShot";
 export * from "./PainPoints";
 export * from "./Features";
 export * from "./Pricing";

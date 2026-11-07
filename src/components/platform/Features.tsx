@@ -33,10 +33,10 @@ const FEATURES: Feature[] = [
       "Your own job card numbers",
     ],
     image: {
-      src: "/product/job-card-tabs.png",
-      alt: "A Rabbar job card with linked invoices, payments, inspections and expenses, and two technicians assigned with one marked as lead",
-      width: 1800,
-      height: 719,
+      src: "/product/job-cards-list.png",
+      alt: "The Rabbar job card list, with each job's customer, vehicle, status (open, in progress, awaiting approval, awaiting parts, delivered) and amount invoiced",
+      width: 1400,
+      height: 801,
     },
   },
   {
@@ -49,10 +49,10 @@ const FEATURES: Feature[] = [
       "Rolls up into net profit and a 12-month trend on the dashboard",
     ],
     image: {
-      src: "/product/job-card-profit.png",
-      alt: "A delivered job card in Rabbar showing invoiced, collected, outstanding, expenses and profit figures",
-      width: 1800,
-      height: 525,
+      src: "/product/job-card-detail.png",
+      alt: "A delivered Rabbar job card showing invoiced, collected, outstanding, expenses and profit, with the customer, vehicle, complaint and diagnosis notes",
+      width: 1400,
+      height: 929,
     },
   },
   {
@@ -67,10 +67,10 @@ const FEATURES: Feature[] = [
       "A branded inspection report PDF, shared to WhatsApp or email",
     ],
     image: {
-      src: "/product/inspection-advisory.png",
-      alt: "A vehicle inspection in Rabbar showing a safety-critical O2 sensor advisory explaining the fault and its consequences, above a brakes checklist",
-      width: 1800,
-      height: 625,
+      src: "/product/inspection-ai-advisory.png",
+      alt: "An AI-drafted vehicle inspection advisory in Rabbar, with fix-now and due-soon items and what happens if each fault is left",
+      width: 1400,
+      height: 1080,
     },
   },
   {
@@ -84,6 +84,12 @@ const FEATURES: Feature[] = [
       "Renewal history kept on every renewal",
       "Service reminders by date or mileage to bring customers back",
     ],
+    image: {
+      src: "/product/paperwork-expiry.png",
+      alt: "Rabbar paperwork management: insurance, vehicle licence, roadworthiness, hackney permit and proof of ownership, each marked expired, expiring soon, valid or no expiry",
+      width: 1400,
+      height: 972,
+    },
   },
   {
     id: "invoices",
@@ -96,12 +102,6 @@ const FEATURES: Feature[] = [
       "Carry old balances forward, and write off bad debt",
       "Cash, transfer, POS, card and cheque payments, each with a receipt",
     ],
-    image: {
-      src: "/product/invoice-pdf.png",
-      alt: "A branded Rabbar invoice PDF with line items, discount, VAT, balance due and bank details",
-      width: 1100,
-      height: 1332,
-    },
   },
   {
     id: "debtors",
@@ -114,10 +114,10 @@ const FEATURES: Feature[] = [
       "Customer statements, and exports to a spreadsheet",
     ],
     image: {
-      src: "/product/dashboard-1.png",
-      alt: "The Rabbar dashboard showing amounts invoiced, net profit, expenses, overdue invoices, total revenue and customer count",
-      width: 1800,
-      height: 518,
+      src: "/product/dashboard-debtors.png",
+      alt: "The Rabbar dashboard listing top debtors by amount owed and days overdue, next to a chart of job cards by status",
+      width: 1400,
+      height: 933,
     },
   },
   {

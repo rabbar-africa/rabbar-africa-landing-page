@@ -17,12 +17,14 @@ export function PlatformHero() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24">
         <div className="max-w-3xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-[#DAE648]">
-            Job card software for Nigerian businesses
+            Job card and invoicing software for Nigerian businesses
           </p>
 
           <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.08] tracking-tight">
             Run every job on a job card.{" "}
-            <span className="text-[#DAE648]">Get paid on WhatsApp.</span>
+            <span className="text-[#DAE648]">
+              Create invoices, receipts and log expenses.
+            </span>
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
@@ -71,10 +73,10 @@ export function PlatformHero() {
         <div className="mt-14 sm:mt-16">
           <div className="rounded-xl border border-white/10 bg-white/5 p-1.5 shadow-2xl">
             <Image
-              src="/product/dashboard-full.png"
-              alt="The Rabbar dashboard with job cards, inspections, paperwork and invoices in the menu, showing amounts invoiced, net profit, overdue and top debtors"
-              width={1800}
-              height={913}
+              src="/product/app-dashboard.png"
+              alt="The Rabbar app for a workshop: the menu shows job cards, inspections, technicians and paperwork, and the dashboard shows amounts invoiced, net profit, overdue invoices and top debtors"
+              width={2400}
+              height={1500}
               priority
               sizes="(max-width: 1023px) 100vw, 1100px"
               className="rounded-lg w-full h-auto"

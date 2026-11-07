@@ -5,32 +5,41 @@ export const whatsappMessage = encodeURIComponent(
 );
 export const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-/** Software enquiries, the primary CTA on the software landing page. */
-export const softwareDemoMessage = encodeURIComponent(
-  "Hello Rabbar! I run a workshop and I'd like a demo of the workshop management software.",
+/** Platform enquiries: the secondary CTA ("Talk to us") on the homepage. */
+export const platformDemoMessage = encodeURIComponent(
+  "Hello Rabbar! I'd like to know more about using Rabbar for invoicing in my business.",
 );
-export const softwareDemoLink = `https://wa.me/${whatsappNumber}?text=${softwareDemoMessage}`;
+export const platformDemoLink = `https://wa.me/${whatsappNumber}?text=${platformDemoMessage}`;
 
 /**
- * Where "Get started" sends a workshop owner: the Jobcard app itself.
+ * The Rabbar web app (https://app.rabbar.africa in production).
  *
- * Set NEXT_PUBLIC_SOFTWARE_APP_URL to the app's entry point. It is read
- * statically so Next can inline it at build time, which means changing it
- * requires a rebuild, not just a restart.
- *
- * When it is unset the CTA falls back to the WhatsApp demo link rather than
- * rendering a dead button, so an unconfigured preview deploy still converts.
+ * Set NEXT_PUBLIC_SOFTWARE_APP_URL to the app's origin. It is read statically
+ * so Next can inline it at build time, which means changing it requires a
+ * rebuild, not just a restart. A trailing slash is tolerated.
  */
-const softwareAppUrl = process.env.NEXT_PUBLIC_SOFTWARE_APP_URL?.trim();
+const appUrl = process.env.NEXT_PUBLIC_SOFTWARE_APP_URL?.trim().replace(
+  /\/+$/,
+  "",
+);
 
-export const jobcardStartLink = softwareAppUrl || softwareDemoLink;
+/** True when the app URL is configured. */
+export const appIsConfigured = Boolean(appUrl);
 
 /**
- * True when the app URL is configured. Callers use it to decide the link
- * target: the app opens in the same tab like any signup flow, while the
- * WhatsApp fallback opens in a new one so the page is not lost.
+ * "Get started": the app's signup page, the primary CTA everywhere.
+ *
+ * When the app URL is unset the CTA falls back to the WhatsApp enquiry link
+ * rather than rendering a dead button, so an unconfigured preview deploy
+ * still converts. Callers open the app in the same tab, like any signup flow,
+ * and the WhatsApp fallback in a new one (see `appIsConfigured`).
  */
-export const jobcardStartIsApp = Boolean(softwareAppUrl);
+export const appSignupLink = appUrl
+  ? `${appUrl}/auth/signup`
+  : platformDemoLink;
+
+/** "Sign in": the app's login page, or null when the app URL is unset. */
+export const appLoginLink = appUrl ? `${appUrl}/auth/login` : null;
 
 /** Fleet enquiries are an enterprise sales motion, a proposal request, not a demo. */
 export const fleetProposalMessage = encodeURIComponent(

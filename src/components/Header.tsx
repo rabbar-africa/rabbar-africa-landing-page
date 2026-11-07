@@ -2,13 +2,13 @@
 import { Logo } from "@/components/Logo";
 import { NavLink } from "@/components/ui/nav-link";
 import { MobileNav } from "@/components/MobileNav";
-import { PRODUCT_LIST } from "@/data/products";
-import { softwareDemoLink } from "@/data/constant";
+import { StartLink } from "@/components/platform/StartLink";
+import { NAV_LINKS } from "@/data/navigation";
+import { appLoginLink } from "@/data/constant";
 
 /**
- * Umbrella navigation. The logo goes to the Rabbar Africa homepage, which
- * routes into the three products; nav items come from `@/data/products` so a
- * rename there propagates here.
+ * Site navigation. The logo goes to the homepage, which is the invoicing
+ * platform; "Get started" opens the web app's signup.
  */
 export function Header() {
   return (
@@ -23,27 +23,29 @@ export function Header() {
           </div>
 
           <nav
-            className="hidden md:flex items-center space-x-6 lg:space-x-8"
+            className="hidden lg:flex items-center space-x-6 xl:space-x-8"
             role="navigation"
             aria-label="Main navigation"
           >
-            {PRODUCT_LIST.map((product) => (
-              <NavLink key={product.slug} href={product.slug}>
-                {product.name}
+            {NAV_LINKS.map(({ label, href }) => (
+              <NavLink key={href} href={href}>
+                {label}
               </NavLink>
             ))}
-            <NavLink href="/blogs">Blog</NavLink>
           </nav>
 
-          <div className="hidden md:flex items-center">
-            <a
-              href={softwareDemoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#DAE648] text-[#001F3E] px-6 py-2 rounded-lg hover:bg-[#E8F34F] font-semibold transition-all hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064] focus-visible:ring-offset-2"
-            >
-              Talk to us
-            </a>
+          <div className="hidden lg:flex items-center gap-5">
+            {appLoginLink && (
+              <a
+                href={appLoginLink}
+                className="font-semibold text-[#001F3E] hover:text-[#013064] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064] focus-visible:rounded-sm"
+              >
+                Sign in
+              </a>
+            )}
+            <StartLink className="bg-[#DAE648] text-[#001F3E] px-6 py-2 rounded-lg hover:bg-[#E8F34F] font-semibold transition-all hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064] focus-visible:ring-offset-2">
+              Get started
+            </StartLink>
           </div>
 
           <MobileNav />

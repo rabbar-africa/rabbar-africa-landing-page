@@ -7,16 +7,17 @@ import {
 } from "@/components/legal/LegalDocument";
 import { SubprocessorTable } from "@/components/legal/SubprocessorTable";
 import { COMPANY, LEGAL_VERSION } from "@/data/legal";
-import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
+import { UMBRELLA_NAME } from "@/data/products";
 import { contactEmail } from "@/data/constant";
 
 export const metadata: Metadata = {
   title: "Data Processing Terms",
-  description: `How ${UMBRELLA_NAME} processes the customer data workshops keep in ${PRODUCTS.jobcard.name}, as their data processor under the Nigeria Data Protection Act 2023.`,
+  description: `How ${UMBRELLA_NAME} processes the customer data businesses keep in the Rabbar Africa app, as their data processor under the Nigeria Data Protection Act 2023.`,
   alternates: { canonical: "/data-processing" },
 };
 
-const { jobcard } = PRODUCTS;
+/** The invoicing platform, which carries the company name. */
+const APP = `${UMBRELLA_NAME} app`;
 
 const Email = () => <a href={`mailto:${contactEmail}`}>{contactEmail}</a>;
 
@@ -27,16 +28,16 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          These Data Processing Terms are between the business that holds a{" "}
-          {jobcard.name} account (“you”) and {COMPANY.legalName} (“
+          These Data Processing Terms are between the business that holds an{" "}
+          {UMBRELLA_NAME} account (“you”) and {COMPANY.legalName} (“
           {UMBRELLA_NAME}”, “we”, “us”). They form part of our{" "}
           <Link href="/terms">Terms of Service</Link>, and you accept them when
           you accept those terms.
         </p>
         <p>
-          They apply to the personal data you put into {jobcard.name} about
-          other people, mainly your customers (“customer data”). For customer
-          data, you are the <strong>controller</strong> and we are your{" "}
+          They apply to the personal data you put into the {APP} about other
+          people, mainly your customers (“customer data”). For customer data,
+          you are the <strong>controller</strong> and we are your{" "}
           <strong>processor</strong>, as those terms are used in the Nigeria
           Data Protection Act 2023 (NDPA) and the Nigeria Data Protection
           Commission’s General Application and Implementation Directive 2025.
@@ -59,7 +60,7 @@ const sections: LegalSection[] = [
         rows={[
           [
             <strong key="p">Purpose</strong>,
-            `To provide ${jobcard.name} to you: storing your records, producing invoices, receipts, statements and inspection reports, reminders, exports, the WhatsApp assistant and AI drafting. Also to support and secure the service.`,
+            `To provide the ${APP} to you: storing your records, producing invoices, receipts, statements and inspection reports, reminders, exports, the WhatsApp assistant and AI features. Also to support and secure the service.`,
           ],
           [
             <strong key="s">People concerned</strong>,
@@ -67,11 +68,11 @@ const sections: LegalSection[] = [
           ],
           [
             <strong key="d">Types of data</strong>,
-            "Names, phone numbers, email and postal addresses, company names and job titles, dates of birth if you enter them, vehicle details (make, model, plate number, VIN), vehicle documents and their scans, job cards, inspection findings and photos, invoices, payments, notes, and anything else you type or upload.",
+            "Names, phone numbers, email and postal addresses, company names and job titles, dates of birth if you enter them, invoices, payments and notes. For workshops, also vehicle details (make, model, plate number, VIN), vehicle documents and their scans, job cards, and inspection findings and photos. And anything else you type or upload.",
           ],
           [
             <strong key="sp">Sensitive data</strong>,
-            `${jobcard.name} is not designed for sensitive personal data, such as health, religious or biometric data. Do not enter it unless you have a lawful basis to and it is needed for the work.`,
+            `The ${APP} is not designed for sensitive personal data, such as health, religious or biometric data. Do not enter it unless you have a lawful basis to and it is needed for the work.`,
           ],
           [
             <strong key="o">What we do with it</strong>,
@@ -95,7 +96,7 @@ const sections: LegalSection[] = [
           <li>having a lawful basis to collect and use customer data;</li>
           <li>
             telling your customers how you use their data, including that you
-            use {jobcard.name};
+            use {UMBRELLA_NAME};
           </li>
           <li>keeping the data accurate and relevant to the work you do;</li>
           <li>
@@ -103,8 +104,8 @@ const sections: LegalSection[] = [
             tools we provide (section 8); and
           </li>
           <li>
-            deciding who in your team can see what, using {jobcard.name}’s roles
-            and permissions.
+            deciding who in your team can see what, using the app’s roles and
+            permissions.
           </li>
         </ul>
       </>
@@ -116,7 +117,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          We process customer data only to provide {jobcard.name} to you. Your
+          We process customer data only to provide the {APP} to you. Your
           instructions are these terms, the Terms of Service, and what you and
           your team do in the app and the WhatsApp assistant. We do not use
           customer data for our own purposes, sell it, or use it for
@@ -220,7 +221,7 @@ const sections: LegalSection[] = [
       <>
         <p>
           Your customers have rights under the NDPA, such as to see, correct or
-          erase their data. {jobcard.name} lets you meet most requests yourself:
+          erase their data. The {APP} lets you meet most requests yourself:
         </p>
         <ul>
           <li>
@@ -300,8 +301,8 @@ const sections: LegalSection[] = [
       <>
         <p>
           We will give you the information you reasonably need to show you
-          comply with the NDPA as it relates to {jobcard.name}. We will also
-          help, where reasonable, with any data protection impact assessment or
+          comply with the NDPA as it relates to the {APP}. We will also help,
+          where reasonable, with any data protection impact assessment or
           inquiry from the Nigeria Data Protection Commission.
         </p>
         <p>
@@ -358,9 +359,9 @@ export default function DataProcessingPage() {
       version={LEGAL_VERSION}
       intro={
         <p>
-          Workshops use {jobcard.name} to keep records about their customers.
-          These terms explain how we look after that data on each workshop’s
-          behalf, and what each of us is responsible for.
+          Businesses use the {APP} to keep records about their customers. These
+          terms explain how we look after that data on each business’s behalf,
+          and what each of us is responsible for.
         </p>
       }
       sections={sections}

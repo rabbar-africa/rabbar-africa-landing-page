@@ -10,11 +10,14 @@ import { contactEmail } from "@/data/constant";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: `The terms that apply when you use the ${UMBRELLA_NAME} website, ${PRODUCTS.jobcard.name} and its WhatsApp assistant, ${PRODUCTS.garage.name} and ${PRODUCTS.fleet.name}.`,
+  description: `The terms that apply when you use the ${UMBRELLA_NAME} website, the Rabbar Africa app and its WhatsApp assistant, ${PRODUCTS.garage.name} and ${PRODUCTS.fleet.name}.`,
   alternates: { canonical: "/terms" },
 };
 
-const { jobcard, garage, fleet } = PRODUCTS;
+const { garage, fleet } = PRODUCTS;
+
+/** The invoicing platform, which carries the company name. */
+const APP = `${UMBRELLA_NAME} app`;
 
 const sections: LegalSection[] = [
   {
@@ -28,17 +31,17 @@ const sections: LegalSection[] = [
           RC {COMPANY.rcNumber}, with its office at {COMPANY.address}.
         </p>
         <p>
-          They apply when you use our website; our workshop management software{" "}
-          <strong>{jobcard.name}</strong>, through its web app or its WhatsApp
+          They apply when you use our website; <strong>the {APP}</strong>, our
+          invoicing and business software, through its web app or its WhatsApp
           assistant; our workshop <strong>{garage.name}</strong>; or our fleet
           service <strong>{fleet.name}</strong>.
         </p>
         <p>
           You accept these terms when you press <strong>Create account</strong>{" "}
-          in the {jobcard.name} app, tap <strong>Start free</strong> in the
-          WhatsApp assistant, accept an invitation to join a workspace, or
-          otherwise use our services. If you accept them for a business, you
-          confirm you have authority to bind it.
+          in the {APP}, tap <strong>Start free</strong> in the WhatsApp
+          assistant, accept an invitation to join a workspace, or otherwise use
+          our services. If you accept them for a business, you confirm you have
+          authority to bind it.
         </p>
         <p>These documents form part of these terms:</p>
         <ul>
@@ -48,8 +51,8 @@ const sections: LegalSection[] = [
           </li>
           <li>
             our <Link href="/data-processing">Data Processing Terms</Link>,
-            which govern how we process the customer data a workshop keeps in{" "}
-            {jobcard.name}.
+            which govern how we process the customer data a business keeps in
+            the app.
           </li>
         </ul>
       </>
@@ -57,12 +60,12 @@ const sections: LegalSection[] = [
   },
   {
     id: "accounts",
-    heading: "Jobcard accounts",
+    heading: "Your account",
     body: (
       <>
         <p>
-          To use {jobcard.name} you must be at least 18 and create an account
-          for your workshop. The person who creates it is the account owner. The
+          To use the {APP} you must be at least 18 and create an account for
+          your business. The person who creates it is the account owner. The
           owner can invite team members and decide what each of them can access,
           and only the owner can delete the business.
         </p>
@@ -86,9 +89,9 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          The WhatsApp assistant lets you and your team use {jobcard.name} by
-          chatting: raising invoices, recording payments, and finding or adding
-          customers and vehicles.
+          The WhatsApp assistant lets you and your team use the app by chatting:
+          raising invoices, recording payments, and finding or adding customers
+          and vehicles.
         </p>
         <ul>
           <li>
@@ -119,10 +122,10 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          {jobcard.name} has a free Starter plan and paid plans. What each plan
+          The {APP} has a free Starter plan and paid plans. What each plan
           includes, and its limits, are shown in the app and on our{" "}
-          <Link href={`${jobcard.slug}#pricing`}>pricing page</Link>. Prices are
-          in Nigerian naira.
+          <Link href="/#pricing">pricing page</Link>. Prices are in Nigerian
+          naira.
         </p>
         <ul>
           <li>
@@ -180,11 +183,12 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          {jobcard.name} uses artificial intelligence to draft customer
-          advisories and notes from inspections, and to understand messages sent
-          to the WhatsApp assistant. AI can make mistakes. A draft may be
-          incomplete, misread a finding or recommend the wrong urgency. The
-          assistant may also misread an amount, an item or a customer’s name.
+          The {APP} uses artificial intelligence to understand messages sent to
+          the WhatsApp assistant and, for workshops, to draft customer
+          advisories and notes from inspections. AI can make mistakes. A draft
+          may be incomplete, misread a finding or recommend the wrong urgency.
+          The assistant may also misread an amount, an item or a customer’s
+          name.
         </p>
         <p>
           <strong>AI output is a starting point, not a diagnosis.</strong> You
@@ -198,13 +202,13 @@ const sections: LegalSection[] = [
   },
   {
     id: "your-data",
-    heading: "Your data in Jobcard",
+    heading: "Your data in the app",
     body: (
       <>
         <p>
-          You own the data you put into {jobcard.name}. You give us permission
-          to store and process it only as needed to provide, support and secure
-          the service, as described in our{" "}
+          You own the data you put into the {APP}. You give us permission to
+          store and process it only as needed to provide, support and secure the
+          service, as described in our{" "}
           <Link href="/privacy">Privacy Policy</Link>.
         </p>
         <p>
@@ -235,7 +239,7 @@ const sections: LegalSection[] = [
             contains viruses or harmful code;
           </li>
           <li>
-            try to access another workshop’s data, or any part of our systems
+            try to access another business’s data, or any part of our systems
             you are not authorised to use;
           </li>
           <li>
@@ -302,12 +306,12 @@ const sections: LegalSection[] = [
     body: (
       <p>
         We own our website, our software, and our brand, including the{" "}
-        {UMBRELLA_NAME}, {jobcard.name}, {garage.name} and {fleet.name} names
-        and logos. While your account is in good standing, we give you a
-        personal, non-transferable right to use {jobcard.name} for your own
-        workshop. These terms do not give you any other rights in our property.
-        On the free Starter plan, documents you create carry a small “Powered by
-        Rabbar” credit.
+        {UMBRELLA_NAME}, {garage.name} and {fleet.name} names and logos. While
+        your account is in good standing, we give you a personal,
+        non-transferable right to use the {APP} for your own business. These
+        terms do not give you any other rights in our property. On the free
+        Starter plan, documents you create carry a small “Powered by Rabbar”
+        credit.
       </p>
     ),
   },
@@ -327,11 +331,11 @@ const sections: LegalSection[] = [
     heading: "Availability and changes",
     body: (
       <p>
-        We work to keep {jobcard.name} available and reliable, but we cannot
-        promise it will be uninterrupted or free of errors, and we may need to
-        take it offline for maintenance. We may change, add or remove features
-        over time. If we make a change that significantly reduces what a paid
-        plan includes, we will tell you in advance.
+        We work to keep the {APP} available and reliable, but we cannot promise
+        it will be uninterrupted or free of errors, and we may need to take it
+        offline for maintenance. We may change, add or remove features over
+        time. If we make a change that significantly reduces what a paid plan
+        includes, we will tell you in advance.
       </p>
     ),
   },
@@ -349,13 +353,13 @@ const sections: LegalSection[] = [
         <ul>
           <li>
             we are not liable for indirect or consequential losses, or for loss
-            of profit, revenue, business or data, arising from your use of{" "}
-            {jobcard.name}; and
+            of profit, revenue, business or data, arising from your use of the{" "}
+            {APP}; and
           </li>
           <li>
-            our total liability to you in connection with {jobcard.name} is
-            limited to the fees you paid us for it in the 12 months before the
-            event giving rise to the claim.
+            our total liability to you in connection with the {APP} is limited
+            to the fees you paid us for it in the 12 months before the event
+            giving rise to the claim.
           </li>
         </ul>
         <p>
@@ -396,7 +400,7 @@ const sections: LegalSection[] = [
     body: (
       <p>
         We may update these terms. The date at the top shows when they were last
-        revised. If we make a material change, we will tell {jobcard.name}{" "}
+        revised. If we make a material change, we will tell {UMBRELLA_NAME}{" "}
         account owners by email or in the app before it takes effect. If you
         keep using our services after that, you accept the updated terms.
       </p>

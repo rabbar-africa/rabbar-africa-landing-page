@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { NavLink } from "@/components/ui/nav-link";
-import { softwareDemoLink } from "@/data/constant";
-import { PRODUCT_LIST } from "@/data/products";
+import { StartLink } from "@/components/platform/StartLink";
+import { appLoginLink } from "@/data/constant";
+import { NAV_LINKS } from "@/data/navigation";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ export function MobileNav() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
@@ -56,35 +57,29 @@ export function MobileNav() {
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col p-6 space-y-4">
-              {PRODUCT_LIST.map((product) => (
+              {NAV_LINKS.map(({ label, href }) => (
                 <NavLink
-                  key={product.slug}
-                  href={product.slug}
+                  key={href}
+                  href={href}
                   onClick={closeMenu}
                   className="text-lg py-2"
                 >
-                  {product.name}
+                  {label}
                 </NavLink>
               ))}
 
-              <NavLink
-                href="/blogs"
-                onClick={closeMenu}
-                className="text-lg py-2"
-              >
-                Blog
-              </NavLink>
-
-              <div className="pt-4">
-                <a
-                  href={softwareDemoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeMenu}
-                  className="block w-full text-center bg-[#DAE648] text-[#001F3E] px-6 py-3 rounded-lg hover:bg-[#E8F34F] font-semibold transition-colors"
-                >
-                  Talk to us
-                </a>
+              <div className="pt-4 space-y-3">
+                <StartLink className="block w-full text-center bg-[#DAE648] text-[#001F3E] px-6 py-3 rounded-lg hover:bg-[#E8F34F] font-semibold transition-colors">
+                  Get started
+                </StartLink>
+                {appLoginLink && (
+                  <a
+                    href={appLoginLink}
+                    className="block w-full text-center border border-gray-300 text-[#001F3E] px-6 py-3 rounded-lg hover:bg-gray-50 font-semibold transition-colors"
+                  >
+                    Sign in
+                  </a>
+                )}
               </div>
             </div>
           </nav>

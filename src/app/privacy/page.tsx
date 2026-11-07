@@ -12,11 +12,14 @@ import { contactEmail } from "@/data/constant";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: `How ${UMBRELLA_NAME} collects, uses, shares and protects personal data across our website, ${PRODUCTS.jobcard.name}, the WhatsApp assistant, ${PRODUCTS.garage.name} and ${PRODUCTS.fleet.name}.`,
+  description: `How ${UMBRELLA_NAME} collects, uses, shares and protects personal data across our website, the Rabbar Africa app and WhatsApp assistant, ${PRODUCTS.garage.name} and ${PRODUCTS.fleet.name}.`,
   alternates: { canonical: "/privacy" },
 };
 
-const { jobcard, garage, fleet } = PRODUCTS;
+const { garage, fleet } = PRODUCTS;
+
+/** The invoicing platform, which carries the company name. */
+const APP = `${UMBRELLA_NAME} app`;
 
 const Email = () => <a href={`mailto:${contactEmail}`}>{contactEmail}</a>;
 
@@ -32,25 +35,25 @@ const sections: LegalSection[] = [
           {COMPANY.address}.
         </p>
         <p>
-          This policy covers our website; <strong>{jobcard.name}</strong>, our
-          workshop management software, including its web app and its WhatsApp
-          assistant; our workshop <strong>{garage.name}</strong>; and our fleet
-          service <strong>{fleet.name}</strong>.
+          This policy covers our website; <strong>the {APP}</strong>, our
+          invoicing and business software, including its web app and its
+          WhatsApp assistant; our workshop <strong>{garage.name}</strong>; and
+          our fleet service <strong>{fleet.name}</strong>.
         </p>
         <p>We have two roles under the Nigeria Data Protection Act 2023:</p>
         <ul>
           <li>
             <strong>Controller.</strong> For the people we deal with directly,
             we decide how their data is used. That covers website visitors,
-            workshop owners and their team members, anyone who messages our
+            business owners and their team members, anyone who messages our
             WhatsApp assistant, and {garage.name} and {fleet.name} customers.
           </li>
           <li>
-            <strong>Processor.</strong> For the customer records a workshop
-            keeps in {jobcard.name}, the workshop is the controller. We hold
-            that data on its behalf and use it only to provide the service,
-            under our <Link href="/data-processing">Data Processing Terms</Link>
-            . See section 8.
+            <strong>Processor.</strong> For the customer records a business
+            keeps in the {APP}, that business is the controller. We hold that
+            data on its behalf and use it only to provide the service, under our{" "}
+            <Link href="/data-processing">Data Processing Terms</Link>. See
+            section 8.
           </li>
         </ul>
         <p>
@@ -72,7 +75,7 @@ const sections: LegalSection[] = [
           or email us, we receive whatever you choose to send.
         </p>
         <p>
-          <strong>When you create a {jobcard.name} account.</strong> We collect
+          <strong>When you create a {UMBRELLA_NAME} account.</strong> We collect
           your first and last name, email address, WhatsApp phone number and
           password. We also collect details of your business: its name, email,
           phone number and logo. Later you can add its address, tax
@@ -86,11 +89,11 @@ const sections: LegalSection[] = [
           each person last signed in.
         </p>
         <p>
-          <strong>Records you keep in {jobcard.name}.</strong> These include
-          your customers, vehicles, job cards, inspections and their photos,
-          vehicle documents and their scans, invoices, payments, expenses,
-          reminders and technicians. Section 8 explains how we handle your
-          customers’ data.
+          <strong>Records you keep in the app.</strong> These include your
+          customers, invoices, payments, expenses and their receipts, and your
+          price list. Workshops can also keep vehicles, job cards, inspections
+          and their photos, vehicle documents and their scans, reminders and
+          technicians. Section 8 explains how we handle your customers’ data.
         </p>
         <p>
           <strong>When you use the WhatsApp assistant.</strong> We receive your
@@ -100,7 +103,7 @@ const sections: LegalSection[] = [
           your name and your email address. See section 4.
         </p>
         <p>
-          <strong>Payments.</strong> {jobcard.name} subscriptions are paid
+          <strong>Payments.</strong> {UMBRELLA_NAME} subscriptions are paid
           through Paystack. If you save a card, we receive a payment token and
           limited card details (the card type, issuing bank, last four digits
           and expiry date) so we can renew your subscription. We never see or
@@ -123,10 +126,10 @@ const sections: LegalSection[] = [
           <strong>Automatically.</strong> On our website, Google Analytics and
           Google Ads collect information such as the pages you visit, your
           browser and device, your approximate location and the site that
-          referred you (see section 11). The {jobcard.name} app has no analytics
-          or advertising trackers. Like any online service, our hosting
-          providers keep standard server logs, such as IP addresses and request
-          times, for security and troubleshooting.
+          referred you (see section 11). The {APP} has no analytics or
+          advertising trackers. Like any online service, our hosting providers
+          keep standard server logs, such as IP addresses and request times, for
+          security and troubleshooting.
         </p>
       </>
     ),
@@ -144,7 +147,7 @@ const sections: LegalSection[] = [
           head={["What we do", "Lawful basis"]}
           rows={[
             [
-              `Run your ${jobcard.name} account and the WhatsApp assistant, carry out work on your vehicle, and deliver fleet services`,
+              `Run your ${UMBRELLA_NAME} account and the WhatsApp assistant, carry out work on your vehicle, and deliver fleet services`,
               "Performing our contract with you",
             ],
             [
@@ -186,7 +189,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          The {jobcard.name} WhatsApp assistant lets a workshop raise invoices,
+          The {UMBRELLA_NAME} WhatsApp assistant lets a business raise invoices,
           record payments, and find or add customers and vehicles by chatting.
           The first message it sends links to this policy and our{" "}
           <Link href="/terms">Terms of Service</Link>, and tapping{" "}
@@ -224,16 +227,16 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          Some {jobcard.name} features use AI from our provider, Anthropic. We
+          Some features of the {APP} use AI from our provider, Anthropic. We
           send only what each feature needs:
         </p>
         <ul>
           <li>
             <strong>Inspection advisories and notes.</strong> When a workshop
-            asks for a draft, we send the inspection findings, the vehicle’s
-            details, and the names of the customer and technician if they are
-            entered. Inspection photos are not sent. The technician reviews and
-            edits the draft before it is saved or sent to anyone.
+            using the app asks for a draft, we send the inspection findings, the
+            vehicle’s details, and the names of the customer and technician if
+            they are entered. Inspection photos are not sent. The technician
+            reviews and edits the draft before it is saved or sent to anyone.
           </li>
           <li>
             <strong>The WhatsApp assistant.</strong> We send the text of your
@@ -257,8 +260,8 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          Authorised {UMBRELLA_NAME} staff can see the records in {jobcard.name}{" "}
-          workspaces and the WhatsApp assistant’s conversation logs. They use
+          Authorised {UMBRELLA_NAME} staff can see the records businesses keep
+          in the app and the WhatsApp assistant’s conversation logs. They use
           this access only to:
         </p>
         <ul>
@@ -297,34 +300,34 @@ const sections: LegalSection[] = [
           </li>
         </ul>
         <p>
-          {jobcard.name} does not contact your customers. Invoices, receipts and
-          inspection reports reach them only when you send them yourself.
+          The {APP} does not contact your customers. Invoices, receipts and
+          other documents reach them only when you send them yourself.
         </p>
       </>
     ),
   },
   {
-    id: "workshop-customer-data",
-    heading: "Your customers’ data in Jobcard",
+    id: "business-customer-data",
+    heading: "Your customers’ data in the app",
     body: (
       <>
         <p>
-          Workshops use {jobcard.name} to record information about their own
-          customers: names, contact details, vehicles and their documents, job
-          cards, inspections, invoices and payments. For that information the
-          workshop is the controller, and we process it on the workshop’s
-          behalf, as set out in our{" "}
+          Businesses use the {APP} to record information about their own
+          customers: names, contact details, invoices and payments and, for
+          workshops, vehicles and their documents, job cards and inspections.
+          For that information the business is the controller, and we process it
+          on the business’s behalf, as set out in our{" "}
           <Link href="/data-processing">Data Processing Terms</Link>.
         </p>
         <p>
-          If you are a workshop, you are responsible for having a lawful basis
-          to collect your customers’ data and for telling them how you use it.
-          {jobcard.name} gives you tools to export a customer’s data and to
-          erase a customer who asks to be forgotten.
+          If you run a business on {UMBRELLA_NAME}, you are responsible for
+          having a lawful basis to collect your customers’ data and for telling
+          them how you use it. The app gives you tools to export a customer’s
+          data and to erase a customer who asks to be forgotten.
         </p>
         <p>
-          If you are a customer of a workshop that uses {jobcard.name}, please
-          contact that workshop about your data. If you contact us instead, we
+          If you are a customer of a business that uses {UMBRELLA_NAME}, please
+          contact that business about your data. If you contact us instead, we
           will pass your request on to them.
         </p>
       </>
@@ -357,7 +360,7 @@ const sections: LegalSection[] = [
           head={["Data", "How long"]}
           rows={[
             [
-              `Your ${jobcard.name} account and business records`,
+              `Your ${UMBRELLA_NAME} account and business records`,
               "While your account is open. If the owner deletes the business, everything is deleted 14 days later (the owner can cancel until then).",
             ],
             [
@@ -365,7 +368,7 @@ const sections: LegalSection[] = [
               "Customers, job cards, vehicle documents and reminders are removed at once, though files attached to them can stay in storage until the business is deleted. Vehicles, payments, expenses and invoices are hidden but kept, so your financial records stay consistent, until the business is deleted.",
             ],
             [
-              "A customer the workshop erases",
+              "A customer the business erases",
               "Their contact details, vehicles, documents, reminders and files are deleted, and their name and contact details are removed from job cards and inspections. Invoices and payments keep the customer’s name and amounts, as tax law requires.",
             ],
             [
@@ -406,10 +409,10 @@ const sections: LegalSection[] = [
           measure whether people who click our adverts go on to contact us.
         </p>
         <p>
-          <strong>The {jobcard.name} app</strong> uses only what it needs to
-          work: cookies that keep you signed in, and local storage that
-          remembers settings such as which menus you have open. It has no
-          analytics or advertising cookies.
+          <strong>The {APP}</strong> uses only what it needs to work: cookies
+          that keep you signed in, and local storage that remembers settings
+          such as which menus you have open. It has no analytics or advertising
+          cookies.
         </p>
         <p>You can control website cookies:</p>
         <ul>
@@ -454,9 +457,8 @@ const sections: LegalSection[] = [
           <li>passwords stored only as one-way hashes, never in plain text;</li>
           <li>daily backups, encrypted before they are stored;</li>
           <li>
-            keeping each workshop’s {jobcard.name} data separate from every
-            other workshop’s, with role-based permissions inside each workshop;
-            and
+            keeping each business’s data separate from every other business’s,
+            with role-based permissions inside each business; and
           </li>
           <li>limiting staff access as described in section 6.</li>
         </ul>
@@ -464,8 +466,8 @@ const sections: LegalSection[] = [
           No system is completely secure. If a breach puts your personal data at
           risk, we will notify the Nigeria Data Protection Commission within 72
           hours of becoming aware of it. Where the risk to you is high, we will
-          also tell you directly. If the breach affects a workshop’s customer
-          data, we will tell the workshop without delay.
+          also tell you directly. If the breach affects a business’s customer
+          data, we will tell the business without delay.
         </p>
       </>
     ),
@@ -504,9 +506,9 @@ const sections: LegalSection[] = [
           </li>
         </ul>
         <p>
-          <strong>Doing it yourself.</strong> Workshop owners can update most
+          <strong>Doing it yourself.</strong> Business owners can update most
           account details in Settings. They can also export their records and
-          delete their business from the {jobcard.name} app.
+          delete their business from the {APP}.
         </p>
         <p>
           <strong>Asking us.</strong> Email <Email /> with your request. We may
@@ -535,7 +537,7 @@ const sections: LegalSection[] = [
       <p>
         We may update this policy as our services change. The date at the top
         shows when it was last revised. If we make a change that materially
-        affects how we use your personal data, we will tell {jobcard.name}{" "}
+        affects how we use your personal data, we will tell {UMBRELLA_NAME}{" "}
         account holders by email or in the app before it takes effect.
       </p>
     ),
@@ -562,7 +564,7 @@ const sections: LegalSection[] = [
           Our <Link href="/terms">Terms of Service</Link> explain the rules for
           using our services. Our{" "}
           <Link href="/data-processing">Data Processing Terms</Link> explain how
-          we handle the customer data workshops keep in {jobcard.name}.
+          we handle the customer data businesses keep in the {APP}.
         </p>
       </>
     ),

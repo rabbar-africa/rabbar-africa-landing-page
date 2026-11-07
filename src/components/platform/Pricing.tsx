@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { jobcardStartIsApp, jobcardStartLink } from "@/data/constant";
 import {
   BILLING_OPTIONS,
   PRICING_TIERS,
   isFeatureHeading,
 } from "@/data/pricing";
+import { StartLink } from "./StartLink";
 
 export function Pricing() {
   const [annual, setAnnual] = useState(false);
@@ -18,10 +18,10 @@ export function Pricing() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#001F3E] tracking-tight">
-            Priced per workshop
+            Priced per business
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Not per car, and not a cut of your takings. Pay yearly and two
+            Not per invoice, and not a cut of your takings. Pay yearly and two
             months are on us.
           </p>
         </div>
@@ -144,11 +144,7 @@ export function Pricing() {
                 })}
               </ul>
 
-              <a
-                href={jobcardStartLink}
-                {...(jobcardStartIsApp
-                  ? {}
-                  : { target: "_blank", rel: "noopener noreferrer" })}
+              <StartLink
                 className={cn(
                   "group mt-8 inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
                   tier.featured
@@ -162,15 +158,15 @@ export function Pricing() {
                   className="transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
                 />
-              </a>
+              </StartLink>
             </div>
           ))}
         </div>
 
         <p className="mt-8 text-sm text-gray-500">
-          Start on Starter for free, no card needed. Moving from a pad, a
-          notebook or a spreadsheet? Message us and we&apos;ll help you bring it
-          across.
+          Start on Starter for free, no card needed. Moving from a receipt book,
+          a notebook or a spreadsheet? Message us and we&apos;ll help you bring
+          it across.
         </p>
       </div>
     </section>

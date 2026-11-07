@@ -8,7 +8,8 @@ import {
 } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import Link from "next/link";
-import { PRODUCT_LIST, PRODUCTS } from "@/data/products";
+import { PRODUCTS, SIDE_PRODUCTS } from "@/data/products";
+import { FOOTER_LINKS } from "@/data/navigation";
 import { Logo } from "./Logo";
 import { contactEmail } from "@/data/constant";
 
@@ -18,7 +19,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0D2847] text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
             {/* <h3 className="text-[#E8F34F] text-xl mb-4">RABBAR AFRICA</h3>
@@ -28,8 +29,8 @@ export function Footer() {
               <Logo color="white" />
             </div>
             <p className="text-gray-400 mb-4">
-              Your trusted partner for premium automobiles and exceptional
-              service across Africa.
+              Job cards, invoices and receipts on WhatsApp, vehicle inspection
+              reports and paperwork management, built in Lagos.
             </p>
             <div className="flex gap-4">
               <a
@@ -69,24 +70,16 @@ export function Footer() {
           <div>
             <h4 className="text-[#E8F34F] mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {PRODUCT_LIST.map((product) => (
-                <li key={product.slug}>
+              {FOOTER_LINKS.map(({ label, href }) => (
+                <li key={href}>
                   <Link
-                    href={product.slug}
+                    href={href}
                     className="hover:text-[#E8F34F] transition-colors"
                   >
-                    {product.name}
+                    {label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/blogs"
-                  className="hover:text-[#E8F34F] transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
               <li>
                 <Link
                   href={`${PRODUCTS.garage.slug}#contact`}
@@ -95,6 +88,24 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Side services */}
+          <div>
+            <h4 className="text-[#E8F34F] mb-4">Also from Rabbar Africa</h4>
+            <ul className="space-y-2">
+              {SIDE_PRODUCTS.map((product) => (
+                <li key={product.slug}>
+                  <Link
+                    href={product.slug}
+                    className="hover:text-[#E8F34F] transition-colors"
+                  >
+                    {product.name}
+                  </Link>
+                  <p className="text-sm text-gray-400">{product.audience}</p>
+                </li>
+              ))}
             </ul>
           </div>
 

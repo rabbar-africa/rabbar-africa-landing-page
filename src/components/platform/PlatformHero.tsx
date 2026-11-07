@@ -1,13 +1,11 @@
 import Image from "next/image";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import {
-  jobcardStartIsApp,
-  jobcardStartLink,
-  softwareDemoLink,
-} from "@/data/constant";
-import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
+import { platformDemoLink } from "@/data/constant";
+import { StartLink } from "./StartLink";
 
-export function SoftwareHero() {
+const PROMISES = ["Free to start", "No card needed", "Works on your phone"];
+
+export function PlatformHero() {
   return (
     <section id="hero" className="relative bg-[#001F3E] overflow-hidden">
       {/* Accent wash */}
@@ -19,46 +17,54 @@ export function SoftwareHero() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24">
         <div className="max-w-3xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-[#DAE648]">
-            {PRODUCTS.jobcard.name}
-            <span className="text-gray-400">by {UMBRELLA_NAME}</span>
+            Job card software for Nigerian businesses
           </p>
 
           <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.08] tracking-tight">
-            Run your workshop off your phone, not a{" "}
-            <span className="text-[#DAE648]">carbon-copy pad</span>.
+            Run every job on a job card.{" "}
+            <span className="text-[#DAE648]">Get paid on WhatsApp.</span>
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
-            Job cards, inspections and invoices in one place, and for the first
-            time, a straight answer to which car actually made you money.
+            Digital job cards, invoices and receipts on WhatsApp, branded
+            vehicle inspection reports and paperwork management, in one app.
+            Built in our own Lagos workshop for mechanics, and used by
+            laundries, solar installers, electricians and tailors too.
           </p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-4">
-            <a
-              href={jobcardStartLink}
-              {...(jobcardStartIsApp
-                ? {}
-                : { target: "_blank", rel: "noopener noreferrer" })}
-              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#DAE648] px-7 py-3.5 font-semibold text-[#001F3E] transition-all hover:bg-[#E8F34F] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DAE648] focus-visible:ring-offset-2 focus-visible:ring-offset-[#001F3E]"
-            >
+            <StartLink className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#DAE648] px-7 py-3.5 font-semibold text-[#001F3E] transition-all hover:bg-[#E8F34F] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DAE648] focus-visible:ring-offset-2 focus-visible:ring-offset-[#001F3E]">
               Get started free
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
                 aria-hidden="true"
               />
-            </a>
+            </StartLink>
 
             <a
-              href={softwareDemoLink}
+              href={platformDemoLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
               <MessageCircle size={18} aria-hidden="true" />
-              Book a demo
+              Talk to us on WhatsApp
             </a>
           </div>
+
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
+            {PROMISES.map((promise) => (
+              <li key={promise} className="inline-flex items-center gap-2">
+                <Check
+                  size={16}
+                  className="text-[#DAE648]"
+                  aria-hidden="true"
+                />
+                {promise}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Product shot */}
@@ -66,7 +72,7 @@ export function SoftwareHero() {
           <div className="rounded-xl border border-white/10 bg-white/5 p-1.5 shadow-2xl">
             <Image
               src="/product/dashboard-full.png"
-              alt="The Jobcard dashboard showing invoiced, net profit, expenses, overdue and total revenue, with top debtors and job card status"
+              alt="The Rabbar dashboard with job cards, inspections, paperwork and invoices in the menu, showing amounts invoiced, net profit, overdue and top debtors"
               width={1800}
               height={913}
               priority

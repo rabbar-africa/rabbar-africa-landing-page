@@ -1,7 +1,7 @@
 import { UMBRELLA_NAME } from "@/data/products";
 
 /**
- * Jobcard pricing.
+ * Rabbar Africa (invoicing platform) pricing.
  *
  * Single source of truth for the tiers: names, prices, seat limits and what is
  * included. Feature lists are taken verbatim from the product brief, so edit

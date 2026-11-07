@@ -178,17 +178,17 @@ export function FleetWhy() {
         </h2>
         <div className="mt-8 space-y-6 text-lg text-gray-300 leading-relaxed">
           <p>
-            This is where we differ from an ordinary workshop. The same system
-            we built to run our own garage —{" "}
+            This is where we differ from an ordinary workshop. The{" "}
             <Link
-              href={PRODUCTS.jobcard.slug}
+              href={PRODUCTS.platform.slug}
               className="font-semibold text-[#DAE648] underline underline-offset-4 hover:text-[#E8F34F]"
             >
-              {PRODUCTS.jobcard.name}
+              {PRODUCTS.platform.name}
             </Link>{" "}
-            , is the operational backbone behind the service. Every vehicle, its
-            service history, its next service due and its condition sit on a
-            record rather than in someone&apos;s head.
+            platform we built to run our own garage is the operational backbone
+            behind the service. Every vehicle, its service history, its next
+            service due and its condition sit on a record rather than in
+            someone&apos;s head.
           </p>
           <p>
             That means you get real visibility of your fleet: what has been done

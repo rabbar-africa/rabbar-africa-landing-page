@@ -68,12 +68,13 @@ export const SUBPROCESSORS: Subprocessor[] = [
   {
     name: "Supabase",
     purpose:
-      "Hosts our database: all Jobcard account and business records, and WhatsApp assistant activity.",
+      "Hosts our database: all Rabbar Africa account and business records, and WhatsApp assistant activity.",
     location: "Ireland (EU)",
   },
   {
     name: "Microsoft Azure",
-    purpose: "Runs the servers that power Jobcard and the WhatsApp assistant.",
+    purpose:
+      "Runs the servers that power the Rabbar Africa app and the WhatsApp assistant.",
     location: "Outside Nigeria",
   },
   {
@@ -83,7 +84,7 @@ export const SUBPROCESSORS: Subprocessor[] = [
   },
   {
     name: "Vercel",
-    purpose: "Hosts our website and the Jobcard web app.",
+    purpose: "Hosts our website and the Rabbar Africa web app.",
     location: "United States and global edge network",
   },
   {
@@ -118,7 +119,7 @@ export const SUBPROCESSORS: Subprocessor[] = [
   {
     name: "Google",
     purpose:
-      "Our business email, and analytics and advertising measurement on our website (not in the Jobcard app).",
+      "Our business email, and analytics and advertising measurement on our website (not in the Rabbar Africa app).",
     location: "United States",
   },
 ];

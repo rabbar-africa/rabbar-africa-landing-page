@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllBlogSlugs } from "@/lib/blog-data";
-import { PRODUCT_LIST } from "@/data/products";
+import { SIDE_PRODUCTS } from "@/data/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://rabbar.africa";
@@ -14,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 1,
     },
-    ...PRODUCT_LIST.map((product) => ({
+    // The homepage is the platform; the side services have their own pages.
+    ...SIDE_PRODUCTS.map((product) => ({
       url: `${baseUrl}${product.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,

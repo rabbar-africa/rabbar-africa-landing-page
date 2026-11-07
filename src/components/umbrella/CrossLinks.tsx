@@ -9,13 +9,25 @@ interface CrossLink {
 }
 
 /**
- * Sibling-product pointers. Each product page carries links to the other two so
- * the umbrella reads as one company rather than three disconnected sites.
+ * Sibling-product pointers. Each page links to the other two, so the site
+ * reads as one company. On the homepage this is the low-key "Also from Rabbar
+ * Africa" strip for the side services.
  */
-export function CrossLinks({ links }: { links: CrossLink[] }) {
+export function CrossLinks({
+  links,
+  heading,
+}: {
+  links: CrossLink[];
+  heading?: string;
+}) {
   return (
     <section className="bg-[#F4F4F4] border-t border-gray-200 py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {heading && (
+          <h2 className="mb-6 text-sm font-semibold uppercase tracking-wider text-[#013064]">
+            {heading}
+          </h2>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {links.map(({ name, slug, body }) => (
             <Link
@@ -40,11 +52,25 @@ export function CrossLinks({ links }: { links: CrossLink[] }) {
   );
 }
 
+/** The homepage's "Also from Rabbar Africa" strip. */
+export const PLATFORM_CROSS_LINKS: CrossLink[] = [
+  {
+    name: PRODUCTS.garage.name,
+    slug: PRODUCTS.garage.slug,
+    body: "Need your own car looked after? Our Lagos workshop handles repairs, servicing and vehicle documentation.",
+  },
+  {
+    name: PRODUCTS.fleet.name,
+    slug: PRODUCTS.fleet.slug,
+    body: "Run a company fleet? We handle maintenance and compliance for organisations, with one accountable partner.",
+  },
+];
+
 export const GARAGE_CROSS_LINKS: CrossLink[] = [
   {
-    name: PRODUCTS.jobcard.name,
-    slug: PRODUCTS.jobcard.slug,
-    body: `Curious how we run this workshop day to day? We built ${PRODUCTS.jobcard.name} for that, and now other workshops run on it too.`,
+    name: `Job cards with ${PRODUCTS.platform.name}`,
+    slug: PRODUCTS.platform.slug,
+    body: "Run a workshop of your own? This one runs on Rabbar: job cards, inspection reports, paperwork, and invoices and receipts on WhatsApp.",
   },
   {
     name: PRODUCTS.fleet.name,
@@ -53,28 +79,15 @@ export const GARAGE_CROSS_LINKS: CrossLink[] = [
   },
 ];
 
-export const JOBCARD_CROSS_LINKS: CrossLink[] = [
-  {
-    name: PRODUCTS.garage.name,
-    slug: PRODUCTS.garage.slug,
-    body: `See the workshop ${PRODUCTS.jobcard.name} was built in and is used in every day.`,
-  },
-  {
-    name: PRODUCTS.fleet.name,
-    slug: PRODUCTS.fleet.slug,
-    body: `Run a company fleet? We offer the same operation as a managed service.`,
-  },
-];
-
 export const FLEET_CROSS_LINKS: CrossLink[] = [
   {
     name: PRODUCTS.garage.name,
     slug: PRODUCTS.garage.slug,
-    body: `Bringing in a single car rather than a fleet? That is what our own workshop does.`,
+    body: "Bringing in a single car rather than a fleet? That is what our own workshop does.",
   },
   {
-    name: PRODUCTS.jobcard.name,
-    slug: PRODUCTS.jobcard.slug,
-    body: `Run a workshop of your own? ${PRODUCTS.jobcard.name} is the software behind this service.`,
+    name: `Job cards with ${PRODUCTS.platform.name}`,
+    slug: PRODUCTS.platform.slug,
+    body: "Run a workshop of your own? Rabbar is the job card software behind this service, with inspection reports, paperwork and WhatsApp invoices.",
   },
 ];

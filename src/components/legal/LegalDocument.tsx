@@ -9,6 +9,50 @@ export interface LegalSection {
   body: ReactNode;
 }
 
+/**
+ * A simple bordered table for the legal pages (providers, retention periods).
+ * Scrolls sideways inside its own box on narrow screens so the page never
+ * does.
+ */
+export function LegalTable({
+  head,
+  rows,
+}: {
+  head: string[];
+  rows: ReactNode[][];
+}) {
+  return (
+    <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200">
+      <table className="w-full min-w-[32rem] text-left text-sm">
+        <thead className="bg-gray-50">
+          <tr>
+            {head.map((label) => (
+              <th
+                key={label}
+                scope="col"
+                className="px-4 py-3 font-semibold text-[#001F3E]"
+              >
+                {label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-200">
+          {rows.map((row, i) => (
+            <tr key={i}>
+              {row.map((cell, j) => (
+                <td key={j} className="px-4 py-3 align-top">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 interface LegalDocumentProps {
   eyebrow: string;
   title: string;

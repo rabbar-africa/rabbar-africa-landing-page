@@ -10,7 +10,7 @@ import { contactEmail } from "@/data/constant";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: `The terms that apply when you use the ${UMBRELLA_NAME} website, ${PRODUCTS.jobcard.name}, ${PRODUCTS.garage.name} and ${PRODUCTS.fleet.name}.`,
+  description: `The terms that apply when you use the ${UMBRELLA_NAME} website, ${PRODUCTS.jobcard.name} and its WhatsApp assistant, ${PRODUCTS.garage.name} and ${PRODUCTS.fleet.name}.`,
   alternates: { canonical: "/terms" },
 };
 
@@ -28,17 +28,30 @@ const sections: LegalSection[] = [
           RC {COMPANY.rcNumber}, with its office at {COMPANY.address}.
         </p>
         <p>
-          They apply when you use our website, our workshop management software{" "}
-          <strong>{jobcard.name}</strong>, our workshop{" "}
-          <strong>{garage.name}</strong>, or our fleet service{" "}
-          <strong>{fleet.name}</strong>. By using any of them you agree to these
-          terms. If you are accepting them on behalf of a business, you confirm
-          you have authority to bind it.
+          They apply when you use our website; our workshop management software{" "}
+          <strong>{jobcard.name}</strong>, through its web app or its WhatsApp
+          assistant; our workshop <strong>{garage.name}</strong>; or our fleet
+          service <strong>{fleet.name}</strong>.
         </p>
         <p>
-          Our <Link href="/privacy">Privacy Policy</Link> explains how we handle
-          personal data and forms part of these terms.
+          You accept these terms when you press <strong>Create account</strong>{" "}
+          in the {jobcard.name} app, tap <strong>Start free</strong> in the
+          WhatsApp assistant, accept an invitation to join a workspace, or
+          otherwise use our services. If you accept them for a business, you
+          confirm you have authority to bind it.
         </p>
+        <p>These documents form part of these terms:</p>
+        <ul>
+          <li>
+            our <Link href="/privacy">Privacy Policy</Link>, which explains how
+            we handle personal data; and
+          </li>
+          <li>
+            our <Link href="/data-processing">Data Processing Terms</Link>,
+            which govern how we process the customer data a workshop keeps in{" "}
+            {jobcard.name}.
+          </li>
+        </ul>
       </>
     ),
   },
@@ -49,8 +62,9 @@ const sections: LegalSection[] = [
       <>
         <p>
           To use {jobcard.name} you must be at least 18 and create an account
-          for your workshop. The person who creates it is the account owner and
-          can invite team members and decide what each of them can access.
+          for your workshop. The person who creates it is the account owner. The
+          owner can invite team members and decide what each of them can access,
+          and only the owner can delete the business.
         </p>
         <ul>
           <li>Give accurate information and keep it up to date.</li>
@@ -67,38 +81,83 @@ const sections: LegalSection[] = [
     ),
   },
   {
+    id: "whatsapp",
+    heading: "The WhatsApp assistant",
+    body: (
+      <>
+        <p>
+          The WhatsApp assistant lets you and your team use {jobcard.name} by
+          chatting: raising invoices, recording payments, and finding or adding
+          customers and vehicles.
+        </p>
+        <ul>
+          <li>
+            <strong>Your phone is your login.</strong> The assistant recognises
+            you by your WhatsApp number. Anyone who can use your WhatsApp can
+            act in your workspace as you, so keep your phone and WhatsApp
+            secure. If you lose your phone or change your number, tell us
+            straight away.
+          </li>
+          <li>
+            <strong>Check before you send.</strong> The assistant uses AI to
+            understand your messages (see section 5). Check each invoice,
+            payment or record it creates before you rely on it or send it to a
+            customer.
+          </li>
+          <li>
+            <strong>WhatsApp’s rules apply too.</strong> Your use of WhatsApp is
+            also governed by WhatsApp’s own terms. You must not use the
+            assistant to send spam or anything WhatsApp’s policies forbid.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
     id: "billing",
     heading: "Plans, billing and renewal",
     body: (
       <>
         <p>
-          {jobcard.name} has a free Starter plan and paid plans, billed monthly
-          or annually. What each plan includes, and its limits, are set out on
-          our <Link href={`${jobcard.slug}#pricing`}>pricing page</Link>. Prices
-          are in Nigerian naira.
+          {jobcard.name} has a free Starter plan and paid plans. What each plan
+          includes, and its limits, are shown in the app and on our{" "}
+          <Link href={`${jobcard.slug}#pricing`}>pricing page</Link>. Prices are
+          in Nigerian naira.
         </p>
         <ul>
           <li>
-            <strong>Payment.</strong> Paid plans are charged in advance through
-            Paystack. When you add a card we may make a small verification
-            charge, which is refunded automatically.
+            <strong>Payment.</strong> Paid plans are paid in advance through
+            Paystack, by card, bank transfer or USSD. Promo codes may give you
+            free or discounted time, on the terms shown when you use them.
           </li>
           <li>
-            <strong>Automatic renewal.</strong> Paid plans renew automatically
-            at the end of each billing period, and we charge your saved card. We
-            will remind you before a renewal. You can turn off automatic renewal
-            at any time in the app.
+            <strong>Saved cards and automatic renewal.</strong> If you save a
+            card, your plan renews automatically at the end of each billing
+            period and we charge that card. When you save a card we charge ₦50
+            to check it, and refund it straight away. If you don’t save a card,
+            we email you a payment link before each renewal instead. You can
+            remove your card, or turn off automatic renewal, at any time in the
+            app.
           </li>
           <li>
-            <strong>Cancellation.</strong> You can cancel your subscription in
-            the app at any time. Cancellation takes effect at the end of the
-            period you have already paid for, and you keep access until then.
+            <strong>Reminders.</strong> We remind you before a renewal is due.
           </li>
           <li>
-            <strong>Failed payments.</strong> If a renewal payment fails we will
-            retry it, and your subscription will remain active for a grace
-            period of 7 days. If payment has not succeeded by then, the
-            subscription expires and access to paid features stops until you
+            <strong>Upgrades and downgrades.</strong> An upgrade takes effect
+            straight away, and you pay the full price of the new plan from that
+            day. A downgrade takes effect at the end of the period you have
+            already paid for.
+          </li>
+          <li>
+            <strong>Cancellation.</strong> If you stop renewing, you keep your
+            plan until the end of the period you have paid for, and then move to
+            the free Starter plan.
+          </li>
+          <li>
+            <strong>Failed payments.</strong> If a renewal payment fails, we
+            retry it, and your plan keeps working for a grace period of 7 days.
+            If payment has not succeeded by then, your workspace moves to the
+            Starter plan. Your data is kept, but Starter limits apply until you
             pay.
           </li>
           <li>
@@ -116,40 +175,49 @@ const sections: LegalSection[] = [
     ),
   },
   {
+    id: "ai",
+    heading: "AI features",
+    body: (
+      <>
+        <p>
+          {jobcard.name} uses artificial intelligence to draft customer
+          advisories and notes from inspections, and to understand messages sent
+          to the WhatsApp assistant. AI can make mistakes. A draft may be
+          incomplete, misread a finding or recommend the wrong urgency. The
+          assistant may also misread an amount, an item or a customer’s name.
+        </p>
+        <p>
+          <strong>AI output is a starting point, not a diagnosis.</strong> You
+          and your team are responsible for checking every advisory, invoice and
+          record before you save it, send it to a customer, or rely on it to
+          decide what work to do. The diagnosis of a vehicle, and any advice or
+          invoice given to a customer, remain yours.
+        </p>
+      </>
+    ),
+  },
+  {
     id: "your-data",
     heading: "Your data in Jobcard",
     body: (
       <>
         <p>
           You own the data you put into {jobcard.name}. You give us permission
-          to store and process it only as needed to provide the service to you,
-          as described in our <Link href="/privacy">Privacy Policy</Link>.
+          to store and process it only as needed to provide, support and secure
+          the service, as described in our{" "}
+          <Link href="/privacy">Privacy Policy</Link>.
         </p>
         <p>
-          Much of that data will be about your own customers. You are
+          Much of that data will be about your own customers. For that data you
+          are the controller and we are your processor, under our{" "}
+          <Link href="/data-processing">Data Processing Terms</Link>. You are
           responsible for having a lawful basis to collect it, and for telling
           your customers how you use it, in line with the Nigeria Data
           Protection Act 2023.
         </p>
-      </>
-    ),
-  },
-  {
-    id: "ai",
-    heading: "AI-drafted advisories",
-    body: (
-      <>
         <p>
-          {jobcard.name} can use artificial intelligence to draft a customer
-          advisory from an inspection. AI can make mistakes: a draft may be
-          incomplete, misread a finding or recommend the wrong urgency.
-        </p>
-        <p>
-          <strong>A draft is a starting point, not a diagnosis.</strong> You and
-          your technicians are responsible for checking every advisory before
-          you save it, send it to a customer, or rely on it to decide what work
-          to do. The diagnosis of a vehicle, and any advice given to a customer,
-          remain yours.
+          You can export your records from the app at any time. If a customer
+          asks to be forgotten, you can erase them from their customer page.
         </p>
       </>
     ),
@@ -172,11 +240,15 @@ const sections: LegalSection[] = [
           </li>
           <li>
             copy, resell or reverse engineer our software, except as the law
-            allows; or
+            allows;
           </li>
           <li>
             overload or disrupt our services, including through automated access
-            we have not agreed to.
+            we have not agreed to; or
+          </li>
+          <li>
+            use the WhatsApp assistant to message people who have not asked to
+            hear from you.
           </li>
         </ul>
       </>
@@ -234,6 +306,8 @@ const sections: LegalSection[] = [
         and logos. While your account is in good standing, we give you a
         personal, non-transferable right to use {jobcard.name} for your own
         workshop. These terms do not give you any other rights in our property.
+        On the free Starter plan, documents you create carry a small “Powered by
+        Rabbar” credit.
       </p>
     ),
   },
@@ -293,18 +367,25 @@ const sections: LegalSection[] = [
   },
   {
     id: "termination",
-    heading: "Suspension and termination",
+    heading: "Deleting your account, suspension and termination",
     body: (
       <>
         <p>
-          You can stop using our services and close your {jobcard.name} account
-          at any time. We may suspend or close an account if you seriously or
-          repeatedly break these terms, if you do not pay, or if we are required
-          to by law. Where we can, we will warn you first.
+          <strong>Deleting your business.</strong> The account owner can delete
+          the business at any time in the app’s settings, after confirming with
+          a code we email them. The deletion happens 14 days later, and the
+          owner can cancel it until then. Automatic renewal is paused during
+          those 14 days. Once the business is deleted, its data is gone for
+          good, apart from what our{" "}
+          <Link href="/privacy#retention">Privacy Policy</Link> says we must
+          keep. Export anything you need first.
         </p>
         <p>
-          If your account is closed, you can ask us for a copy of your data
-          within a reasonable period afterwards.
+          <strong>Suspension.</strong> We may suspend or close an account if you
+          seriously or repeatedly break these terms, if you do not pay, or if
+          the law requires us to. Where we can, we will warn you first. If we
+          close your account, you can ask us for an export of your data within
+          30 days.
         </p>
       </>
     ),
@@ -316,7 +397,7 @@ const sections: LegalSection[] = [
       <p>
         We may update these terms. The date at the top shows when they were last
         revised. If we make a material change, we will tell {jobcard.name}{" "}
-        account holders by email or in the app before it takes effect. If you
+        account owners by email or in the app before it takes effect. If you
         keep using our services after that, you accept the updated terms.
       </p>
     ),

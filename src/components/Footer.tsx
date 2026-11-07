@@ -130,7 +130,10 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               © {currentYear} Rabbar Africa. All rights reserved.
             </p>
-            <nav aria-label="Legal" className="flex gap-6 text-sm">
+            <nav
+              aria-label="Legal"
+              className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm"
+            >
               <Link
                 href="/privacy"
                 className="hover:text-[#E8F34F] transition-colors"
@@ -142,6 +145,12 @@ export function Footer() {
                 className="hover:text-[#E8F34F] transition-colors"
               >
                 Terms of Service
+              </Link>
+              <Link
+                href="/data-processing"
+                className="hover:text-[#E8F34F] transition-colors"
+              >
+                Data Processing Terms
               </Link>
             </nav>
           </div>

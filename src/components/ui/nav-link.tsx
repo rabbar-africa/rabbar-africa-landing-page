@@ -14,13 +14,14 @@ interface NavLinkProps {
 /**
  * Returns true when `href` addresses the page currently being viewed.
  *
- * Query strings and hashes are ignored so `/jobcard#pricing` still counts as
- * the Jobcard page, and a nested route marks its parent active. Links that are
- * only a hash (an in-page anchor) never match.
+ * Query strings are ignored, and a nested route marks its parent active.
+ * Links to a section (`/#job-cards`) never match: several of them point at the
+ * homepage, and marking them all active would be noise.
  */
 function useIsActive(href: string) {
   const pathname = usePathname();
-  const [path] = href.split(/[?#]/);
+  if (href.includes("#")) return false;
+  const [path] = href.split("?");
 
   if (!path) return false;
   if (path === "/") return pathname === "/";

@@ -18,23 +18,35 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_TITLE =
+  "Rabbar Africa — Job Card Software, WhatsApp Invoices & Inspection Reports";
+const SITE_DESCRIPTION =
+  "Digital job cards, invoices and receipts on WhatsApp, vehicle inspection reports and paperwork management, for Nigerian workshops and businesses. Free to start.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rabbar.africa"),
+  metadataBase: new URL("https://www.rabbar.africa"),
   title: {
-    default: "Rabbar Africa - Premier Automobile Services in Nigeria",
+    default: SITE_TITLE,
     template: "%s | Rabbar Africa",
   },
-  description:
-    "Professional automobile services across Nigeria. Expert repairs, maintenance, documentation, and insurance services. Your trusted partner for all vehicle needs.",
+  description: SITE_DESCRIPTION,
   keywords: [
-    "auto repair Nigeria",
-    "car maintenance",
-    "vehicle documentation",
-    "car insurance Nigeria",
-    "automobile services",
-    "vehicle inspection",
-    "car repairs",
-    "automotive services Nigeria",
+    "job card software",
+    "job card app",
+    "digital job card",
+    "mechanic job card",
+    "workshop job card Nigeria",
+    "vehicle inspection report",
+    "car inspection checklist PDF",
+    "vehicle paperwork management",
+    "vehicle document expiry tracking",
+    "WhatsApp invoice",
+    "send invoice on WhatsApp",
+    "receipt generator WhatsApp",
+    "workshop management software Nigeria",
+    "auto repair shop software Nigeria",
+    "garage management software",
+    "invoicing app Nigeria",
   ],
   authors: [{ name: "Rabbar Africa" }],
   creator: "Rabbar Africa",
@@ -53,25 +65,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rabbar.africa",
+    url: "https://www.rabbar.africa",
     siteName: "Rabbar Africa",
-    title: "Rabbar Africa - Premier Automobile Services in Nigeria",
-    description:
-      "Professional automobile services across Nigeria. Expert repairs, maintenance, documentation, and insurance services.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Rabbar Africa - Automobile Services",
+        alt: SITE_TITLE,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rabbar Africa - Premier Automobile Services in Nigeria",
-    description:
-      "Professional automobile services across Nigeria. Expert repairs, maintenance, documentation, and insurance services.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ["/og-image.jpg"],
     creator: "@rabbarafrica",
   },

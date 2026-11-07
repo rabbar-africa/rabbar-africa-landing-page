@@ -1,13 +1,23 @@
 /**
  * Single source of truth for the Rabbar Africa product family.
  *
- * Names, slugs and one-line pitches are all read from here,nav, product
- * cards, page metadata and body copy. Renaming a product means editing this
- * file only. Slugs are used as route paths, so changing one means renaming the
- * matching directory under `src/app/`.
+ * The invoicing platform is the main product: it is the homepage and carries
+ * the company name. Rabbar Garage and Rabbar Fleet are side services with
+ * their own pages, linked low-key from the homepage and the footer.
+ *
+ * Names, slugs and one-line pitches are all read from here. Slugs are used as
+ * route paths, so changing one means renaming the matching directory under
+ * `src/app/`.
  */
 
 export const UMBRELLA_NAME = "Rabbar Africa";
+
+/**
+ * The platform in running copy and on buttons ("Send your first invoice with
+ * Rabbar"), matching how the WhatsApp assistant introduces itself. Titles,
+ * the logo and legal text use the full name.
+ */
+export const SHORT_NAME = "Rabbar";
 
 export interface Product {
   /** Public-facing product name. */
@@ -30,14 +40,13 @@ export interface Product {
 }
 
 export const PRODUCTS = {
-  jobcard: {
-    name: "Jobcard",
-    slug: "/jobcard",
-    pitch: "Run a workshop off your phone, not a carbon-copy pad.",
-    audience: "For workshop owners",
+  platform: {
+    name: UMBRELLA_NAME,
+    slug: "/",
+    pitch: "Run every job on a job card. Get paid on WhatsApp.",
+    audience: "For workshops and small businesses",
     blurb:
-      "Job cards, photo-backed inspections with AI-drafted advisories, branded invoices, and profit on every car.",
-    // highlights: ["Job cards", "AI advisories", "Per-job profit"],
+      "Job cards, invoices and receipts on WhatsApp, vehicle inspection reports and paperwork management.",
     accent: { hex: "#DAE648", onLight: "#5C6606" },
   },
   garage: {
@@ -46,8 +55,7 @@ export const PRODUCTS = {
     pitch: "Bring us your car. We handle the rest.",
     audience: "For car owners",
     blurb:
-      "Repairs, servicing, revamping and vehicle documentation from our own workshop in.",
-    // highlights: ["Repairs", "Documentation", "Insurance"],
+      "Repairs, servicing, revamping and vehicle documentation from our own workshop in Lagos.",
     accent: { hex: "#FF8A3D", onLight: "#B4471A" },
   },
   fleet: {
@@ -57,13 +65,9 @@ export const PRODUCTS = {
     audience: "For companies with vehicles",
     blurb:
       "Scheduled maintenance, repairs and compliance for company vehicles, with one accountable partner.",
-    // highlights: ["Scheduled upkeep", "Compliance", "Monthly reporting"],
     accent: { hex: "#4CC9E8", onLight: "#0E6E88" },
   },
 } satisfies Record<string, Product>;
 
-export const PRODUCT_LIST: Product[] = [
-  PRODUCTS.jobcard,
-  PRODUCTS.garage,
-  PRODUCTS.fleet,
-];
+/** The side services, linked from the homepage strip and the footer. */
+export const SIDE_PRODUCTS: Product[] = [PRODUCTS.garage, PRODUCTS.fleet];

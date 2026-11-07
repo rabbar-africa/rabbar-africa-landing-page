@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { PRODUCTS, UMBRELLA_NAME } from "@/data/products";
+import { PRODUCTS } from "@/data/products";
 import {
   CrossLinks,
   FLEET_CROSS_LINKS,
@@ -18,7 +18,7 @@ import {
 const { name, slug } = PRODUCTS.fleet;
 
 export const metadata: Metadata = {
-  title: `${name} — Corporate Fleet Maintenance & Management in Lagos | ${UMBRELLA_NAME}`,
+  title: `${name} — Corporate Fleet Maintenance & Management in Lagos`,
   description:
     "Scheduled maintenance, repairs, compliance and reporting for company vehicles in Lagos. One accountable partner, itemised and approved work, and a proper record for every vehicle.",
   alternates: { canonical: slug },

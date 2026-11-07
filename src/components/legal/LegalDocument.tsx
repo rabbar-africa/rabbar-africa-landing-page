@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { formatLegalVersion } from "@/data/legal";
 
 export interface LegalSection {
   /** Anchor id, used by the table of contents and for deep links. */
@@ -9,11 +10,58 @@ export interface LegalSection {
   body: ReactNode;
 }
 
+/**
+ * A simple bordered table for the legal pages (providers, retention periods).
+ * Scrolls sideways inside its own box on narrow screens so the page never
+ * does.
+ */
+export function LegalTable({
+  head,
+  rows,
+}: {
+  head: string[];
+  rows: ReactNode[][];
+}) {
+  return (
+    <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200">
+      <table className="w-full min-w-lg text-left text-sm">
+        <thead className="bg-gray-50">
+          <tr>
+            {head.map((label) => (
+              <th
+                key={label}
+                scope="col"
+                className="px-4 py-3 font-semibold text-[#001F3E]"
+              >
+                {label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-200">
+          {rows.map((row, i) => (
+            <tr key={i}>
+              {row.map((cell, j) => (
+                <td key={j} className="px-4 py-3 align-top">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 interface LegalDocumentProps {
   eyebrow: string;
   title: string;
-  /** Human-readable date the document last changed, e.g. "11 September 2026". */
-  lastUpdated: string;
+  /**
+   * The version shown on the page, as an ISO date (LEGAL_VERSION for the live
+   * pages). The "Last updated" date is derived from it.
+   */
+  version: string;
   intro: ReactNode;
   sections: LegalSection[];
 }
@@ -26,7 +74,7 @@ interface LegalDocumentProps {
 export function LegalDocument({
   eyebrow,
   title,
-  lastUpdated,
+  version,
   intro,
   sections,
 }: LegalDocumentProps) {
@@ -44,7 +92,7 @@ export function LegalDocument({
               {title}
             </h1>
             <p className="mt-4 text-sm text-gray-400">
-              Last updated {lastUpdated}
+              Version {version} · Last updated {formatLegalVersion(version)}
             </p>
           </div>
         </section>

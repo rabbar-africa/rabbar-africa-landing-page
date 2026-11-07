@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Vehicle Documentation Services in Lagos - Rabbar Africa",
     description:
       "Skip the queues! Get vehicle license, insurance, driver's license & all paperwork processed in 24hrs. 47+ documents processed. 98% success rate.",
-    url: "https://rabbar.africa/vehicle-documentation",
+    url: "https://www.rabbar.africa/vehicle-documentation",
     siteName: "Rabbar Africa",
     locale: "en_NG",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       "Fast & reliable vehicle paperwork services. License renewal, insurance, permits & more. WhatsApp us today!",
   },
   alternates: {
-    canonical: "https://rabbar.africa/vehicle-documentation",
+    canonical: "https://www.rabbar.africa/vehicle-documentation",
   },
 };
 
@@ -55,8 +55,8 @@ export default function VehicleDocumentation() {
     provider: {
       "@type": "Organization",
       name: "Rabbar Africa",
-      url: "https://rabbar.africa",
-      logo: "https://rabbar.africa/logo.png",
+      url: "https://www.rabbar.africa",
+      logo: "https://www.rabbar.africa/logo.png",
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+234-916-000-2836",
@@ -128,13 +128,13 @@ export default function VehicleDocumentation() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://rabbar.africa",
+        item: "https://www.rabbar.africa",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Vehicle Documentation",
-        item: "https://rabbar.africa/vehicle-documentation",
+        item: "https://www.rabbar.africa/vehicle-documentation",
       },
     ],
   };

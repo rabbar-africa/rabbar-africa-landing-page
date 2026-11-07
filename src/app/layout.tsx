@@ -24,7 +24,7 @@ const SITE_DESCRIPTION =
   "Digital job cards, invoices and receipts on WhatsApp, vehicle inspection reports and paperwork management, for Nigerian workshops and businesses. Free to start.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rabbar.africa"),
+  metadataBase: new URL("https://www.rabbar.africa"),
   title: {
     default: SITE_TITLE,
     template: "%s | Rabbar Africa",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rabbar.africa",
+    url: "https://www.rabbar.africa",
     siteName: "Rabbar Africa",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,

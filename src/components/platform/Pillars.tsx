@@ -18,25 +18,25 @@ const PILLARS = [
     icon: ClipboardList,
     title: "Job cards",
     body: "A digital job card for every job: the customer, the complaint, who's on it, the promised date, and the profit when it's done.",
-    href: "#job-cards",
+    href: "/jobcard",
   },
   {
     icon: MessageSquareText,
     title: "Invoices and receipts on WhatsApp",
     body: "Type the job in one WhatsApp message and get a branded invoice PDF back. Record the payment the same way and the receipt follows.",
-    href: "#whatsapp",
+    href: "/whatsapp-invoicing",
   },
   {
     icon: ClipboardCheck,
     title: "Vehicle inspection reports",
     body: "Work the checklist on a phone, photograph each fault, and send the customer a branded inspection report PDF with an AI-drafted advisory.",
-    href: "#inspections",
+    href: "/vehicle-inspection-reports",
   },
   {
     icon: ShieldCheck,
     title: "Paperwork management",
     body: "Insurance, vehicle licence, roadworthiness and more, with scans and expiry dates, so nothing lapses before your customer notices.",
-    href: "#paperwork",
+    href: "/paperwork-management",
   },
 ];
 

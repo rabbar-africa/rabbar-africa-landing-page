@@ -2,14 +2,6 @@ import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      // The invoicing platform used to be "Jobcard" at /jobcard; it is now the
-      // homepage. Free-plan invoices, receipts and statements already sent to
-      // customers print rabbar.africa/jobcard, so this must stay permanent.
-      { source: "/jobcard", destination: "/", permanent: true },
-    ];
-  },
   turbopack: {
     // Pin the workspace root so Turbopack ignores stray lockfiles in parent dirs.
     root: path.resolve(__dirname),

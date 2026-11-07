@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 
 export interface Feature {
   /** Anchor id: the nav and the pillars section link to these. */
@@ -9,6 +10,8 @@ export interface Feature {
   body: string;
   points: string[];
   image?: { src: string; alt: string; width: number; height: number };
+  /** Optional "Learn more" link to the feature's own page. */
+  learnMore?: { href: string; label: string };
 }
 
 /**
@@ -23,6 +26,7 @@ export interface Feature {
 const FEATURES: Feature[] = [
   {
     id: "job-cards",
+    learnMore: { href: "/jobcard", label: "More about job cards" },
     eyebrow: "Job cards",
     title: "A digital job card for every job",
     body: "Open a job card the moment work comes in: the customer, the complaint in their own words, diagnosis notes, the promised date and who is working on it. For a car, add the vehicle and odometer reading. Move it from open to delivered as work happens, and everything for that job, from invoices and payments to inspections, expenses and photos, stays on the job card.",
@@ -57,6 +61,10 @@ const FEATURES: Feature[] = [
   },
   {
     id: "inspections",
+    learnMore: {
+      href: "/vehicle-inspection-reports",
+      label: "More about inspection reports",
+    },
     eyebrow: "Vehicle inspection reports",
     title: "Vehicle inspection reports your customers trust",
     body: "Work through the inspection checklist on a phone, mark each item OK or needs fixing, and attach photos of every fault. Rabbar uses AI to draft the customer advisory in plain English: what's wrong, and what happens if it's left. The technician checks it, and the customer gets a branded inspection report PDF before work starts.",
@@ -75,6 +83,10 @@ const FEATURES: Feature[] = [
   },
   {
     id: "paperwork",
+    learnMore: {
+      href: "/paperwork-management",
+      label: "More about paperwork management",
+    },
     eyebrow: "Paperwork management",
     title: "Vehicle paperwork that never expires unnoticed",
     body: "Keep each customer's vehicle papers in one place: insurance, vehicle licence, roadworthiness, proof of ownership, hackney permit or any document type you add. Store the scans with issue and expiry dates, and work the expiring-soon list before your customer gets stopped on the road. Renewals keep the old document as history.",
@@ -93,6 +105,10 @@ const FEATURES: Feature[] = [
   },
   {
     id: "invoices",
+    learnMore: {
+      href: "/whatsapp-invoicing",
+      label: "More about WhatsApp invoicing",
+    },
     eyebrow: "Invoices and receipts",
     title: "Invoices and receipts that look like a business",
     body: "Your logo, your bank details and your own numbering on every invoice and receipt PDF. Raise one from a job card, from your saved price list, or from a single WhatsApp message, and share it to WhatsApp or email in a tap. For the customer who still owes you from last time, carry the old balance onto the new invoice.",
@@ -157,8 +173,14 @@ export function Features() {
   );
 }
 
-function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
-  const { id, eyebrow, title, body, points, image } = feature;
+export function FeatureBlock({
+  feature,
+  index,
+}: {
+  feature: Feature;
+  index: number;
+}) {
+  const { id, eyebrow, title, body, points, image, learnMore } = feature;
   // Alternate which side the screenshot sits on, for rhythm down the page.
   const imageFirst = index % 2 === 1;
 
@@ -183,6 +205,19 @@ function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
           </li>
         ))}
       </ul>
+      {learnMore && (
+        <Link
+          href={learnMore.href}
+          className="group mt-6 inline-flex items-center gap-1.5 font-semibold text-[#013064] hover:text-[#001F3E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064] focus-visible:rounded-sm"
+        >
+          {learnMore.label}
+          <ArrowRight
+            size={17}
+            className="transition-transform group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
+        </Link>
+      )}
     </div>
   );
 

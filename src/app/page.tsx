@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: "/", type: "website" },
 };
 
-const SITE_URL = "https://rabbar.africa";
+const SITE_URL = "https://www.rabbar.africa";
 
 /**
  * Structured data for search engines and AI assistants: what the product is,

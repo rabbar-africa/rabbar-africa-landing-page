@@ -41,6 +41,12 @@ export const appSignupLink = appUrl
 /** "Sign in": the app's login page, or null when the app URL is unset. */
 export const appLoginLink = appUrl ? `${appUrl}/auth/login` : null;
 
+/** "Talk to us" for plans sold by agreement (Enterprise) on /pricing. */
+export const enterpriseMessage = encodeURIComponent(
+  "Hello Rabbar! I'd like to talk about the Enterprise plan for my business.",
+);
+export const enterpriseLink = `https://wa.me/${whatsappNumber}?text=${enterpriseMessage}`;
+
 /** Fleet enquiries are an enterprise sales motion, a proposal request, not a demo. */
 export const fleetProposalMessage = encodeURIComponent(
   "Hello Rabbar Africa! We have a company fleet and I'd like to request a fleet management proposal.",

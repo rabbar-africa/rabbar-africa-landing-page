@@ -115,7 +115,7 @@ export default function WhatsAppInvoicingPage() {
         },
         {
           q: "Is WhatsApp invoicing free?",
-          a: "Yes. Invoices and receipts on WhatsApp are included on the free Starter plan. Paid plans add unlimited invoices and remove the Rabbar watermark.",
+          a: "Yes. Invoices and receipts on WhatsApp are included on the free Starter plan. Paid plans raise the number of invoices, and Chat Lite is a lower-cost plan for businesses that work only on WhatsApp. See the pricing page for every plan.",
         },
         {
           q: "Can I send receipts on WhatsApp?",

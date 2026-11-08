@@ -100,7 +100,7 @@ export default function PaperworkManagementPage() {
         },
         {
           q: "Which plan includes paperwork tracking?",
-          a: "Every plan is listed, feature by feature, on the pricing page, so you can see which one fits how many documents you track.",
+          a: "Every plan, including the free Starter plan. Each plan has its own allowance of paperwork records, from a small number on Starter to unlimited on Premium. See the pricing page to compare.",
         },
       ]}
     />

@@ -154,7 +154,7 @@ export default function JobcardPage() {
         },
         {
           q: "How much does the job card software cost?",
-          a: "The Starter plan is free, with limits on job cards and customers. Paid plans give you unlimited job cards. See the pricing page for every plan.",
+          a: "The Starter plan is free, with a limit on job cards. Paid plans raise the limit, up to unlimited job cards on Premium, and you can pay monthly or yearly. See the pricing page for every plan.",
         },
       ]}
     />

@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
-import { PRICING_TIERS } from "@/data/pricing";
-
-/** Lowest paid monthly price, so the teaser never disagrees with /pricing. */
-const fromPrice = PRICING_TIERS.find((t) => t.monthly !== "Free")?.monthly;
 
 /**
  * The homepage's pointer to /pricing, where the plans and the full feature
- * comparison live.
+ * comparison live. `fromPrice` is the cheapest paid monthly price, read from
+ * the backend's plans by the page, so it never disagrees with /pricing.
  */
-export function PricingTeaser() {
+export function PricingTeaser({ fromPrice }: { fromPrice?: string }) {
   return (
     <section id="pricing" className="bg-white py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

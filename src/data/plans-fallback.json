@@ -1,0 +1,1042 @@
+[
+  {
+    "tier": "STARTER",
+    "name": "Starter",
+    "description": "Free: 15 invoices, 30 customers, 5 job cards and your logo.",
+    "currency": "NGN",
+    "isActive": true,
+    "monthlyPrice": 0,
+    "annualPrice": null,
+    "annualSaving": null,
+    "annualMonthsFree": null,
+    "contactSales": false,
+    "features": [
+      {
+        "key": "customerSupport",
+        "label": "Customer support",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "basicAnalytics",
+        "label": "Basic analytics",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "webEditing",
+        "label": "Create and edit on the web",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "pdfImportExport",
+        "label": "PDF import and export",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "customerStatement",
+        "label": "Customer statements",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "invoiceTerms",
+        "label": "Terms & conditions on invoices",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "recurringInvoices",
+        "label": "Recurring invoices",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "creditNotes",
+        "label": "Credit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "analytics",
+        "label": "Advanced analytics and reporting",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "businessStatement",
+        "label": "Monthly business statement",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "reminders",
+        "label": "Reminders and notifications",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "myNumbers",
+        "label": "My numbers and who owes you",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "noRabbarBranding",
+        "label": "No \"Powered by Rabbar\" footer",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "defaultVat",
+        "label": "VAT on every invoice by default",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "taxTracking",
+        "label": "Tax tracking and compliance",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "vatTracking",
+        "label": "VAT tracking (input and output)",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "vatReturns",
+        "label": "VAT returns",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "debitNotes",
+        "label": "Debit notes",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "inventory",
+        "label": "Inventory: stock levels, stock-in and stock-out",
+        "included": false,
+        "comingSoon": true
+      }
+    ],
+    "limits": [
+      {
+        "key": "invoices",
+        "label": "Invoices",
+        "max": 15,
+        "per": "total",
+        "phrase": "15 invoices",
+        "comingSoon": false
+      },
+      {
+        "key": "quotations",
+        "label": "Quotations",
+        "max": 15,
+        "per": "total",
+        "phrase": "15 quotations",
+        "comingSoon": true
+      },
+      {
+        "key": "customers",
+        "label": "Customers",
+        "max": 30,
+        "per": "total",
+        "phrase": "30 customers",
+        "comingSoon": false
+      },
+      {
+        "key": "users",
+        "label": "Users",
+        "max": 1,
+        "per": "total",
+        "phrase": "1 user",
+        "comingSoon": false
+      },
+      {
+        "key": "bankAccounts",
+        "label": "Bank accounts",
+        "max": 1,
+        "per": "total",
+        "phrase": "1 bank account",
+        "comingSoon": false
+      },
+      {
+        "key": "templates",
+        "label": "Document templates",
+        "max": 2,
+        "per": "total",
+        "phrase": "2 templates per document type",
+        "comingSoon": false
+      },
+      {
+        "key": "jobCards",
+        "label": "Job cards",
+        "max": 5,
+        "per": "total",
+        "phrase": "5 job cards",
+        "comingSoon": false
+      },
+      {
+        "key": "inspections",
+        "label": "Inspections",
+        "max": 15,
+        "per": "total",
+        "phrase": "15 inspections",
+        "comingSoon": false
+      },
+      {
+        "key": "paperwork",
+        "label": "Paperwork",
+        "max": 15,
+        "per": "total",
+        "phrase": "15 paperwork records",
+        "comingSoon": false
+      }
+    ]
+  },
+  {
+    "tier": "WHATSAPP",
+    "name": "Chat Lite",
+    "description": "Everything in WhatsApp: 30 invoices a month, 2 team members, who owes you and VAT by default. The web app is view only.",
+    "currency": "NGN",
+    "isActive": true,
+    "monthlyPrice": 2499,
+    "annualPrice": 24990,
+    "annualSaving": 4998,
+    "annualMonthsFree": 2,
+    "contactSales": false,
+    "features": [
+      {
+        "key": "customerSupport",
+        "label": "Customer support",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "basicAnalytics",
+        "label": "Basic analytics",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "webEditing",
+        "label": "Create and edit on the web",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "pdfImportExport",
+        "label": "PDF import and export",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "customerStatement",
+        "label": "Customer statements",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "invoiceTerms",
+        "label": "Terms & conditions on invoices",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "recurringInvoices",
+        "label": "Recurring invoices",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "creditNotes",
+        "label": "Credit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "analytics",
+        "label": "Advanced analytics and reporting",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "businessStatement",
+        "label": "Monthly business statement",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "reminders",
+        "label": "Reminders and notifications",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "myNumbers",
+        "label": "My numbers and who owes you",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "noRabbarBranding",
+        "label": "No \"Powered by Rabbar\" footer",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "defaultVat",
+        "label": "VAT on every invoice by default",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "taxTracking",
+        "label": "Tax tracking and compliance",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "vatTracking",
+        "label": "VAT tracking (input and output)",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "vatReturns",
+        "label": "VAT returns",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "debitNotes",
+        "label": "Debit notes",
+        "included": false,
+        "comingSoon": true
+      },
+      {
+        "key": "inventory",
+        "label": "Inventory: stock levels, stock-in and stock-out",
+        "included": false,
+        "comingSoon": true
+      }
+    ],
+    "limits": [
+      {
+        "key": "invoices",
+        "label": "Invoices",
+        "max": 30,
+        "per": "month",
+        "phrase": "30 invoices a month",
+        "comingSoon": false
+      },
+      {
+        "key": "quotations",
+        "label": "Quotations",
+        "max": 30,
+        "per": "month",
+        "phrase": "30 quotations a month",
+        "comingSoon": true
+      },
+      {
+        "key": "customers",
+        "label": "Customers",
+        "max": 100,
+        "per": "total",
+        "phrase": "100 customers",
+        "comingSoon": false
+      },
+      {
+        "key": "users",
+        "label": "Users",
+        "max": 2,
+        "per": "total",
+        "phrase": "2 users",
+        "comingSoon": false
+      },
+      {
+        "key": "bankAccounts",
+        "label": "Bank accounts",
+        "max": 2,
+        "per": "total",
+        "phrase": "2 bank accounts",
+        "comingSoon": false
+      },
+      {
+        "key": "templates",
+        "label": "Document templates",
+        "max": 2,
+        "per": "total",
+        "phrase": "2 templates per document type",
+        "comingSoon": false
+      },
+      {
+        "key": "jobCards",
+        "label": "Job cards",
+        "max": 30,
+        "per": "month",
+        "phrase": "30 job cards a month",
+        "comingSoon": false
+      },
+      {
+        "key": "inspections",
+        "label": "Inspections",
+        "max": 30,
+        "per": "month",
+        "phrase": "30 inspections a month",
+        "comingSoon": false
+      },
+      {
+        "key": "paperwork",
+        "label": "Paperwork",
+        "max": 30,
+        "per": "month",
+        "phrase": "30 paperwork records a month",
+        "comingSoon": false
+      }
+    ]
+  },
+  {
+    "tier": "STANDARD",
+    "name": "Standard",
+    "description": "100 invoices a month, 5 team members, who owes you, no Rabbar footer, terms on invoices and VAT by default.",
+    "currency": "NGN",
+    "isActive": true,
+    "monthlyPrice": 5000,
+    "annualPrice": 50000,
+    "annualSaving": 10000,
+    "annualMonthsFree": 2,
+    "contactSales": false,
+    "features": [
+      {
+        "key": "customerSupport",
+        "label": "Customer support",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "basicAnalytics",
+        "label": "Basic analytics",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "webEditing",
+        "label": "Create and edit on the web",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "pdfImportExport",
+        "label": "PDF import and export",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "customerStatement",
+        "label": "Customer statements",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "invoiceTerms",
+        "label": "Terms & conditions on invoices",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "recurringInvoices",
+        "label": "Recurring invoices",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "creditNotes",
+        "label": "Credit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "analytics",
+        "label": "Advanced analytics and reporting",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "businessStatement",
+        "label": "Monthly business statement",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "reminders",
+        "label": "Reminders and notifications",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "myNumbers",
+        "label": "My numbers and who owes you",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "noRabbarBranding",
+        "label": "No \"Powered by Rabbar\" footer",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "defaultVat",
+        "label": "VAT on every invoice by default",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "taxTracking",
+        "label": "Tax tracking and compliance",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "vatTracking",
+        "label": "VAT tracking (input and output)",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "vatReturns",
+        "label": "VAT returns",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "debitNotes",
+        "label": "Debit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "inventory",
+        "label": "Inventory: stock levels, stock-in and stock-out",
+        "included": false,
+        "comingSoon": true
+      }
+    ],
+    "limits": [
+      {
+        "key": "invoices",
+        "label": "Invoices",
+        "max": 100,
+        "per": "month",
+        "phrase": "100 invoices a month",
+        "comingSoon": false
+      },
+      {
+        "key": "quotations",
+        "label": "Quotations",
+        "max": 100,
+        "per": "month",
+        "phrase": "100 quotations a month",
+        "comingSoon": true
+      },
+      {
+        "key": "customers",
+        "label": "Customers",
+        "max": 100,
+        "per": "month",
+        "phrase": "100 customers a month",
+        "comingSoon": false
+      },
+      {
+        "key": "users",
+        "label": "Users",
+        "max": 5,
+        "per": "total",
+        "phrase": "5 users",
+        "comingSoon": false
+      },
+      {
+        "key": "bankAccounts",
+        "label": "Bank accounts",
+        "max": 5,
+        "per": "total",
+        "phrase": "5 bank accounts",
+        "comingSoon": false
+      },
+      {
+        "key": "templates",
+        "label": "Document templates",
+        "max": 5,
+        "per": "total",
+        "phrase": "5 templates per document type",
+        "comingSoon": false
+      },
+      {
+        "key": "jobCards",
+        "label": "Job cards",
+        "max": 100,
+        "per": "month",
+        "phrase": "100 job cards a month",
+        "comingSoon": false
+      },
+      {
+        "key": "inspections",
+        "label": "Inspections",
+        "max": 100,
+        "per": "month",
+        "phrase": "100 inspections a month",
+        "comingSoon": false
+      },
+      {
+        "key": "paperwork",
+        "label": "Paperwork",
+        "max": 100,
+        "per": "month",
+        "phrase": "100 paperwork records a month",
+        "comingSoon": false
+      }
+    ]
+  },
+  {
+    "tier": "PREMIUM",
+    "name": "Premium",
+    "description": "For bigger teams: unlimited invoices, customers, job cards, users and bank accounts, and every feature.",
+    "currency": "NGN",
+    "isActive": true,
+    "monthlyPrice": 10000,
+    "annualPrice": 100000,
+    "annualSaving": 20000,
+    "annualMonthsFree": 2,
+    "contactSales": false,
+    "features": [
+      {
+        "key": "customerSupport",
+        "label": "Customer support",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "basicAnalytics",
+        "label": "Basic analytics",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "webEditing",
+        "label": "Create and edit on the web",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "pdfImportExport",
+        "label": "PDF import and export",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "customerStatement",
+        "label": "Customer statements",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "invoiceTerms",
+        "label": "Terms & conditions on invoices",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "recurringInvoices",
+        "label": "Recurring invoices",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "creditNotes",
+        "label": "Credit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "analytics",
+        "label": "Advanced analytics and reporting",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "businessStatement",
+        "label": "Monthly business statement",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "reminders",
+        "label": "Reminders and notifications",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "myNumbers",
+        "label": "My numbers and who owes you",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "noRabbarBranding",
+        "label": "No \"Powered by Rabbar\" footer",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "defaultVat",
+        "label": "VAT on every invoice by default",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "taxTracking",
+        "label": "Tax tracking and compliance",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "vatTracking",
+        "label": "VAT tracking (input and output)",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "vatReturns",
+        "label": "VAT returns",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "debitNotes",
+        "label": "Debit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "inventory",
+        "label": "Inventory: stock levels, stock-in and stock-out",
+        "included": true,
+        "comingSoon": true
+      }
+    ],
+    "limits": [
+      {
+        "key": "invoices",
+        "label": "Invoices",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited invoices",
+        "comingSoon": false
+      },
+      {
+        "key": "quotations",
+        "label": "Quotations",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited quotations",
+        "comingSoon": true
+      },
+      {
+        "key": "customers",
+        "label": "Customers",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited customers",
+        "comingSoon": false
+      },
+      {
+        "key": "users",
+        "label": "Users",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited users",
+        "comingSoon": false
+      },
+      {
+        "key": "bankAccounts",
+        "label": "Bank accounts",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited bank accounts",
+        "comingSoon": false
+      },
+      {
+        "key": "templates",
+        "label": "Document templates",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited templates",
+        "comingSoon": false
+      },
+      {
+        "key": "jobCards",
+        "label": "Job cards",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited job cards",
+        "comingSoon": false
+      },
+      {
+        "key": "inspections",
+        "label": "Inspections",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited inspections",
+        "comingSoon": false
+      },
+      {
+        "key": "paperwork",
+        "label": "Paperwork",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited paperwork records",
+        "comingSoon": false
+      }
+    ]
+  },
+  {
+    "tier": "ENTERPRISE",
+    "name": "Enterprise",
+    "description": "For large operators: no limits, every feature, and terms agreed with us.",
+    "currency": "NGN",
+    "isActive": false,
+    "monthlyPrice": null,
+    "annualPrice": null,
+    "annualSaving": null,
+    "annualMonthsFree": null,
+    "contactSales": true,
+    "features": [
+      {
+        "key": "customerSupport",
+        "label": "Customer support",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "basicAnalytics",
+        "label": "Basic analytics",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "webEditing",
+        "label": "Create and edit on the web",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "pdfImportExport",
+        "label": "PDF import and export",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "customerStatement",
+        "label": "Customer statements",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "invoiceTerms",
+        "label": "Terms & conditions on invoices",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "recurringInvoices",
+        "label": "Recurring invoices",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "creditNotes",
+        "label": "Credit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "analytics",
+        "label": "Advanced analytics and reporting",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "businessStatement",
+        "label": "Monthly business statement",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "reminders",
+        "label": "Reminders and notifications",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "myNumbers",
+        "label": "My numbers and who owes you",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "noRabbarBranding",
+        "label": "No \"Powered by Rabbar\" footer",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "defaultVat",
+        "label": "VAT on every invoice by default",
+        "included": true,
+        "comingSoon": false
+      },
+      {
+        "key": "taxTracking",
+        "label": "Tax tracking and compliance",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "vatTracking",
+        "label": "VAT tracking (input and output)",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "vatReturns",
+        "label": "VAT returns",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "debitNotes",
+        "label": "Debit notes",
+        "included": true,
+        "comingSoon": true
+      },
+      {
+        "key": "inventory",
+        "label": "Inventory: stock levels, stock-in and stock-out",
+        "included": true,
+        "comingSoon": true
+      }
+    ],
+    "limits": [
+      {
+        "key": "invoices",
+        "label": "Invoices",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited invoices",
+        "comingSoon": false
+      },
+      {
+        "key": "quotations",
+        "label": "Quotations",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited quotations",
+        "comingSoon": true
+      },
+      {
+        "key": "customers",
+        "label": "Customers",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited customers",
+        "comingSoon": false
+      },
+      {
+        "key": "users",
+        "label": "Users",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited users",
+        "comingSoon": false
+      },
+      {
+        "key": "bankAccounts",
+        "label": "Bank accounts",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited bank accounts",
+        "comingSoon": false
+      },
+      {
+        "key": "templates",
+        "label": "Document templates",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited templates",
+        "comingSoon": false
+      },
+      {
+        "key": "jobCards",
+        "label": "Job cards",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited job cards",
+        "comingSoon": false
+      },
+      {
+        "key": "inspections",
+        "label": "Inspections",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited inspections",
+        "comingSoon": false
+      },
+      {
+        "key": "paperwork",
+        "label": "Paperwork",
+        "max": null,
+        "per": "total",
+        "phrase": "Unlimited paperwork records",
+        "comingSoon": false
+      }
+    ]
+  }
+]

@@ -1,11 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { ArrowRight, Check, Info, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Plan } from "@/lib/plans";
 import { CARD_LIMITS, FEATURE_LABELS, PLAN_COPY } from "@/data/pricing";
 import { StartLink } from "@/components/platform/StartLink";
+import {
+  intervalFor,
+  planQueryFor,
+  useBillingInterval,
+} from "./BillingIntervalContext";
 
 // Formatting is repeated here (not imported from lib/plans) because that
 // module is server-only.
@@ -101,7 +105,7 @@ export function PlanCards({
   /** WhatsApp link for "Talk to us". */
   contactLink: string;
 }) {
-  const [yearly, setYearly] = useState(false);
+  const { yearly, setYearly } = useBillingInterval();
   const onSale = plans.filter((p) => !p.contactSales);
   const contactPlans = plans.filter((p) => p.contactSales);
   const monthsFree = Math.max(
@@ -271,6 +275,8 @@ export function PlanCards({
               </ul>
 
               <StartLink
+                plan={planQueryFor(plan)}
+                interval={intervalFor(plan, yearly)}
                 className={cn(
                   "group mt-8 inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
                   featured

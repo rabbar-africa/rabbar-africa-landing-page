@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ, FinalCTA } from "@/components/platform";
 import { PlanCards } from "@/components/pricing/PlanCards";
 import { ComparisonTable } from "@/components/pricing/ComparisonTable";
+import { BillingIntervalProvider } from "@/components/pricing/BillingIntervalContext";
 import { BILLING_FAQS } from "@/data/pricing";
 import { UMBRELLA_NAME } from "@/data/products";
 import { enterpriseLink } from "@/data/constant";
@@ -97,28 +98,32 @@ export default async function PricingPage() {
           </div>
         </section>
 
-        <section className="bg-white pb-20 sm:pb-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <PlanCards plans={plans} contactLink={enterpriseLink} />
-          </div>
-        </section>
-
-        <section
-          id="compare"
-          className="bg-white border-t border-gray-200 py-20 sm:py-24"
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#001F3E] tracking-tight">
-              Compare all plans.
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg text-gray-600">
-              What each plan includes, side by side.
-            </p>
-            <div className="mt-10">
-              <ComparisonTable plans={plans} contactLink={enterpriseLink} />
+        {/* One monthly/yearly choice for the cards and the table, so both show
+            the same prices and send the same billing interval to signup. */}
+        <BillingIntervalProvider>
+          <section className="bg-white pb-20 sm:pb-24">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <PlanCards plans={plans} contactLink={enterpriseLink} />
             </div>
-          </div>
-        </section>
+          </section>
+
+          <section
+            id="compare"
+            className="bg-white border-t border-gray-200 py-20 sm:py-24"
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#001F3E] tracking-tight">
+                Compare all plans.
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg text-gray-600">
+                What each plan includes, side by side.
+              </p>
+              <div className="mt-10">
+                <ComparisonTable plans={plans} contactLink={enterpriseLink} />
+              </div>
+            </div>
+          </section>
+        </BillingIntervalProvider>
 
         <FAQ items={BILLING_FAQS} heading="Billing questions." />
         <FinalCTA />

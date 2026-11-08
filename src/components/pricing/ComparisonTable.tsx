@@ -6,6 +6,11 @@ import { cn } from "@/lib/utils";
 import type { Plan, PlanLimit } from "@/lib/plans";
 import { EVERY_PLAN_INCLUDES, FEATURE_LABELS, PLAN_COPY } from "@/data/pricing";
 import { StartLink } from "@/components/platform/StartLink";
+import {
+  intervalFor,
+  planQueryFor,
+  useBillingInterval,
+} from "./BillingIntervalContext";
 
 const money = (amount: number, currency: string) =>
   new Intl.NumberFormat("en-NG", {
@@ -70,6 +75,7 @@ export function ComparisonTable({
   plans: Plan[];
   contactLink: string;
 }) {
+  const { yearly } = useBillingInterval();
   const [selected, setSelected] = useState(
     Math.max(
       0,
@@ -184,9 +190,11 @@ export function ComparisonTable({
                 <span className="mt-1 block text-sm font-normal text-gray-500">
                   {plan.contactSales
                     ? "Talk to us"
-                    : plan.monthlyPrice
-                      ? `${money(plan.monthlyPrice, plan.currency)}/month`
-                      : "Free"}
+                    : !plan.monthlyPrice
+                      ? "Free"
+                      : yearly && plan.annualPrice
+                        ? `${money(plan.annualPrice, plan.currency)}/year`
+                        : `${money(plan.monthlyPrice, plan.currency)}/month`}
                 </span>
                 {plan.contactSales ? (
                   <a
@@ -199,6 +207,8 @@ export function ComparisonTable({
                   </a>
                 ) : (
                   <StartLink
+                    plan={planQueryFor(plan)}
+                    interval={intervalFor(plan, yearly)}
                     className={cn(
                       "mt-3 inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#013064]",
                       i === featuredIndex

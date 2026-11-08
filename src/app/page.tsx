@@ -20,6 +20,18 @@ import {
 } from "@/components/umbrella/CrossLinks";
 import { COMPANY } from "@/data/legal";
 import { UMBRELLA_NAME } from "@/data/products";
+import {
+  formatPrice,
+  getPlans,
+  lowestPaidMonthly,
+  planOffers,
+  type Plan,
+} from "@/lib/plans";
+
+// Prices come from the backend: rebuild the page at most once an hour. A
+// literal, because Next reads it at build time; keep it equal to
+// PLANS_REVALIDATE_SECONDS in src/lib/plans.ts.
+export const revalidate = 3600;
 
 /**
  * Lead with what ranks: "job card" is where Rabbar wins searches, while plain
@@ -43,9 +55,9 @@ const SITE_URL = "https://www.rabbar.africa";
 
 /**
  * Structured data for search engines and AI assistants: what the product is,
- * that it is free to start, and the FAQ answers, word for word.
+ * what each plan costs, and the FAQ answers, word for word.
  */
-const jsonLd = {
+const buildJsonLd = (plans: Plan[]) => ({
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -77,12 +89,7 @@ const jsonLd = {
         "Vehicle paperwork management with expiry tracking",
         "Payments, receipts, debtors and expenses",
       ],
-      offers: {
-        "@type": "Offer",
-        name: "Starter",
-        price: "0",
-        priceCurrency: "NGN",
-      },
+      offers: planOffers(plans),
       publisher: { "@id": `${SITE_URL}/#organization` },
     },
     {
@@ -94,9 +101,12 @@ const jsonLd = {
       })),
     },
   ],
-};
+});
 
-export default function Home() {
+export default async function Home() {
+  const plans = await getPlans();
+  const jsonLd = buildJsonLd(plans);
+  const cheapest = lowestPaidMonthly(plans);
   return (
     <div className="min-h-screen">
       <script
@@ -115,7 +125,13 @@ export default function Home() {
         <Documents />
         <PainPoints />
         <Features />
-        <PricingTeaser />
+        <PricingTeaser
+          fromPrice={
+            cheapest?.monthlyPrice
+              ? formatPrice(cheapest.monthlyPrice, cheapest.currency)
+              : undefined
+          }
+        />
         <FAQ />
         <FinalCTA />
         <CrossLinks

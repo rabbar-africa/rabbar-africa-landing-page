@@ -116,7 +116,7 @@ export default function VehicleInspectionReportsPage() {
         },
         {
           q: "Which plan includes inspections?",
-          a: "Every plan is listed, feature by feature, on the pricing page, so you can see which one includes the inspections you need.",
+          a: "Every plan, including the free Starter plan. Each plan has its own allowance of inspections, from a small number on Starter to unlimited on Premium. See the pricing page to compare.",
         },
       ]}
     />

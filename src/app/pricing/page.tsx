@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FAQ, FinalCTA, PlanCards } from "@/components/platform";
+import { FAQ, FinalCTA } from "@/components/platform";
+import { PlanCards } from "@/components/pricing/PlanCards";
 import { ComparisonTable } from "@/components/pricing/ComparisonTable";
 import { BILLING_FAQS } from "@/data/pricing";
 import { UMBRELLA_NAME } from "@/data/products";
+import { enterpriseLink } from "@/data/constant";
+import { getPlans, planOffers } from "@/lib/plans";
 
+// Plans and prices come from the backend: rebuild the page at most once an
+// hour. A literal, because Next reads it at build time; keep it equal to
+// PLANS_REVALIDATE_SECONDS in src/lib/plans.ts.
+export const revalidate = 3600;
+
+const SITE_URL = "https://www.rabbar.africa";
 const title = "Pricing — Job Card Software & WhatsApp Invoicing";
-const description = `${UMBRELLA_NAME} plans and prices: start free, then pay per business for unlimited job cards, invoices and receipts on WhatsApp, vehicle inspection reports and paperwork tracking. Compare every feature.`;
+const description = `${UMBRELLA_NAME} plans and prices, monthly or yearly: start free, then pay per business for more job cards, invoices and receipts on WhatsApp, vehicle inspection reports and paperwork tracking. Compare every plan.`;
 
 export const metadata: Metadata = {
   title,
@@ -17,23 +26,38 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: "/pricing", type: "website" },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: BILLING_FAQS.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
-
 const TRUST = [
+  "Free plan, no card needed",
+  "Pay monthly or yearly",
   "Cancel any time",
   "Secure payments by Paystack",
-  "Support on WhatsApp",
 ];
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const plans = await getPlans();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: UMBRELLA_NAME,
+        url: SITE_URL,
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web, WhatsApp",
+        offers: planOffers(plans),
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: BILLING_FAQS.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -54,9 +78,9 @@ export default function PricingPage() {
               Simple pricing that grows with your business.
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-gray-300 leading-relaxed">
-              Start free. Pay per business, not per job, when you need unlimited
-              job cards, inspection reports, paperwork tracking and your own
-              branding on every invoice and receipt.
+              Every plan has job cards, invoices and receipts on WhatsApp,
+              inspection reports and paperwork tracking. Start free, and pay per
+              business, not per job, when you need more.
             </p>
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
               {TRUST.map((point) => (
@@ -75,7 +99,7 @@ export default function PricingPage() {
 
         <section className="bg-white pb-20 sm:pb-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <PlanCards />
+            <PlanCards plans={plans} contactLink={enterpriseLink} />
           </div>
         </section>
 
@@ -85,13 +109,13 @@ export default function PricingPage() {
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#001F3E] tracking-tight">
-              Compare all features.
+              Compare all plans.
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-gray-600">
-              Everything in each plan, side by side.
+              What each plan includes, side by side.
             </p>
             <div className="mt-10">
-              <ComparisonTable />
+              <ComparisonTable plans={plans} contactLink={enterpriseLink} />
             </div>
           </div>
         </section>

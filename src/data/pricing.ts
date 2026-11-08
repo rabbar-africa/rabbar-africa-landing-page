@@ -1,252 +1,94 @@
-import { UMBRELLA_NAME } from "@/data/products";
-
 /**
- * Rabbar Africa (invoicing platform) pricing.
+ * Pricing copy that the backend doesn't hold.
  *
- * Single source of truth for the tiers: names, prices, seat limits and what is
- * included. Feature lists are taken verbatim from the product brief, so edit
- * them here rather than in the component.
- *
- * A feature ending in "plus:" is rendered as a sub-heading rather than a
- * ticked item, which is how the "Everything in X, plus:" lines read.
+ * Prices, yearly prices, limits and which features each plan includes come
+ * from the backend (see src/lib/plans.ts), because they're edited in the back
+ * office. This file only adds what a visitor needs around them: a tagline per
+ * plan, which plan to promote, the features every plan has, and the billing
+ * questions.
  */
-export interface PricingTier {
-  /** Tier name, also used in the WhatsApp enquiry message. */
-  name: string;
-  /** One-line positioning under the tier name. */
+
+export interface PlanCopy {
+  /** One line under the plan name on the card. */
   tagline: string;
-  /** Displayed price when billing monthly. "Free" renders without a period suffix. */
-  monthly: string;
-  /** Displayed price when billing annually (two months free). */
-  annual: string;
-  /** Seat allowance, shown in the tier's accent colour. */
-  users: string;
-  /** What the tier includes, in display order. */
-  features: string[];
-  /** Marks the visually promoted tier. Exactly one should set this. */
+  /** The promoted plan. Exactly one should set this. */
   featured?: boolean;
 }
 
-export const PRICING_TIERS: PricingTier[] = [
-  {
-    name: "Starter",
-    tagline: "Get off the carbon-copy pad",
-    monthly: "Free",
-    annual: "Free",
-    users: "1 user",
-    features: [
-      "Up to 50 customers and their vehicles",
-      "30 job cards a month",
-      "Invoices and payments",
-      "Parts & services catalogue",
-      "Basic dashboard",
-      `PDFs comes with ${UMBRELLA_NAME} watermark`,
-    ],
-  },
-  {
-    name: "Standard",
-    tagline: "The full workshop",
-    monthly: "₦5,000",
-    annual: "₦50,000",
-    users: "Up to 5 users",
-    featured: true,
-    features: [
-      "Everything in Starter, plus:",
-      "Unlimited job cards, customers and invoices",
-      "Expense tracking and per-job profit",
-      "Inspections with photo findings",
-      "AI-drafted customer advisories",
-      "Paperwork expiry tracking",
-      "Service reminders by date or mileage",
-      "Carry-forward invoices and write-offs",
-      "Your logo and colours on every PDF",
-      "Full dashboard: top debtors, profit trend",
-      "WhatsApp support",
-    ],
-  },
-  {
-    name: "Enterprise",
-    tagline: "Bigger teams, tighter control",
-    monthly: "₦15,000",
-    annual: "₦150,000",
-    users: "Unlimited users",
-    features: [
-      "Everything in Standard, plus:",
-      "Custom roles and permission matrix",
-      "Custom document numbering per module",
-      "Multiple currencies and tax rates",
-      "Multiple addresses and bank accounts",
-      "Guided onboarding and data migration",
-      "Priority WhatsApp support",
-    ],
-  },
-];
-
-/** Billing period toggle, annual carries two months free. */
-export const BILLING_OPTIONS = [
-  { label: "Monthly", annual: false },
-  { label: "Annual · 2 months free", annual: true },
-] as const;
-
-/** Marks an "Everything in X, plus:" line, which renders as a sub-heading. */
-export const isFeatureHeading = (feature: string) => feature.endsWith("plus:");
+/** Keyed by the backend's plan tier. A tier missing here still shows. */
+export const PLAN_COPY: Record<string, PlanCopy> = {
+  STARTER: { tagline: "Try everything, free" },
+  WHATSAPP: { tagline: "Run the business from WhatsApp" },
+  STANDARD: { tagline: "For a busy workshop or business", featured: true },
+  PREMIUM: { tagline: "No limits, for bigger teams" },
+  ENTERPRISE: { tagline: "For large operators, on agreed terms" },
+};
 
 /**
- * A comparison cell: true is included, false is not, and a string is a limit
- * or a short note ("30 a month", "Unlimited").
+ * Friendlier names for some backend feature labels. Anything not listed
+ * shows the backend's own label, so a new feature appears without a change
+ * here.
  */
-export type ComparisonValue = boolean | string;
-
-export interface ComparisonRow {
-  feature: string;
-  /** One line under the feature name, saying what it means. */
-  description?: string;
-  /** One value per tier, in PRICING_TIERS order. */
-  values: [ComparisonValue, ComparisonValue, ComparisonValue];
-}
-
-export interface ComparisonGroup {
-  group: string;
-  rows: ComparisonRow[];
-}
+export const FEATURE_LABELS: Record<string, string> = {
+  webEditing: "Create and edit in the web app",
+  myNumbers: "Who owes you, and your numbers on WhatsApp",
+  noRabbarBranding: 'No "Powered by Rabbar" footer on documents',
+};
 
 /**
- * The feature comparison on /pricing. It restates PRICING_TIERS row by row,
- * so keep the two in step: a change to a tier's features belongs in both.
- * Job cards, WhatsApp invoicing, inspections and paperwork lead, as they do
- * on the homepage.
+ * The limits shown on each plan card, in this order. The comparison table
+ * shows every live limit.
  */
-export const COMPARISON: ComparisonGroup[] = [
-  {
-    group: "Job cards",
-    rows: [
-      {
-        feature: "Job cards",
-        description:
-          "Status, priority, technicians and promised date on every job",
-        values: ["30 a month", "Unlimited", "Unlimited"],
-      },
-      {
-        feature: "Customers and vehicles",
-        values: ["Up to 50", "Unlimited", "Unlimited"],
-      },
-      {
-        feature: "Profit per job",
-        description: "Parts, labour and other costs set against the invoice",
-        values: [false, true, true],
-      },
-    ],
-  },
-  {
-    group: "Invoices and receipts",
-    rows: [
-      {
-        feature: "Invoices, payments and receipts",
-        values: [true, "Unlimited", "Unlimited"],
-      },
-      {
-        feature: "Invoices and receipts on WhatsApp",
-        description: "Type the job in one message and get the PDF back",
-        values: [true, true, true],
-      },
-      {
-        feature: "Parts and services catalogue",
-        values: [true, true, true],
-      },
-      {
-        feature: "Carry-forward invoices and write-offs",
-        description: "Move an old balance onto the next invoice",
-        values: [false, true, true],
-      },
-      {
-        feature: "Your logo and colours on every PDF",
-        values: ["With Rabbar watermark", true, true],
-      },
-      {
-        feature: "Custom document numbering per module",
-        values: [false, false, true],
-      },
-      {
-        feature: "Multiple currencies and tax rates",
-        values: [false, false, true],
-      },
-    ],
-  },
-  {
-    group: "Inspections and paperwork",
-    rows: [
-      {
-        feature: "Vehicle inspections with photo findings",
-        values: [false, true, true],
-      },
-      {
-        feature: "AI-drafted customer advisories",
-        description: "Reviewed by your technician before they go out",
-        values: [false, true, true],
-      },
-      {
-        feature: "Paperwork expiry tracking",
-        description: "Insurance, vehicle licence, roadworthiness and more",
-        values: [false, true, true],
-      },
-      {
-        feature: "Service reminders by date or mileage",
-        values: [false, true, true],
-      },
-    ],
-  },
-  {
-    group: "Money and reports",
-    rows: [
-      {
-        feature: "Dashboard",
-        values: ["Basic", "Full: top debtors, profit trend", "Full"],
-      },
-      {
-        feature: "Expense tracking",
-        values: [false, true, true],
-      },
-    ],
-  },
-  {
-    group: "Team and business",
-    rows: [
-      { feature: "Users", values: ["1", "Up to 5", "Unlimited"] },
-      {
-        feature: "Custom roles and permissions",
-        description: "Decide what each person can see and do",
-        values: [false, false, true],
-      },
-      {
-        feature: "Multiple addresses and bank accounts",
-        values: [false, false, true],
-      },
-    ],
-  },
-  {
-    group: "Support",
-    rows: [
-      {
-        feature: "WhatsApp support",
-        values: [false, true, "Priority"],
-      },
-      {
-        feature: "Guided onboarding and data migration",
-        values: [false, false, true],
-      },
-    ],
-  },
+export const CARD_LIMITS = [
+  "jobCards",
+  "invoices",
+  "inspections",
+  "customers",
+  "users",
 ];
 
 /**
- * Billing questions on /pricing. Answers follow the Terms of Service
- * ("Plans, billing and renewal") and how billing actually works, so update
- * them together.
+ * What every plan includes, so they aren't plan limits or features in the
+ * backend. Shown at the top of the comparison table. Keep to what is true on
+ * the free plan.
+ */
+export const EVERY_PLAN_INCLUDES = [
+  {
+    feature: "Invoices and receipts on WhatsApp",
+    description: "Type the job in one message and get the PDF back",
+  },
+  {
+    feature: "Digital job cards",
+    description: "Status, technicians, promised date and profit per job",
+  },
+  {
+    feature: "Vehicle inspection reports",
+    description: "Checklist, photos and an AI-drafted advisory, as a PDF",
+  },
+  {
+    feature: "Paperwork expiry tracking",
+    description: "Insurance, vehicle licence, roadworthiness and more",
+  },
+  { feature: "Payments, expenses and profit" },
+];
+
+/**
+ * Billing questions on /pricing. Answers follow the backend's billing rules
+ * (billing.service.ts, billing-interval.ts) and the Terms of Service, so
+ * update them together.
  */
 export const BILLING_FAQS = [
   {
     q: "Is there a free plan?",
-    a: "Yes. Starter is free for as long as you like, with no card needed. Move up to a paid plan when the business outgrows it.",
+    a: "Yes. Starter is free for as long as you like, with no card needed. Move up to a paid plan when the business outgrows its limits.",
+  },
+  {
+    q: "What is Chat Lite?",
+    a: "Chat Lite is for businesses that run everything from WhatsApp. You create invoices, receipts and records through the Rabbar assistant, with higher limits than Starter, and the web app is view only.",
+  },
+  {
+    q: "Can I pay yearly?",
+    a: "Yes. Paid plans can be paid by the year, which costs less than twelve monthly payments; the saving is shown on each plan. Promo codes apply to monthly payments only, because the yearly price is already discounted. We remind you 14 days before a yearly renewal.",
   },
   {
     q: "How do I pay?",
@@ -258,7 +100,7 @@ export const BILLING_FAQS = [
   },
   {
     q: "Can I change plans?",
-    a: "Yes, at any time in the app. An upgrade takes effect straight away and you pay the full price of the new plan from that day. A downgrade takes effect at the end of the period you've already paid for.",
+    a: "Yes, in the app. An upgrade takes effect straight away and you pay for the new plan from that day; a downgrade takes effect at the end of the period you've paid for. If you've paid for a year, talk to us to change plan before the year ends.",
   },
   {
     q: "What happens if a payment fails?",

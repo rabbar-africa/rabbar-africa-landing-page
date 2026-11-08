@@ -6,7 +6,6 @@ export * from "./Documents";
 export * from "./PhoneShot";
 export * from "./PainPoints";
 export * from "./Features";
-export * from "./Pricing";
 export * from "./PricingTeaser";
 export * from "./FAQ";
 export * from "./FinalCTA";

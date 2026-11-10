@@ -15,7 +15,7 @@ import fallbackPlans from "@/data/plans-fallback.json";
  *
  * When RABBAR_API_URL is unset, or the API fails, the page falls back to
  * src/data/plans-fallback.json: the backend's own defaults (DEFAULT_PLANS
- * and DEFAULT_ENTITLEMENTS in plan-config.ts) as of 8 November 2026. Refresh
+ * and DEFAULT_ENTITLEMENTS in plan-config.ts) as of 10 November 2026. Refresh
  * it when the defaults change, by saving the output of GET /plans
  * ?contactSales=true from a backend with no back-office edits.
  */
@@ -33,8 +33,9 @@ export interface PlanLimit {
   label: string;
   /** null: unlimited. */
   max: number | null;
-  per: "total" | "month";
-  /** Ready to show, e.g. "100 invoices a month" or "Unlimited customers". */
+  /** `month` resets on the 1st, `year` on 1 January. */
+  per: "total" | "month" | "year";
+  /** Ready to show, e.g. "100 invoices a month" or "30,000 invoices a year". */
   phrase: string;
   comingSoon: boolean;
 }

@@ -54,16 +54,16 @@
         "comingSoon": true
       },
       {
-        "key": "recurringExpenses",
-        "label": "Recurring expenses",
-        "included": true,
-        "comingSoon": true
-      },
-      {
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
         "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": false,
+        "comingSoon": false
       },
       {
         "key": "analytics",
@@ -126,6 +126,12 @@
         "comingSoon": true
       },
       {
+        "key": "dailyRecurringExpenses",
+        "label": "Daily recurring expenses",
+        "included": false,
+        "comingSoon": false
+      },
+      {
         "key": "inventory",
         "label": "Inventory: stock levels, stock-in and stock-out",
         "included": false,
@@ -147,7 +153,7 @@
         "max": 15,
         "per": "total",
         "phrase": "15 quotations",
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "customers",
@@ -262,16 +268,16 @@
         "comingSoon": true
       },
       {
-        "key": "recurringExpenses",
-        "label": "Recurring expenses",
-        "included": true,
-        "comingSoon": true
-      },
-      {
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
         "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": false,
+        "comingSoon": false
       },
       {
         "key": "analytics",
@@ -334,6 +340,12 @@
         "comingSoon": true
       },
       {
+        "key": "dailyRecurringExpenses",
+        "label": "Daily recurring expenses",
+        "included": false,
+        "comingSoon": false
+      },
+      {
         "key": "inventory",
         "label": "Inventory: stock levels, stock-in and stock-out",
         "included": false,
@@ -355,7 +367,7 @@
         "max": 30,
         "per": "month",
         "phrase": "30 quotations a month",
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "customers",
@@ -470,16 +482,16 @@
         "comingSoon": true
       },
       {
-        "key": "recurringExpenses",
-        "label": "Recurring expenses",
-        "included": true,
-        "comingSoon": true
-      },
-      {
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
         "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": false
       },
       {
         "key": "analytics",
@@ -542,6 +554,12 @@
         "comingSoon": true
       },
       {
+        "key": "dailyRecurringExpenses",
+        "label": "Daily recurring expenses",
+        "included": false,
+        "comingSoon": false
+      },
+      {
         "key": "inventory",
         "label": "Inventory: stock levels, stock-in and stock-out",
         "included": false,
@@ -563,7 +581,7 @@
         "max": 100,
         "per": "month",
         "phrase": "100 quotations a month",
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "customers",
@@ -626,12 +644,12 @@
   {
     "tier": "PREMIUM",
     "name": "Premium",
-    "description": "For bigger teams: unlimited invoices, customers, job cards, users and bank accounts, and every feature.",
+    "description": "Everything in Standard, plus 30,000 invoices and job cards a year, 20 users, 10 bank accounts and every feature. For bigger teams.",
     "currency": "NGN",
     "isActive": true,
-    "monthlyPrice": 10000,
-    "annualPrice": 100000,
-    "annualSaving": 20000,
+    "monthlyPrice": 15000,
+    "annualPrice": 150000,
+    "annualSaving": 30000,
     "annualMonthsFree": 2,
     "contactSales": false,
     "features": [
@@ -678,16 +696,16 @@
         "comingSoon": true
       },
       {
-        "key": "recurringExpenses",
-        "label": "Recurring expenses",
-        "included": true,
-        "comingSoon": true
-      },
-      {
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
         "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": false
       },
       {
         "key": "analytics",
@@ -750,6 +768,12 @@
         "comingSoon": true
       },
       {
+        "key": "dailyRecurringExpenses",
+        "label": "Daily recurring expenses",
+        "included": true,
+        "comingSoon": false
+      },
+      {
         "key": "inventory",
         "label": "Inventory: stock levels, stock-in and stock-out",
         "included": true,
@@ -760,73 +784,73 @@
       {
         "key": "invoices",
         "label": "Invoices",
-        "max": null,
-        "per": "total",
-        "phrase": "Unlimited invoices",
+        "max": 30000,
+        "per": "year",
+        "phrase": "30,000 invoices a year",
         "comingSoon": false
       },
       {
         "key": "quotations",
         "label": "Quotations",
-        "max": null,
-        "per": "total",
-        "phrase": "Unlimited quotations",
-        "comingSoon": true
+        "max": 30000,
+        "per": "year",
+        "phrase": "30,000 quotations a year",
+        "comingSoon": false
       },
       {
         "key": "customers",
         "label": "Customers",
-        "max": null,
-        "per": "total",
-        "phrase": "Unlimited customers",
+        "max": 10000,
+        "per": "year",
+        "phrase": "10,000 customers a year",
         "comingSoon": false
       },
       {
         "key": "users",
         "label": "Users",
-        "max": null,
+        "max": 20,
         "per": "total",
-        "phrase": "Unlimited users",
+        "phrase": "20 users",
         "comingSoon": false
       },
       {
         "key": "bankAccounts",
         "label": "Bank accounts",
-        "max": null,
+        "max": 10,
         "per": "total",
-        "phrase": "Unlimited bank accounts",
+        "phrase": "10 bank accounts",
         "comingSoon": false
       },
       {
         "key": "templates",
         "label": "Document templates",
-        "max": null,
+        "max": 20,
         "per": "total",
-        "phrase": "Unlimited templates",
+        "phrase": "20 templates per document type",
         "comingSoon": false
       },
       {
         "key": "jobCards",
         "label": "Job cards",
-        "max": null,
-        "per": "total",
-        "phrase": "Unlimited job cards",
+        "max": 30000,
+        "per": "year",
+        "phrase": "30,000 job cards a year",
         "comingSoon": false
       },
       {
         "key": "inspections",
         "label": "Inspections",
-        "max": null,
-        "per": "total",
-        "phrase": "Unlimited inspections",
+        "max": 10000,
+        "per": "year",
+        "phrase": "10,000 inspections a year",
         "comingSoon": false
       },
       {
         "key": "paperwork",
         "label": "Paperwork",
-        "max": null,
-        "per": "total",
-        "phrase": "Unlimited paperwork records",
+        "max": 10000,
+        "per": "year",
+        "phrase": "10,000 paperwork records a year",
         "comingSoon": false
       }
     ]
@@ -886,16 +910,16 @@
         "comingSoon": true
       },
       {
-        "key": "recurringExpenses",
-        "label": "Recurring expenses",
-        "included": true,
-        "comingSoon": true
-      },
-      {
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
         "comingSoon": true
+      },
+      {
+        "key": "recurringExpenses",
+        "label": "Recurring expenses",
+        "included": true,
+        "comingSoon": false
       },
       {
         "key": "analytics",
@@ -958,6 +982,12 @@
         "comingSoon": true
       },
       {
+        "key": "dailyRecurringExpenses",
+        "label": "Daily recurring expenses",
+        "included": true,
+        "comingSoon": false
+      },
+      {
         "key": "inventory",
         "label": "Inventory: stock levels, stock-in and stock-out",
         "included": true,
@@ -979,7 +1009,7 @@
         "max": null,
         "per": "total",
         "phrase": "Unlimited quotations",
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "customers",

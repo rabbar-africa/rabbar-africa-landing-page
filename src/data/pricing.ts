@@ -20,7 +20,7 @@ export const PLAN_COPY: Record<string, PlanCopy> = {
   STARTER: { tagline: "Try everything, free" },
   WHATSAPP: { tagline: "Run the business from WhatsApp" },
   STANDARD: { tagline: "For a busy workshop or business", featured: true },
-  PREMIUM: { tagline: "No limits, for bigger teams" },
+  PREMIUM: { tagline: "Room to grow, for bigger teams" },
   ENTERPRISE: { tagline: "For large operators, on agreed terms" },
 };
 

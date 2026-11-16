@@ -9,7 +9,10 @@ function GoogleAnalyticsComponent() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
+    // Does nothing until the visitor accepts cookies: pageview() needs
+    // window.gtag, which CookieConsent only loads after Accept.
+    const query = searchParams.toString();
+    const url = query ? `${pathname}?${query}` : pathname;
     pageview(url);
   }, [pathname, searchParams]);
 

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
-import { GA_ID, ADS_ID } from "@/lib/gtag";
 import GoogleAnalytics from "@/components/GoogleAnalyticsWrapper";
+import { CookieConsent } from "@/components/consent/CookieConsent";
 /** Display face — geometric and slightly technical, to match the wordmark. */
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display-face",
@@ -127,28 +126,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '${GA_ID}', { send_page_view: false });
-            gtag('config', '${ADS_ID}');
-          `}
-        </Script>
-      </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
       >
+        {/* Google Analytics and Ads load only after the visitor accepts
+            cookies (NDPC GAID 2025): see CookieConsent. */}
         <GoogleAnalytics />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

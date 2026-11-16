@@ -2,7 +2,7 @@
   {
     "tier": "STARTER",
     "name": "Starter",
-    "description": "Free: 15 invoices, 30 customers, 5 job cards and your logo.",
+    "description": "Free: 15 invoices, then 3 every month, 30 customers, 5 job cards and your logo.",
     "currency": "NGN",
     "isActive": true,
     "monthlyPrice": 0,
@@ -144,8 +144,12 @@
         "label": "Invoices",
         "max": 15,
         "per": "total",
-        "phrase": "15 invoices",
-        "comingSoon": false
+        "phrase": "15 invoices, then 3 a month",
+        "comingSoon": false,
+        "then": {
+          "max": 3,
+          "per": "month"
+        }
       },
       {
         "key": "quotations",

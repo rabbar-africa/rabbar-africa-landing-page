@@ -35,7 +35,12 @@ export interface PlanLimit {
   max: number | null;
   /** `month` resets on the 1st, `year` on 1 January. */
   per: "total" | "month" | "year";
-  /** Ready to show, e.g. "100 invoices a month" or "30,000 invoices a year". */
+  /**
+   * After a `total` start, what comes each month or year for good: Starter's
+   * invoices are 15, then 3 a month. Null or absent: nothing after.
+   */
+  then?: { max: number; per: "month" | "year" } | null;
+  /** Ready to show, e.g. "100 invoices a month" or "15 invoices, then 3 a month". */
   phrase: string;
   comingSoon: boolean;
 }

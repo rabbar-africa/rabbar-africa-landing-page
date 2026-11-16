@@ -19,7 +19,10 @@ const money = (amount: number, currency: string) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-/** A limit as a table cell: "Unlimited", "100 a month", "30,000 a year" or "15". */
+/**
+ * A limit as a table cell: "Unlimited", "100 a month", "30,000 a year", "15",
+ * or "15, then 3 a month".
+ */
 function limitCell(limit?: PlanLimit) {
   if (!limit) return "—";
   if (limit.max === null) return "Unlimited";
@@ -27,6 +30,8 @@ function limitCell(limit?: PlanLimit) {
   if (limit.key === "templates") return `${n} per document type`;
   if (limit.per === "month") return `${n} a month`;
   if (limit.per === "year") return `${n} a year`;
+  if (limit.then)
+    return `${n}, then ${limit.then.max.toLocaleString("en-NG")} a ${limit.then.per}`;
   return n;
 }
 

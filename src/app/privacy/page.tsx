@@ -123,13 +123,14 @@ const sections: LegalSection[] = [
           information about the vehicles you ask us to maintain.
         </p>
         <p>
-          <strong>Automatically.</strong> On our website, Google Analytics and
-          Google Ads collect information such as the pages you visit, your
-          browser and device, your approximate location and the site that
-          referred you (see section 11). The {APP} has no analytics or
-          advertising trackers. Like any online service, our hosting providers
-          keep standard server logs, such as IP addresses and request times, for
-          security and troubleshooting.
+          <strong>Automatically, if you accept cookies.</strong> On our website,
+          and only if you accept cookies, Google Analytics and Google Ads
+          collect information such as the pages you visit, your browser and
+          device, your approximate location and the site that referred you (see
+          section 11). The {APP} has no analytics or advertising trackers. Like
+          any online service, our hosting providers keep standard server logs,
+          such as IP addresses and request times, for security and
+          troubleshooting.
         </p>
       </>
     ),
@@ -168,7 +169,7 @@ const sections: LegalSection[] = [
             ],
             [
               "Understand how our website is used and whether our advertising works",
-              "Our legitimate interests or, where the law requires it, your consent",
+              "Your consent, given in our cookie banner. You can withdraw it at any time",
             ],
             [
               "Keep financial records and respond to lawful requests from authorities",
@@ -404,9 +405,17 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          <strong>Our website</strong> uses cookies set by Google Analytics and
-          Google Ads. They count visits, show which pages are useful, and
+          <strong>Our website</strong> can use cookies set by Google Analytics
+          and Google Ads. They count visits, show which pages are useful, and
           measure whether people who click our adverts go on to contact us.
+        </p>
+        <p>
+          <strong>Only if you accept.</strong> When you first visit, a banner
+          asks whether we may use these cookies, with equal Accept and Decline
+          buttons. Until you accept, no Google Analytics or Google Ads code
+          loads and no such cookies are set, and the website works fully either
+          way. Your choice is saved in your browser&apos;s local storage so we
+          don&apos;t ask on every page.
         </p>
         <p>
           <strong>The {APP}</strong> uses only what it needs to work: cookies
@@ -416,6 +425,11 @@ const sections: LegalSection[] = [
         </p>
         <p>You can control website cookies:</p>
         <ul>
+          <li>
+            Change your choice at any time with <strong>Cookie settings</strong>{" "}
+            at the bottom of every page. If you withdraw consent, we delete the
+            Google cookies we set.
+          </li>
           <li>
             Block or delete cookies in your browser settings. Our website will
             still work without them.

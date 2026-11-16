@@ -11,6 +11,7 @@ import Link from "next/link";
 import { PRODUCTS, SIDE_PRODUCTS } from "@/data/products";
 import { FOOTER_LINKS } from "@/data/navigation";
 import { Logo } from "./Logo";
+import { CookieSettingsButton } from "@/components/consent/CookieConsent";
 import { contactEmail } from "@/data/constant";
 
 export function Footer() {
@@ -163,6 +164,7 @@ export function Footer() {
               >
                 Data Processing Terms
               </Link>
+              <CookieSettingsButton className="hover:text-[#E8F34F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8F34F] focus-visible:rounded-sm" />
             </nav>
           </div>
         </div>

@@ -20,7 +20,7 @@ export const COMPANY = {
  * internal-tool-backend/src/shared/constants/legal.ts. Bump both whenever the
  * wording of any of the three pages changes.
  */
-export const LEGAL_VERSION = "2026-11-07";
+export const LEGAL_VERSION = "2026-11-16";
 
 const MONTHS = [
   "January",

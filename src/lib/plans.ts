@@ -15,7 +15,7 @@ import fallbackPlans from "@/data/plans-fallback.json";
  *
  * When RABBAR_API_URL is unset, or the API fails, the page falls back to
  * src/data/plans-fallback.json: the backend's own defaults (DEFAULT_PLANS
- * and DEFAULT_ENTITLEMENTS in plan-config.ts) as of 10 November 2026. Refresh
+ * and DEFAULT_ENTITLEMENTS in plan-config.ts) as of 24 November 2026. Refresh
  * it when the defaults change, by saving the output of GET /plans
  * ?contactSales=true from a backend with no back-office edits.
  */

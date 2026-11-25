@@ -20,7 +20,7 @@ const money = (amount: number, currency: string) =>
   }).format(amount);
 
 /**
- * A limit as a table cell: "Unlimited", "100 a month", "30,000 a year", "15",
+ * A limit as a table cell: "Unlimited", "100 a month", "5,000 a year", "15",
  * or "15, then 3 a month".
  */
 function limitCell(limit?: PlanLimit) {

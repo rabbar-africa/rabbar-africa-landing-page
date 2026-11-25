@@ -85,7 +85,7 @@
       },
       {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": false,
         "comingSoon": false
       },
@@ -317,7 +317,7 @@
       },
       {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": false,
         "comingSoon": false
       },
@@ -546,7 +546,7 @@
       },
       {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": false,
         "comingSoon": false
       },
@@ -775,7 +775,7 @@
       },
       {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": true,
         "comingSoon": false
       },
@@ -1004,7 +1004,7 @@
       },
       {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": true,
         "comingSoon": false
       },

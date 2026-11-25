@@ -24,7 +24,7 @@ export interface PlanFeature {
   key: string;
   label: string;
   included: boolean;
-  /** On the roadmap: shown as "coming soon", never as included today. */
+  /** On the roadmap, not built: the site doesn't list these at all. */
   comingSoon: boolean;
 }
 

@@ -3,7 +3,12 @@
 import { ArrowRight, Check, Info, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Plan } from "@/lib/plans";
-import { CARD_LIMITS, FEATURE_LABELS, PLAN_COPY } from "@/data/pricing";
+import {
+  CARD_LIMITS,
+  FEATURE_LABELS,
+  HIDDEN_FEATURES,
+  PLAN_COPY,
+} from "@/data/pricing";
 import { StartLink } from "@/components/platform/StartLink";
 import {
   intervalFor,
@@ -26,6 +31,7 @@ function newFeatures(plan: Plan, previous?: Plan) {
     (f) =>
       f.included &&
       !f.comingSoon &&
+      !HIDDEN_FEATURES.has(f.key) &&
       !previous?.features.find((p) => p.key === f.key)?.included,
   );
 }

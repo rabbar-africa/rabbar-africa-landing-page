@@ -30,10 +30,24 @@ export const PLAN_COPY: Record<string, PlanCopy> = {
  * here.
  */
 export const FEATURE_LABELS: Record<string, string> = {
-  webEditing: "Create and edit in the web app",
   myNumbers: "Who owes you, and your numbers on WhatsApp",
-  noRabbarBranding: 'No "Powered by Rabbar" footer on documents',
+  vatTracking: "VAT tracking and returns",
+  reminders: "Service reminders",
 };
+
+/**
+ * Features never listed on the cards or in the comparison table. They stay in
+ * the plan data: Chat Lite's "view only" note still reads `webEditing`.
+ * - webEditing, noRabbarBranding: not worth a line of their own.
+ * - vatReturns: shown with VAT tracking, which every plan with it also has.
+ * - dailyRecurringExpenses: reads as a repeat of recurring expenses.
+ */
+export const HIDDEN_FEATURES = new Set([
+  "webEditing",
+  "noRabbarBranding",
+  "vatReturns",
+  "dailyRecurringExpenses",
+]);
 
 /**
  * The limits shown on each plan card, in this order. The comparison table

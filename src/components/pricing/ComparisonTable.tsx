@@ -4,7 +4,12 @@ import { Fragment, useState } from "react";
 import { Check, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Plan, PlanLimit } from "@/lib/plans";
-import { EVERY_PLAN_INCLUDES, FEATURE_LABELS, PLAN_COPY } from "@/data/pricing";
+import {
+  EVERY_PLAN_INCLUDES,
+  FEATURE_LABELS,
+  HIDDEN_FEATURES,
+  PLAN_COPY,
+} from "@/data/pricing";
 import { StartLink } from "@/components/platform/StartLink";
 import {
   intervalFor,
@@ -20,7 +25,7 @@ const money = (amount: number, currency: string) =>
   }).format(amount);
 
 /**
- * A limit as a table cell: "Unlimited", "100 a month", "30,000 a year", "15",
+ * A limit as a table cell: "Unlimited", "100 a month", "5,000 a year", "15",
  * or "15, then 3 a month".
  */
 function limitCell(limit?: PlanLimit) {
@@ -95,10 +100,11 @@ export function ComparisonTable({
 
   const limitKeys =
     plans[0]?.limits.filter((l) => !l.comingSoon).map((l) => l.key) ?? [];
+  // Only what is built today: roadmap features ("coming soon") are left out.
   const featureKeys =
-    plans[0]?.features.filter((f) => !f.comingSoon).map((f) => f.key) ?? [];
-  const soonKeys =
-    plans[0]?.features.filter((f) => f.comingSoon).map((f) => f.key) ?? [];
+    plans[0]?.features
+      .filter((f) => !f.comingSoon && !HIDDEN_FEATURES.has(f.key))
+      .map((f) => f.key) ?? [];
 
   const labelOf = (key: string) =>
     FEATURE_LABELS[key] ??
@@ -133,17 +139,6 @@ export function ComparisonTable({
       })),
     },
   ];
-  if (soonKeys.length) {
-    groups.push({
-      group: "Coming soon",
-      rows: soonKeys.map((key) => ({
-        feature: labelOf(key),
-        values: plans.map((p) =>
-          p.features.find((f) => f.key === key)?.included ? "Soon" : false,
-        ),
-      })),
-    });
-  }
 
   return (
     <div>

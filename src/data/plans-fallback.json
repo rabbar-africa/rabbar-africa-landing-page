@@ -57,7 +57,7 @@
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "recurringExpenses",
@@ -69,7 +69,7 @@
         "key": "analytics",
         "label": "Advanced analytics and reporting",
         "included": false,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "businessStatement",
@@ -78,8 +78,14 @@
         "comingSoon": false
       },
       {
+        "key": "fullActivityHistory",
+        "label": "Full activity history",
+        "included": false,
+        "comingSoon": false
+      },
+      {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": false,
         "comingSoon": false
       },
@@ -111,13 +117,13 @@
         "key": "vatTracking",
         "label": "VAT tracking (input and output)",
         "included": false,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "vatReturns",
         "label": "VAT returns",
         "included": false,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "debitNotes",
@@ -144,18 +150,19 @@
         "label": "Invoices",
         "max": 15,
         "per": "total",
-        "phrase": "15 invoices, then 3 a month",
-        "comingSoon": false,
         "then": {
           "max": 3,
           "per": "month"
-        }
+        },
+        "phrase": "15 invoices, then 3 a month",
+        "comingSoon": false
       },
       {
         "key": "quotations",
         "label": "Quotations",
         "max": 15,
         "per": "total",
+        "then": null,
         "phrase": "15 quotations",
         "comingSoon": false
       },
@@ -164,6 +171,7 @@
         "label": "Customers",
         "max": 30,
         "per": "total",
+        "then": null,
         "phrase": "30 customers",
         "comingSoon": false
       },
@@ -172,6 +180,7 @@
         "label": "Users",
         "max": 1,
         "per": "total",
+        "then": null,
         "phrase": "1 user",
         "comingSoon": false
       },
@@ -180,6 +189,7 @@
         "label": "Bank accounts",
         "max": 1,
         "per": "total",
+        "then": null,
         "phrase": "1 bank account",
         "comingSoon": false
       },
@@ -188,6 +198,7 @@
         "label": "Document templates",
         "max": 2,
         "per": "total",
+        "then": null,
         "phrase": "2 templates per document type",
         "comingSoon": false
       },
@@ -196,6 +207,7 @@
         "label": "Job cards",
         "max": 5,
         "per": "total",
+        "then": null,
         "phrase": "5 job cards",
         "comingSoon": false
       },
@@ -204,6 +216,7 @@
         "label": "Inspections",
         "max": 15,
         "per": "total",
+        "then": null,
         "phrase": "15 inspections",
         "comingSoon": false
       },
@@ -212,6 +225,7 @@
         "label": "Paperwork",
         "max": 15,
         "per": "total",
+        "then": null,
         "phrase": "15 paperwork records",
         "comingSoon": false
       }
@@ -275,7 +289,7 @@
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "recurringExpenses",
@@ -287,7 +301,7 @@
         "key": "analytics",
         "label": "Advanced analytics and reporting",
         "included": false,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "businessStatement",
@@ -296,8 +310,14 @@
         "comingSoon": false
       },
       {
+        "key": "fullActivityHistory",
+        "label": "Full activity history",
+        "included": false,
+        "comingSoon": false
+      },
+      {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": false,
         "comingSoon": false
       },
@@ -329,13 +349,13 @@
         "key": "vatTracking",
         "label": "VAT tracking (input and output)",
         "included": false,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "vatReturns",
         "label": "VAT returns",
         "included": false,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "debitNotes",
@@ -362,6 +382,7 @@
         "label": "Invoices",
         "max": 30,
         "per": "month",
+        "then": null,
         "phrase": "30 invoices a month",
         "comingSoon": false
       },
@@ -370,6 +391,7 @@
         "label": "Quotations",
         "max": 30,
         "per": "month",
+        "then": null,
         "phrase": "30 quotations a month",
         "comingSoon": false
       },
@@ -378,6 +400,7 @@
         "label": "Customers",
         "max": 100,
         "per": "total",
+        "then": null,
         "phrase": "100 customers",
         "comingSoon": false
       },
@@ -386,6 +409,7 @@
         "label": "Users",
         "max": 2,
         "per": "total",
+        "then": null,
         "phrase": "2 users",
         "comingSoon": false
       },
@@ -394,6 +418,7 @@
         "label": "Bank accounts",
         "max": 2,
         "per": "total",
+        "then": null,
         "phrase": "2 bank accounts",
         "comingSoon": false
       },
@@ -402,6 +427,7 @@
         "label": "Document templates",
         "max": 2,
         "per": "total",
+        "then": null,
         "phrase": "2 templates per document type",
         "comingSoon": false
       },
@@ -410,6 +436,7 @@
         "label": "Job cards",
         "max": 30,
         "per": "month",
+        "then": null,
         "phrase": "30 job cards a month",
         "comingSoon": false
       },
@@ -418,6 +445,7 @@
         "label": "Inspections",
         "max": 30,
         "per": "month",
+        "then": null,
         "phrase": "30 inspections a month",
         "comingSoon": false
       },
@@ -426,6 +454,7 @@
         "label": "Paperwork",
         "max": 30,
         "per": "month",
+        "then": null,
         "phrase": "30 paperwork records a month",
         "comingSoon": false
       }
@@ -434,7 +463,7 @@
   {
     "tier": "STANDARD",
     "name": "Standard",
-    "description": "100 invoices a month, 5 team members, who owes you, no Rabbar footer, terms on invoices and VAT by default.",
+    "description": "100 invoices a month, 3 team members, 3 bank accounts, who owes you, no Rabbar footer, terms on invoices and VAT by default.",
     "currency": "NGN",
     "isActive": true,
     "monthlyPrice": 5000,
@@ -489,7 +518,7 @@
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "recurringExpenses",
@@ -500,19 +529,25 @@
       {
         "key": "analytics",
         "label": "Advanced analytics and reporting",
-        "included": true,
-        "comingSoon": true
+        "included": false,
+        "comingSoon": false
       },
       {
         "key": "businessStatement",
         "label": "Monthly business statement",
+        "included": false,
+        "comingSoon": false
+      },
+      {
+        "key": "fullActivityHistory",
+        "label": "Full activity history",
         "included": true,
         "comingSoon": false
       },
       {
         "key": "reminders",
-        "label": "Reminders and notifications",
-        "included": true,
+        "label": "Service reminders",
+        "included": false,
         "comingSoon": false
       },
       {
@@ -543,13 +578,13 @@
         "key": "vatTracking",
         "label": "VAT tracking (input and output)",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "vatReturns",
         "label": "VAT returns",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "debitNotes",
@@ -576,6 +611,7 @@
         "label": "Invoices",
         "max": 100,
         "per": "month",
+        "then": null,
         "phrase": "100 invoices a month",
         "comingSoon": false
       },
@@ -584,6 +620,7 @@
         "label": "Quotations",
         "max": 100,
         "per": "month",
+        "then": null,
         "phrase": "100 quotations a month",
         "comingSoon": false
       },
@@ -592,23 +629,26 @@
         "label": "Customers",
         "max": 100,
         "per": "month",
+        "then": null,
         "phrase": "100 customers a month",
         "comingSoon": false
       },
       {
         "key": "users",
         "label": "Users",
-        "max": 5,
+        "max": 3,
         "per": "total",
-        "phrase": "5 users",
+        "then": null,
+        "phrase": "3 users",
         "comingSoon": false
       },
       {
         "key": "bankAccounts",
         "label": "Bank accounts",
-        "max": 5,
+        "max": 3,
         "per": "total",
-        "phrase": "5 bank accounts",
+        "then": null,
+        "phrase": "3 bank accounts",
         "comingSoon": false
       },
       {
@@ -616,6 +656,7 @@
         "label": "Document templates",
         "max": 5,
         "per": "total",
+        "then": null,
         "phrase": "5 templates per document type",
         "comingSoon": false
       },
@@ -624,6 +665,7 @@
         "label": "Job cards",
         "max": 100,
         "per": "month",
+        "then": null,
         "phrase": "100 job cards a month",
         "comingSoon": false
       },
@@ -632,6 +674,7 @@
         "label": "Inspections",
         "max": 100,
         "per": "month",
+        "then": null,
         "phrase": "100 inspections a month",
         "comingSoon": false
       },
@@ -640,6 +683,7 @@
         "label": "Paperwork",
         "max": 100,
         "per": "month",
+        "then": null,
         "phrase": "100 paperwork records a month",
         "comingSoon": false
       }
@@ -648,7 +692,7 @@
   {
     "tier": "PREMIUM",
     "name": "Premium",
-    "description": "Everything in Standard, plus 30,000 invoices and job cards a year, 20 users, 10 bank accounts and every feature. For bigger teams.",
+    "description": "Everything in Standard, plus 5,000 invoices and job cards a year, 6 users, 5 bank accounts, advanced reports, the monthly business statement and reminders. For bigger teams.",
     "currency": "NGN",
     "isActive": true,
     "monthlyPrice": 15000,
@@ -703,7 +747,7 @@
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "recurringExpenses",
@@ -715,7 +759,7 @@
         "key": "analytics",
         "label": "Advanced analytics and reporting",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "businessStatement",
@@ -724,8 +768,14 @@
         "comingSoon": false
       },
       {
+        "key": "fullActivityHistory",
+        "label": "Full activity history",
+        "included": true,
+        "comingSoon": false
+      },
+      {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": true,
         "comingSoon": false
       },
@@ -757,13 +807,13 @@
         "key": "vatTracking",
         "label": "VAT tracking (input and output)",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "vatReturns",
         "label": "VAT returns",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "debitNotes",
@@ -788,41 +838,46 @@
       {
         "key": "invoices",
         "label": "Invoices",
-        "max": 30000,
+        "max": 5000,
         "per": "year",
-        "phrase": "30,000 invoices a year",
+        "then": null,
+        "phrase": "5,000 invoices a year",
         "comingSoon": false
       },
       {
         "key": "quotations",
         "label": "Quotations",
-        "max": 30000,
+        "max": 5000,
         "per": "year",
-        "phrase": "30,000 quotations a year",
+        "then": null,
+        "phrase": "5,000 quotations a year",
         "comingSoon": false
       },
       {
         "key": "customers",
         "label": "Customers",
-        "max": 10000,
+        "max": 5000,
         "per": "year",
-        "phrase": "10,000 customers a year",
+        "then": null,
+        "phrase": "5,000 customers a year",
         "comingSoon": false
       },
       {
         "key": "users",
         "label": "Users",
-        "max": 20,
+        "max": 6,
         "per": "total",
-        "phrase": "20 users",
+        "then": null,
+        "phrase": "6 users",
         "comingSoon": false
       },
       {
         "key": "bankAccounts",
         "label": "Bank accounts",
-        "max": 10,
+        "max": 5,
         "per": "total",
-        "phrase": "10 bank accounts",
+        "then": null,
+        "phrase": "5 bank accounts",
         "comingSoon": false
       },
       {
@@ -830,31 +885,35 @@
         "label": "Document templates",
         "max": 20,
         "per": "total",
+        "then": null,
         "phrase": "20 templates per document type",
         "comingSoon": false
       },
       {
         "key": "jobCards",
         "label": "Job cards",
-        "max": 30000,
+        "max": 5000,
         "per": "year",
-        "phrase": "30,000 job cards a year",
+        "then": null,
+        "phrase": "5,000 job cards a year",
         "comingSoon": false
       },
       {
         "key": "inspections",
         "label": "Inspections",
-        "max": 10000,
+        "max": 5000,
         "per": "year",
-        "phrase": "10,000 inspections a year",
+        "then": null,
+        "phrase": "5,000 inspections a year",
         "comingSoon": false
       },
       {
         "key": "paperwork",
         "label": "Paperwork",
-        "max": 10000,
+        "max": 5000,
         "per": "year",
-        "phrase": "10,000 paperwork records a year",
+        "then": null,
+        "phrase": "5,000 paperwork records a year",
         "comingSoon": false
       }
     ]
@@ -917,7 +976,7 @@
         "key": "creditNotes",
         "label": "Credit notes",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "recurringExpenses",
@@ -929,7 +988,7 @@
         "key": "analytics",
         "label": "Advanced analytics and reporting",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "businessStatement",
@@ -938,8 +997,14 @@
         "comingSoon": false
       },
       {
+        "key": "fullActivityHistory",
+        "label": "Full activity history",
+        "included": true,
+        "comingSoon": false
+      },
+      {
         "key": "reminders",
-        "label": "Reminders and notifications",
+        "label": "Service reminders",
         "included": true,
         "comingSoon": false
       },
@@ -971,13 +1036,13 @@
         "key": "vatTracking",
         "label": "VAT tracking (input and output)",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "vatReturns",
         "label": "VAT returns",
         "included": true,
-        "comingSoon": true
+        "comingSoon": false
       },
       {
         "key": "debitNotes",
@@ -1004,6 +1069,7 @@
         "label": "Invoices",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited invoices",
         "comingSoon": false
       },
@@ -1012,6 +1078,7 @@
         "label": "Quotations",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited quotations",
         "comingSoon": false
       },
@@ -1020,6 +1087,7 @@
         "label": "Customers",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited customers",
         "comingSoon": false
       },
@@ -1028,6 +1096,7 @@
         "label": "Users",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited users",
         "comingSoon": false
       },
@@ -1036,6 +1105,7 @@
         "label": "Bank accounts",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited bank accounts",
         "comingSoon": false
       },
@@ -1044,6 +1114,7 @@
         "label": "Document templates",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited templates",
         "comingSoon": false
       },
@@ -1052,6 +1123,7 @@
         "label": "Job cards",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited job cards",
         "comingSoon": false
       },
@@ -1060,6 +1132,7 @@
         "label": "Inspections",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited inspections",
         "comingSoon": false
       },
@@ -1068,6 +1141,7 @@
         "label": "Paperwork",
         "max": null,
         "per": "total",
+        "then": null,
         "phrase": "Unlimited paperwork records",
         "comingSoon": false
       }
